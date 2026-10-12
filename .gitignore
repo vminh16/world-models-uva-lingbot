@@ -1,0 +1,31 @@
+# Local-only files: notes for the coding assistant and personal planning (kept on disk, not published)
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+docs/PLAN.md
+report/OUTLINE.md
+docs/DELIVERABLES.md
+
+# Large ML artifacts
+**/checkpoints/
+**/pretrained_models/
+**/data/
+**/wandb/
+**/outputs/
+*.ckpt
+*.pth
+*.pt
+*.safetensors
+*.zarr
+*.hdf5
+
+# Full-size videos (upload elsewhere and link them); small previews are allowed
+*.mp4
+*.avi
+*.mkv
+!results/**/rollouts/*_small.mp4
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

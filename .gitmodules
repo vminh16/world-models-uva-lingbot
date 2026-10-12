@@ -1,0 +1,8 @@
+[submodule "uva"]
+	path = uva
+	url = https://github.com/vminh16/unified_video_action.git
+	branch = hw-small-scale
+[submodule "lingbot-va"]
+	path = lingbot-va
+	url = https://github.com/vminh16/lingbot-va.git
+	branch = hw-small-scale
