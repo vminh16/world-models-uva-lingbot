@@ -1,0 +1,6 @@
+date: 2026-10-14T17:31:45+00:00
+repo: aad9f1daf80b7dcdab921b3a48ef7ec96a49a3d3 (dirty: 15 files)
+uva:  fe3dec81af565fbb2d686072722f12340be31293 hw-small-scale (dirty: 8 files)
+cwd:  /home/minhsctn1608/world-models-uva-lingbot/uva
+python eval_sim.py -c /home/minhsctn1608/world-models-uva-lingbot/results/exp02/train_f2_k25/checkpoints/latest.ckpt -o /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f2_k25/seed1 --seed 1 --n_test 50 --n_test_vis 10 --n_train 0 --n_envs 10 --fix_goal False --seeded_goal True
+ckpt: 8bd505472065b6d610d1832a79532047cbd8c500879039990285430e7582b9ba  /home/minhsctn1608/world-models-uva-lingbot/results/exp02/train_f2_k25/checkpoints/latest.ckpt

@@ -1,0 +1,129 @@
+['train.py', '--config-dir=.', '--config-name=uva_pusht.yaml', 'model.policy.autoregressive_model_params.pretrained_model_path=checkpoints/pusht.ckpt', 'model.policy.action_model_params.predict_action=True', 'task.dataset.dataset_path=data/pusht_multitask', 'task.dataset.dataset_type=multitask', '+task.dataset.max_train_episodes=25', 'task.env_runner.fix_goal=False', '+task.env_runner.seeded_goal=True', 'task.env_runner.n_envs=10', 'task.env_runner.n_train=1', 'task.env_runner.n_train_vis=0', 'task.env_runner.n_test=10', 'training.rollout_every=100000', 'checkpoint.topk.k=0', 'training.num_epochs=1', 'training.max_train_steps=50', 'dataloader.batch_size=8', 'dataloader.num_workers=4', 'val_dataloader.num_workers=2', 'logging.mode=offline', 'hydra.run.dir=/home/minhsctn1608/world-models-uva-lingbot/results/exp02/smoke_bs8']
+wandb: Using wandb-core as the SDK backend. Please refer to https://wandb.me/wandb-core for more information.
+wandb: WARNING `resume` will be ignored since W&B syncing is set to `offline`. Starting a new run with run id tj3fbx89.
+wandb: Tracking run with wandb version 0.18.3
+wandb: W&B syncing is set to `offline` in this directory.  
+wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/site-packages/pygame/pkgdata.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_stream, resource_exists
+Working with z of shape (1, 16, 16, 16) = 4096 dimensions.
+-------------------------------------------------------------------
+Loading pre-trained KL-VAE
+Missing keys:
+[]
+Unexpected keys:
+[]
+Restored from pretrained_models/vae/kl16.ckpt
+-------------------------------------------------------------------
+----------------------------------------------------------------------
+Loading pretrained model:  checkpoints/pusht.ckpt
+----------------------------------------------------------------------
+load from previous ema model
+----------------------------------------------------------------------
+pretrained_state_dict_mismatch:  dict_keys([])
+----------------------------------------------------------------------
+---------------------------------------------------------------
+Model Missing keys: []
+Model Unexpected keys: []
+---------------------------------------------------------------
+----------------------------------------------------------------------
+task_modes ['video_model', 'dynamic_model', 'policy_model', 'inverse_model', 'full_dynamic_model']
+----------------------------------------------------------------------
+---------------------------------------------------------
+Validation episodes: [188 107 160  21 106]
+---------------------------------------------------------
+---------------------------------------------------------
+Training episodes: [159  89  46 194  44 187 147 196 179  31 228  97 123 234  19 170 109 173
+ 226 122 245 233 203  22 238]
+---------------------------------------------------------
+train dataset: 2673 train dataloader: 335
+val dataset: 27573 val dataloader: 862
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.23)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+/home/minhsctn1608/world-models-uva-lingbot/results/exp02/smoke_bs8
+Training epoch 0:   0%|          | 0/335 [00:00<?, ?it/s][2026-10-14 13:19:44,419] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-10-14 13:19:44,680][root][INFO] - gcc -pthread -B /home/minhsctn1608/miniconda3/envs/uva/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /home/minhsctn1608/miniconda3/envs/uva/include -fPIC -O2 -isystem /home/minhsctn1608/miniconda3/envs/uva/include -fPIC -c /tmp/tmpscm0ozsr/test.c -o /tmp/tmpscm0ozsr/test.o
+[2026-10-14 13:19:44,780][root][INFO] - gcc -pthread -B /home/minhsctn1608/miniconda3/envs/uva/compiler_compat /tmp/tmpscm0ozsr/test.o -laio -o /tmp/tmpscm0ozsr/a.out
+[2026-10-14 13:19:46,404][root][INFO] - gcc -pthread -B /home/minhsctn1608/miniconda3/envs/uva/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /home/minhsctn1608/miniconda3/envs/uva/include -fPIC -O2 -isystem /home/minhsctn1608/miniconda3/envs/uva/include -fPIC -c /tmp/tmp6gqo_7f4/test.c -o /tmp/tmp6gqo_7f4/test.o
+[2026-10-14 13:19:46,505][root][INFO] - gcc -pthread -B /home/minhsctn1608/miniconda3/envs/uva/compiler_compat /tmp/tmp6gqo_7f4/test.o -L/usr/local/cuda -L/usr/local/cuda/lib64 -lcufile -o /tmp/tmp6gqo_7f4/a.out
+[2026-10-14 13:19:46,635][root][INFO] - gcc -pthread -B /home/minhsctn1608/miniconda3/envs/uva/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /home/minhsctn1608/miniconda3/envs/uva/include -fPIC -O2 -isystem /home/minhsctn1608/miniconda3/envs/uva/include -fPIC -c /tmp/tmpr3h4lbik/test.c -o /tmp/tmpr3h4lbik/test.o
+[2026-10-14 13:19:46,736][root][INFO] - gcc -pthread -B /home/minhsctn1608/miniconda3/envs/uva/compiler_compat /tmp/tmpr3h4lbik/test.o -laio -o /tmp/tmpr3h4lbik/a.out
+Training epoch 0:   0%|          | 1/335 [00:08<44:44,  8.04s/it, loss=0.0492]Training epoch 0:   1%|          | 2/335 [00:09<23:34,  4.25s/it, loss=0.0378]Training epoch 0:   1%|          | 3/335 [00:11<16:37,  3.00s/it, loss=0.557] Training epoch 0:   1%|          | 4/335 [00:12<13:29,  2.45s/it, loss=0.0674]Training epoch 0:   1%|▏         | 5/335 [00:14<11:44,  2.14s/it, loss=0.0488]Training epoch 0:   2%|▏         | 6/335 [00:15<10:41,  1.95s/it, loss=0.0399]Training epoch 0:   2%|▏         | 7/335 [00:17<10:01,  1.83s/it, loss=0.0495]Training epoch 0:   2%|▏         | 8/335 [00:19<09:36,  1.76s/it, loss=0.429] Training epoch 0:   3%|▎         | 9/335 [00:20<09:17,  1.71s/it, loss=0.0691]Training epoch 0:   3%|▎         | 10/335 [00:22<09:06,  1.68s/it, loss=0.322]Training epoch 0:   3%|▎         | 11/335 [00:23<08:49,  1.63s/it, loss=0.275]Training epoch 0:   4%|▎         | 12/335 [00:25<08:43,  1.62s/it, loss=0.0524]Training epoch 0:   4%|▍         | 13/335 [00:27<08:39,  1.61s/it, loss=0.0625]Training epoch 0:   4%|▍         | 14/335 [00:28<08:36,  1.61s/it, loss=0.0414]Training epoch 0:   4%|▍         | 15/335 [00:30<08:33,  1.61s/it, loss=0.0295]Training epoch 0:   5%|▍         | 16/335 [00:31<08:31,  1.60s/it, loss=0.0486]Training epoch 0:   5%|▌         | 17/335 [00:33<08:31,  1.61s/it, loss=0.499] Training epoch 0:   5%|▌         | 18/335 [00:35<08:31,  1.61s/it, loss=0.301]Training epoch 0:   6%|▌         | 19/335 [00:36<08:28,  1.61s/it, loss=0.056]Training epoch 0:   6%|▌         | 20/335 [00:38<08:28,  1.61s/it, loss=0.303]Training epoch 0:   6%|▋         | 21/335 [00:39<08:24,  1.61s/it, loss=0.0438]Training epoch 0:   7%|▋         | 22/335 [00:41<08:24,  1.61s/it, loss=0.335] Training epoch 0:   7%|▋         | 23/335 [00:43<08:15,  1.59s/it, loss=0.328]Training epoch 0:   7%|▋         | 24/335 [00:44<08:14,  1.59s/it, loss=0.0392]Training epoch 0:   7%|▋         | 25/335 [00:46<08:08,  1.57s/it, loss=0.186] Training epoch 0:   8%|▊         | 26/335 [00:47<08:10,  1.59s/it, loss=0.201]Training epoch 0:   8%|▊         | 27/335 [00:49<08:03,  1.57s/it, loss=0.232]Training epoch 0:   8%|▊         | 28/335 [00:50<08:04,  1.58s/it, loss=0.0365]Training epoch 0:   9%|▊         | 29/335 [00:52<08:03,  1.58s/it, loss=0.0429]Training epoch 0:   9%|▉         | 30/335 [00:54<07:57,  1.57s/it, loss=0.194] Training epoch 0:   9%|▉         | 31/335 [00:55<07:52,  1.55s/it, loss=0.342]Training epoch 0:  10%|▉         | 32/335 [00:57<07:48,  1.55s/it, loss=0.321]Training epoch 0:  10%|▉         | 33/335 [00:58<07:50,  1.56s/it, loss=0.0356]Training epoch 0:  10%|█         | 34/335 [01:00<07:51,  1.57s/it, loss=0.0286]Training epoch 0:  10%|█         | 35/335 [01:01<07:46,  1.55s/it, loss=0.343] Training epoch 0:  11%|█         | 36/335 [01:03<07:47,  1.56s/it, loss=0.0403]Training epoch 0:  11%|█         | 37/335 [01:04<07:47,  1.57s/it, loss=0.0465]Training epoch 0:  11%|█▏        | 38/335 [01:06<07:41,  1.55s/it, loss=0.292] Training epoch 0:  12%|█▏        | 39/335 [01:08<07:42,  1.56s/it, loss=0.0468]Training epoch 0:  12%|█▏        | 40/335 [01:09<07:30,  1.53s/it, loss=0.422] Training epoch 0:  12%|█▏        | 41/335 [01:11<07:28,  1.53s/it, loss=0.454]Training epoch 0:  13%|█▎        | 42/335 [01:12<07:34,  1.55s/it, loss=0.476]Training epoch 0:  13%|█▎        | 43/335 [01:14<07:30,  1.54s/it, loss=0.755]Training epoch 0:  13%|█▎        | 44/335 [01:15<07:32,  1.56s/it, loss=0.0538]Training epoch 0:  13%|█▎        | 45/335 [01:17<07:28,  1.55s/it, loss=0.324] Training epoch 0:  14%|█▎        | 46/335 [01:18<07:31,  1.56s/it, loss=0.197]Training epoch 0:  14%|█▍        | 47/335 [01:20<07:31,  1.57s/it, loss=0.0378]Training epoch 0:  14%|█▍        | 48/335 [01:21<07:25,  1.55s/it, loss=0.342] Training epoch 0:  15%|█▍        | 49/335 [01:23<07:26,  1.56s/it, loss=0.0394]                                                                               test_video_fvd 0 862
+Saving Video with 8 frames, img shape 256, 256
+Saving Video with 8 frames, img shape 256, 256
+Eval PushtImageRunner 1/2:   0%|          | 0/300 [00:00<?, ?it/s]Eval PushtImageRunner 1/2:   8%|▊         | 24/300 [00:05<01:02,  4.39it/s]Eval PushtImageRunner 1/2:  16%|█▌        | 48/300 [00:10<00:57,  4.41it/s]Eval PushtImageRunner 1/2:  24%|██▍       | 72/300 [00:16<00:51,  4.39it/s]Eval PushtImageRunner 1/2:  32%|███▏      | 96/300 [00:21<00:46,  4.39it/s]Eval PushtImageRunner 1/2:  40%|████      | 120/300 [00:27<00:40,  4.39it/s]Eval PushtImageRunner 1/2:  48%|████▊     | 144/300 [00:32<00:35,  4.39it/s]Eval PushtImageRunner 1/2:  56%|█████▌    | 168/300 [00:38<00:30,  4.40it/s]Eval PushtImageRunner 1/2:  64%|██████▍   | 192/300 [00:43<00:24,  4.41it/s]Eval PushtImageRunner 1/2:  72%|███████▏  | 216/300 [00:49<00:19,  4.40it/s]Eval PushtImageRunner 1/2:  80%|████████  | 240/300 [00:54<00:13,  4.40it/s]Eval PushtImageRunner 1/2:  88%|████████▊ | 264/300 [01:00<00:08,  4.40it/s]Eval PushtImageRunner 1/2:  96%|█████████▌| 288/300 [01:05<00:02,  4.41it/s]                                                                            Eval PushtImageRunner 2/2:   0%|          | 0/300 [00:00<?, ?it/s]Eval PushtImageRunner 2/2:   8%|▊         | 24/300 [00:05<01:02,  4.42it/s]Eval PushtImageRunner 2/2:  16%|█▌        | 48/300 [00:10<00:56,  4.43it/s]Eval PushtImageRunner 2/2:  24%|██▍       | 72/300 [00:16<00:51,  4.42it/s]Eval PushtImageRunner 2/2:  32%|███▏      | 96/300 [00:21<00:46,  4.42it/s]Eval PushtImageRunner 2/2:  40%|████      | 120/300 [00:27<00:40,  4.43it/s]Eval PushtImageRunner 2/2:  48%|████▊     | 144/300 [00:32<00:35,  4.42it/s]Eval PushtImageRunner 2/2:  56%|█████▌    | 168/300 [00:37<00:29,  4.42it/s]Eval PushtImageRunner 2/2:  64%|██████▍   | 192/300 [00:43<00:24,  4.42it/s]Eval PushtImageRunner 2/2:  72%|███████▏  | 216/300 [00:48<00:19,  4.42it/s]Eval PushtImageRunner 2/2:  80%|████████  | 240/300 [00:54<00:13,  4.42it/s]Eval PushtImageRunner 2/2:  88%|████████▊ | 264/300 [00:59<00:08,  4.41it/s]Eval PushtImageRunner 2/2:  96%|█████████▌| 288/300 [01:05<00:02,  4.41it/s]                                                                            wandb: - 0.000 MB of 0.000 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:                action_loss ▁▁▆▁▁▁▄▁▃▄▁▁▁▁▅▁▁▄▁▃▃▁▁▃▄▁▁▄▁▁▁▅▅▅█▄▃▁▄▄
+wandb:             diffusion_loss ▆▅▁█▅██▇▁▇▄▆▆▅▇▅▆▁▅▁▁▅▅▁▁▅▄▁▅▆▆▁▁█▁▁▅▅▅▆
+wandb:                      epoch ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                global_step ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇████
+wandb:                         lr ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇████
+wandb:            test/mean_score ▁
+wandb: test/sim_max_reward_100000 ▁
+wandb: test/sim_max_reward_100001 ▁
+wandb: test/sim_max_reward_100002 ▁
+wandb: test/sim_max_reward_100003 ▁
+wandb: test/sim_max_reward_100004 ▁
+wandb: test/sim_max_reward_100005 ▁
+wandb: test/sim_max_reward_100006 ▁
+wandb: test/sim_max_reward_100007 ▁
+wandb: test/sim_max_reward_100008 ▁
+wandb: test/sim_max_reward_100009 ▁
+wandb:            test_mean_score ▁
+wandb:           train/mean_score ▁
+wandb:     train/sim_max_reward_0 ▁
+wandb:                 train_loss ▁▁▆▁▁▁▅▁▄▃▁▁▁▆▄▄▁▄▄▁▃▃▁▁▃▄▁▁▄▁▄▁▅▅█▃▁▄▁▃
+wandb:           train_mean_score ▁
+wandb:                  video_fvd ▁
+wandb: 
+wandb: Run summary:
+wandb:                action_loss 0.31447
+wandb:             diffusion_loss 0.04721
+wandb:                      epoch 0
+wandb:                global_step 49
+wandb:                         lr 0.0
+wandb:            test/mean_score 0.14236
+wandb: test/sim_max_reward_100000 0.08541
+wandb: test/sim_max_reward_100001 0
+wandb: test/sim_max_reward_100002 0.02008
+wandb: test/sim_max_reward_100003 0.52278
+wandb: test/sim_max_reward_100004 0.41112
+wandb: test/sim_max_reward_100005 0.305
+wandb: test/sim_max_reward_100006 3e-05
+wandb: test/sim_max_reward_100007 0.07918
+wandb: test/sim_max_reward_100008 0
+wandb: test/sim_max_reward_100009 0
+wandb:            test_mean_score 0.14236
+wandb:           train/mean_score 0.23357
+wandb:     train/sim_max_reward_0 0.23357
+wandb:                 train_loss 0.19872
+wandb:           train_mean_score 0.23357
+wandb:                  video_fvd 1371.29443
+wandb: 
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync /home/minhsctn1608/world-models-uva-lingbot/uva/wandb/offline-run-20261014_131936-tj3fbx89
+wandb: Find logs at: ./wandb/offline-run-20261014_131936-tj3fbx89/logs
+	Command being timed: "python train.py --config-dir=. --config-name=uva_pusht.yaml model.policy.autoregressive_model_params.pretrained_model_path=checkpoints/pusht.ckpt model.policy.action_model_params.predict_action=True task.dataset.dataset_path=data/pusht_multitask task.dataset.dataset_type=multitask +task.dataset.max_train_episodes=25 task.env_runner.fix_goal=False +task.env_runner.seeded_goal=True task.env_runner.n_envs=10 task.env_runner.n_train=1 task.env_runner.n_train_vis=0 task.env_runner.n_test=10 training.rollout_every=100000 checkpoint.topk.k=0 training.num_epochs=1 training.max_train_steps=50 dataloader.batch_size=8 dataloader.num_workers=4 val_dataloader.num_workers=2 logging.mode=offline hydra.run.dir=/home/minhsctn1608/world-models-uva-lingbot/results/exp02/smoke_bs8"
+	User time (seconds): 317.72
+	System time (seconds): 23.97
+	Percent of CPU this job got: 116%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:54.37
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8074304
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 45
+	Minor (reclaiming a frame) page faults: 4167392
+	Voluntary context switches: 37730
+	Involuntary context switches: 14512
+	Swaps: 0
+	File system inputs: 1129288
+	File system outputs: 9205024
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -1,0 +1,6 @@
+date: 2026-10-14T17:43:03+00:00
+repo: aad9f1daf80b7dcdab921b3a48ef7ec96a49a3d3 (dirty: 14 files)
+uva:  fe3dec81af565fbb2d686072722f12340be31293 hw-small-scale (dirty: 8 files)
+cwd:  /home/minhsctn1608/world-models-uva-lingbot/uva
+python train.py --config-dir=. --config-name=uva_pusht.yaml model.policy.autoregressive_model_params.pretrained_model_path=checkpoints/pusht.ckpt model.policy.action_model_params.predict_action=True task.dataset.dataset_path=data/pusht_multitask task.dataset.dataset_type=multitask +task.dataset.max_train_episodes=25 task.env_runner.fix_goal=False +task.env_runner.seeded_goal=True task.env_runner.n_envs=10 task.env_runner.n_train=1 task.env_runner.n_train_vis=0 task.env_runner.n_test=10 training.num_epochs=18 training.lr_warmup_steps=200 training.rollout_every=100000 training.checkpoint_every=17 checkpoint.topk.k=0 dataloader.batch_size=16 dataloader.num_workers=4 val_dataloader.num_workers=2 logging.mode=offline hydra.run.dir=/home/minhsctn1608/world-models-uva-lingbot/results/exp02/train_f4_k25_action_only model.policy.selected_training_mode=policy_model
+init: 114dd771f946311fc72208439937009ad8a8f027a1e843ec42625d1cfe38bcbc  pusht.ckpt

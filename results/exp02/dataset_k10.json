@@ -1,0 +1,42 @@
+{
+  "dataset": "uva/data/pusht_multitask",
+  "n_episodes": 247,
+  "episode_length_all": {
+    "mean": 145.45344129554655,
+    "min": 32,
+    "max": 380
+  },
+  "k": 10,
+  "train_episodes": [
+    20,
+    23,
+    49,
+    103,
+    104,
+    156,
+    171,
+    185,
+    209,
+    243
+  ],
+  "train_episode_lengths": [
+    104,
+    117,
+    109,
+    108,
+    135,
+    127,
+    98,
+    101,
+    170,
+    147
+  ],
+  "train_frames": 1216,
+  "val_ratio_episodes": [
+    21,
+    106,
+    107,
+    160,
+    188
+  ]
+}

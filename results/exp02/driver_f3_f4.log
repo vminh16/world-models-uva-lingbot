@@ -1,0 +1,45 @@
+2026-10-14T17:43:03+00:00
+=== train f4_k25_action_only k=25 epochs=18 -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/train_f4_k25_action_only
+exit=0 wall=2:47:23 peak_vram_mib=21492 min_ram_available_mib=3735 oom_lines=0
+a4df5f511031bf962d718efa6b2c3bfc5d22e587512290446265922a08a96e4b  /home/minhsctn1608/world-models-uva-lingbot/results/exp02/train_f4_k25_action_only/checkpoints/latest.ckpt
+=== eval f4_k25_action_only seed=42 -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f4_k25_action_only/seed42
+exit=0 wall=6:10.97 peak_vram_mib=9534 min_ram_available_mib=7403 oom_lines=0
+n=50  success=0.000 [0.000, 0.071]  mean_score=0.427 ± 0.043 (sem)  -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f4_k25_action_only/seed42/metrics.json
+=== eval f4_k25_action_only seed=0 -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f4_k25_action_only/seed0
+exit=0 wall=6:01.85 peak_vram_mib=9534 min_ram_available_mib=7436 oom_lines=0
+n=50  success=0.020 [0.004, 0.105]  mean_score=0.432 ± 0.041 (sem)  -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f4_k25_action_only/seed0/metrics.json
+=== eval f4_k25_action_only seed=1 -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f4_k25_action_only/seed1
+exit=0 wall=6:00.75 peak_vram_mib=9534 min_ram_available_mib=7428 oom_lines=0
+n=50  success=0.020 [0.004, 0.105]  mean_score=0.502 ± 0.041 (sem)  -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f4_k25_action_only/seed1/metrics.json
+=== train f3_k50 k=k50 epochs=8 -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/train_f3_k50
+exit=0 wall=2:53:28 peak_vram_mib=21600 min_ram_available_mib=3615 oom_lines=0
+d694bf139e8a9c5a05af42d9dd36361e7bacb7161a1ebb4a14140ccf5ceb7dd8  /home/minhsctn1608/world-models-uva-lingbot/results/exp02/train_f3_k50/checkpoints/latest.ckpt
+=== eval f3_k50 seed=42 -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f3_k50/seed42
+exit=0 wall=6:09.37 peak_vram_mib=9534 min_ram_available_mib=7569 oom_lines=0
+n=50  success=0.000 [0.000, 0.071]  mean_score=0.619 ± 0.038 (sem)  -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f3_k50/seed42/metrics.json
+=== eval f3_k50 seed=0 -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f3_k50/seed0
+exit=0 wall=6:01.53 peak_vram_mib=9534 min_ram_available_mib=7445 oom_lines=0
+n=50  success=0.000 [0.000, 0.071]  mean_score=0.547 ± 0.039 (sem)  -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f3_k50/seed0/metrics.json
+=== eval f3_k50 seed=1 -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f3_k50/seed1
+exit=0 wall=6:00.84 peak_vram_mib=9534 min_ram_available_mib=7438 oom_lines=0
+n=50  success=0.040 [0.011, 0.135]  mean_score=0.613 ± 0.038 (sem)  -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f3_k50/seed1/metrics.json
+=== train f3_k10 k=k10 epochs=37 -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/train_f3_k10
+exit=0 wall=2:52:38 peak_vram_mib=21600 min_ram_available_mib=3754 oom_lines=0
+22a5a53cb33a3a5fc00802e30964b4986194d0f3f96219723a340fcac021cc06  /home/minhsctn1608/world-models-uva-lingbot/results/exp02/train_f3_k10/checkpoints/latest.ckpt
+=== eval f3_k10 seed=42 -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f3_k10/seed42
+exit=0 wall=6:08.44 peak_vram_mib=9534 min_ram_available_mib=7553 oom_lines=0
+n=50  success=0.000 [0.000, 0.071]  mean_score=0.419 ± 0.041 (sem)  -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f3_k10/seed42/metrics.json
+=== eval f3_k10 seed=0 -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f3_k10/seed0
+exit=0 wall=6:02.33 peak_vram_mib=9534 min_ram_available_mib=7440 oom_lines=0
+n=50  success=0.000 [0.000, 0.071]  mean_score=0.399 ± 0.041 (sem)  -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f3_k10/seed0/metrics.json
+=== eval f3_k10 seed=1 -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f3_k10/seed1
+exit=0 wall=6:02.13 peak_vram_mib=9534 min_ram_available_mib=7433 oom_lines=0
+n=50  success=0.000 [0.000, 0.071]  mean_score=0.445 ± 0.038 (sem)  -> /home/minhsctn1608/world-models-uva-lingbot/results/exp02/f3_k10/seed1/metrics.json
+f1_pusht_zeroshot  success 0.000 ± 0.000 (repeats [0, 1, 42]), pooled 0.000 [0.000, 0.025] n=150 | mean score 0.180 ± 0.009 | never/always successful env seeds: 50/0
+f2_k25             success 0.007 ± 0.012 (repeats [0, 1, 42]), pooled 0.007 [0.001, 0.037] n=150 | mean score 0.517 ± 0.037 | never/always successful env seeds: 49/0
+f3_k10             success 0.000 ± 0.000 (repeats [0, 1, 42]), pooled 0.000 [0.000, 0.025] n=150 | mean score 0.421 ± 0.023 | never/always successful env seeds: 50/0
+f3_k50             success 0.013 ± 0.023 (repeats [0, 1, 42]), pooled 0.013 [0.004, 0.047] n=150 | mean score 0.593 ± 0.040 | never/always successful env seeds: 48/0
+f4_k25_action_only success 0.013 ± 0.012 (repeats [0, 1, 42]), pooled 0.013 [0.004, 0.047] n=150 | mean score 0.454 ± 0.042 | never/always successful env seeds: 49/0
+-> results/exp02/summary.json
+driver exit=0
+2026-10-15T03:13:53+00:00

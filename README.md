@@ -16,7 +16,7 @@ NVIDIA L4 (24 GB). Part 1 (ROSOrin Pro simulation, SLAM and Nav2) is in
 |---|---|
 | GCP L4 machine and environments | done: 1× L4, `uva` env, LIBERO venv (`docs/ENVIRONMENT.md`) |
 | UVA: evaluate released checkpoints (EXP-01, EXP-05) | done: PushT, PushT-M (50 seeds × 3, and with 50 distinct goals), LIBERO-10 (10 tasks × 20) |
-| UVA: fine-tune on a new PushT variant (EXP-02, EXP-03) | pending |
+| UVA: fine-tune `pusht.ckpt` to random goals (EXP-02, EXP-03) | done: 0 / 10 / 25 / 50 demonstrations and action-only ablation, 3k steps each on one L4 (`results/exp02/`) |
 | LingBot-VA: inference (EXP-11) | pending |
 | Report | pending |
 
@@ -27,10 +27,11 @@ Reproduction only checks the authors' numbers. The extension asks a different qu
 - **The authors** train UVA (starting from a pretrained VAE and MAR image model) on 4 to 8 GPUs, about 2 days for the video
   stage and 2 more for the joint stage, on fixed datasets: PushT (fixed goal) and PushT-M (their own PushT variant with varied
   goal positions, 247 demonstrations).
-- **Here** a released checkpoint is **adapted** to a variant of the PushT simulator that it has never seen, with a few dozen
-  demonstrations generated in that simulator and a few GPU hours. The questions are: how much data and compute does adaptation
-  need (EXP-02, EXP-03), and does the model's *imagined* future, compared frame by frame with the simulator, explain where the
-  policy fails (EXP-04)?
+- **Here** the released fixed-goal checkpoint (`pusht.ckpt`) is **adapted** to random goals (PushT-M), which it has never
+  seen, with 10 to 50 of the released PushT-M demonstrations and about 3 hours on one L4 per run. The questions are: how
+  much data does adaptation need (EXP-02, F3), does the video objective help the policy in this low-data regime (EXP-03,
+  F4), and does the model's *imagined* future, compared frame by frame with the simulator, explain where the policy fails
+  (EXP-04)?
 - Both models have a checkpoint for the same simulated benchmark (UVA `libero10.ckpt`, LingBot-VA
   `lingbot-va-posttrain-libero-long`), which allows a direct comparison in one simulator if memory allows (EXP-05, EXP-12).
 
@@ -89,6 +90,9 @@ rollout videos from the simulator, a GPU memory log (`nvidia-smi`), and figures 
 | uva | `eval_sim.py` | checkpoint loaded with `map_location="cpu"`; env runners created before the policy is moved to the GPU; option `--debug` (LIBERO: first task only) | forked LIBERO workers cannot create an EGL context once CUDA is initialized (ISSUE-006) |
 | uva | `eval_sim.py` | option `--seed` (policy sampling seed, default `cfg.training.seed`); options `--n_test`, `--n_test_vis`, `--n_train`, `--n_train_vis`, `--n_envs`, `--test_start_seed`, `--fix_goal` override `cfg.task.env_runner` (default: keep the checkpoint's value); the final runner config is saved to `<output_dir>/env_runner.yaml` | run the paper's 50 test seeds in chunks on a 16 GB-RAM machine without editing the checkpoint files |
 | uva | `env/pusht/pusht_env.py`, `env/pusht/pusht_image_env.py`, `env_runner/pusht_image_runner.py`, `eval_sim.py` | option `seeded_goal` (default `False` = upstream): with `fix_goal=False`, the goal is drawn from `RandomState([env_seed, 1])` instead of the global `np.random` | upstream gives every env of a chunk the same goal (ISSUE-005) |
+| uva | `workspace/train_unified_video_action_workspace.py` | scalar entries of every step and epoch log (train / video / action loss, lr, FVD, rollout scores) also appended to `<output_dir>/logs.jsonl` | training curves without reading wandb's offline files (EXP-02) |
+| uva | `workspace/train_unified_video_action_workspace.py` | FVD on the validation batches runs only when `epoch % training.val_every == 0` (default 1 = upstream, every epoch) | the k = 10 run has 37 short epochs; FVD every epoch would add about 40 min (EXP-02 F3) |
+| uva | `dataset/pusht_image_dataset.py` | option `train_episodes` (default `None` = upstream `max_train_episodes` sampling): explicit training episode indices | nested subsets k10 ⊂ k25 ⊂ k50 for the data-scaling runs; upstream sampling gives disjoint sets (EXP-02 F3) |
 
 ## Acknowledgements
 

@@ -3,6 +3,40 @@
 Source for the "problems and solutions" part of the report. Newest entries first. Each entry records the command, the error,
 the cause (verified, or marked as a hypothesis) and the fix.
 
+## ISSUE-011 — FVD logged during training is not comparable across runs
+- Date: 2026-10-15
+- Component: UVA (`eval/eval.py` `test_video_fvd`)
+- Status: WONTFIX (documented)
+- Symptom: F3 k=50 logs FVD 280–390, the other runs 1170–1920, from the first epoch on.
+- Cause: `test_video_fvd` uses the first 4 clips of each of the first 4 batches of the unshuffled validation loader:
+  16 clips, all from the first validation episode. The validation set is "every episode not trained on", so the k=50 run
+  (trains on episodes 0 and 1) measures FVD on episode 2, the others on episode 0. With 16 clips the Fréchet distance is
+  dominated by which clips they are (checked by rebuilding the validation sampler for each subset on the VM).
+- Fix: none; FVD from training logs is not used for conclusions. A comparable video metric needs a fixed clip set across
+  runs (Phase 4, W1).
+- In report: yes (one line, as a measurement caveat)
+
+## ISSUE-010 — Fine-tuning data subsets for k = 10 / 25 / 50 are disjoint
+- Date: 2026-10-14
+- Component: UVA (`common/sampler.py` `downsample_mask`)
+- Status: WORKAROUND
+- Cause: `downsample_mask` draws `rng.choice(n, k)` with the same seed for every k; the draws are not prefixes of one
+  permutation, so the k = 10 set shares no episode with the k = 25 set (checked with `scripts/exp02_dataset_info.py`).
+  A data-scaling curve would mix "more data" with "different demonstrations".
+- Fix: option `train_episodes` in `PushTImageDataset` and nested subsets k10 ⊂ k25 ⊂ k50 with k25 = the set F2 used
+  (`scripts/exp02_nested_subsets.py` → `results/exp02/subsets.json`).
+- In report: yes (method of F3)
+
+## ISSUE-009 — F3/F4 driver waited forever for the F2 session to end
+- Date: 2026-10-14
+- Component: our scripts (`results/exp02/driver_f3_f4.sh`)
+- Status: FIXED
+- Command: `while tmux has-session -t exp02; do sleep 60; done`, run inside tmux session `exp02b`
+- Cause: tmux resolves `-t exp02` by prefix when there is no exact match, so after `exp02` ended it matched the driver's
+  own session `exp02b` and the loop never ended. Found 5 min after F2 finished (no F4 log).
+- Fix: exact match `-t =exp02`; driver restarted in session `f3f4`. Cost: 5 min of idle GPU.
+- In report: no
+
 ## ISSUE-008 — Peak GPU memory printed by the run scripts was wrong when values had 4 and 5 digits
 - Date: 2026-10-14
 - Component: our scripts (`scripts/run_exp01.sh`, `scripts/run_exp05.sh`)
