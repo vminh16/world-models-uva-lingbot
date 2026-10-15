@@ -1,0 +1,483 @@
+seed: 42
+env_runner: {'_target_': 'unified_video_action.env_runner.libero_image_runner.LiberoImageRunner', 'dataset_path': 'data/libero_10', 'abs_action': True, 'crf': 22, 'fps': 10, 'max_steps': 500, 'n_action_steps': 8, 'n_envs': 5, 'n_obs_steps': 16, 'n_test': 20, 'n_test_vis': 2, 'n_train': 0, 'n_train_vis': 1, 'past_action': False, 'render_obs_key': 'agentview_image', 'test_start_seed': 100000, 'tqdm_interval_sec': 1.0, 'shape_meta': {'image_resolution': 128, 'action': {'shape': [10]}, 'obs': {'agentview_image': {'shape': [3, 128, 128], 'type': 'rgb'}}}, 'mp_context': 'spawn'}
+Working with z of shape (1, 16, 16, 16) = 4096 dimensions.
+-------------------------------------------------------------------
+Loading pre-trained KL-VAE
+Missing keys:
+[]
+Unexpected keys:
+[]
+Restored from pretrained_models/vae/kl16.ckpt
+-------------------------------------------------------------------
+/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+pretrained model not found:  /store/real/shuang/diffusion_policy_checkpoints/libero_10_image/unified-act-autoregressive-cant-proj-dataaug10-clip-2/checkpoints/best.ckpt
+----------------------------------------------------------------------
+task_modes ['video_model', 'dynamic_model', 'policy_model', 'inverse_model', 'full_dynamic_model']
+----------------------------------------------------------------------
+Loaded checkpoint from checkpoints/libero10.ckpt
+loading checkpoint, use ema model for model
+cuda initialized before env runners: False
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+WARNING:robosuite_logs:No private macro file found!
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+WARNING:robosuite_logs:It is recommended to use a private macro file
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+WARNING:robosuite_logs:To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+convert bddl filename
+chiliocosm/bddl_files/libero_100/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl
+chiliocosm/bddl_files/libero_100/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl
+Created environment with name Libero_Living_Room_Tabletop_Manipulation
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+env_runner:  LIVING ROOM SCENE6 put the white mug on the plate and put the chocolate pudding to the right of the plate
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl
+Created environment with name Libero_Living_Room_Tabletop_Manipulation
+Created environment with name Libero_Living_Room_Tabletop_Manipulation
+Created environment with name Libero_Living_Room_Tabletop_Manipulation
+Created environment with name Libero_Living_Room_Tabletop_Manipulation
+Created environment with name Libero_Living_Room_Tabletop_Manipulation
+Action size is 7
+Action size is 7
+Action size is 7
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+
+
+
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+Process Worker<AsyncVectorEnv>-2:
+Process Worker<AsyncVectorEnv>-0:
+Process Worker<AsyncVectorEnv>-3:
+Process Worker<AsyncVectorEnv>-1:
+Process Worker<AsyncVectorEnv>-4:
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/gym_util/async_vector_env.py", line 589, in _worker
+    pipe.send((function(*args, **kwargs), True))
+  File "/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/gym_util/async_vector_env.py", line 589, in _worker
+    pipe.send((function(*args, **kwargs), True))
+  File "/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/gym_util/async_vector_env.py", line 589, in _worker
+    pipe.send((function(*args, **kwargs), True))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 411, in _send_bytes
+    self._send(header + buf)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 411, in _send_bytes
+    self._send(header + buf)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 411, in _send_bytes
+    self._send(header + buf)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+BrokenPipeError: [Errno 32] Broken pipe
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+
+During handling of the above exception, another exception occurred:
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/gym_util/async_vector_env.py", line 607, in _worker
+    pipe.send((None, False))
+  File "/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/gym_util/async_vector_env.py", line 607, in _worker
+    pipe.send((None, False))
+  File "/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/gym_util/async_vector_env.py", line 607, in _worker
+    pipe.send((None, False))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 411, in _send_bytes
+    self._send(header + buf)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 411, in _send_bytes
+    self._send(header + buf)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 411, in _send_bytes
+    self._send(header + buf)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+BrokenPipeError: [Errno 32] Broken pipe
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/gym_util/async_vector_env.py", line 589, in _worker
+    pipe.send((function(*args, **kwargs), True))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 411, in _send_bytes
+    self._send(header + buf)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/gym_util/async_vector_env.py", line 607, in _worker
+    pipe.send((None, False))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 411, in _send_bytes
+    self._send(header + buf)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/gym_util/async_vector_env.py", line 589, in _worker
+    pipe.send((function(*args, **kwargs), True))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 411, in _send_bytes
+    self._send(header + buf)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/gym_util/async_vector_env.py", line 607, in _worker
+    pipe.send((None, False))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 411, in _send_bytes
+    self._send(header + buf)
+  File "/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Exception ignored in: <function MjRenderContext.__del__ at 0x735dcc408670>
+Traceback (most recent call last):
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/utils/binding_utils.py", line 199, in __del__
+Exception ignored in: <function MjRenderContext.__del__ at 0x7a0695bc8670>
+Traceback (most recent call last):
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/utils/binding_utils.py", line 199, in __del__
+Exception ignored in: <function MjRenderContext.__del__ at 0x7cf660568670>
+Traceback (most recent call last):
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/utils/binding_utils.py", line 199, in __del__
+    self.gl_ctx.free()
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    self.gl_ctx.free()
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    self.gl_ctx.free()
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/OpenGL/error.py", line 230, in glCheckError
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/OpenGL/error.py", line 230, in glCheckError
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+    raise self._errorClass(
+    raise self._errorClass(
+Exception ignored in: <function MjRenderContext.__del__ at 0x79ee349cb670>
+Traceback (most recent call last):
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/utils/binding_utils.py", line 199, in __del__
+    self.gl_ctx.free()
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+Exception ignored in: <function MjRenderContext.__del__ at 0x7f52c09a8670>
+Traceback (most recent call last):
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/utils/binding_utils.py", line 199, in __del__
+    self.gl_ctx.free()
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+Command terminated by signal 9
+	Command being timed: "/home/minhsctn1608/venvs/uva-libero/bin/python eval_sim.py -c checkpoints/libero10.ckpt -o /home/minhsctn1608/world-models-uva-lingbot/results/exp05/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate/seed42 --seed 42 --libero_task LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate --n_test 20 --n_test_vis 2 --n_train 0 --n_envs 5 --mp_context spawn"
+	User time (seconds): 16.09
+	System time (seconds): 7.98
+	Percent of CPU this job got: 40%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:59.12
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7288604
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2337
+	Minor (reclaiming a frame) page faults: 1979041
+	Voluntary context switches: 20957
+	Involuntary context switches: 723
+	Swaps: 0
+	File system inputs: 6495856
+	File system outputs: 40
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x7f52affd5040>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7f52c0e0a740>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7f52c0e0a740>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x7f52c0e0aac0>,
+	),
+	result = 0
+)
+Exception ignored in: <function EGLGLContext.__del__ at 0x7f52c09a84c0>
+Traceback (most recent call last):
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/renderers/context/egl_context.py", line 155, in __del__
+    self.free()
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x7f52affd5040>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7f52c0e0a740>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7f52c0e0a740>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x7f52c0e0aac0>,
+	),
+	result = 0
+)
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x735dbba53040>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x735dcc5a7740>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x735dcc5a7740>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x735dcc5a7ac0>,
+	),
+	result = 0
+)
+Exception ignored in: <function EGLGLContext.__del__ at 0x735dcc4084c0>
+Traceback (most recent call last):
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/renderers/context/egl_context.py", line 155, in __del__
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x7a06851d5040>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7a0695d65740>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7a0695d65740>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x7a0695d65ac0>,
+	),
+	result = 0
+)
+Exception ignored in: <function EGLGLContext.__del__ at 0x7a0695bc84c0>
+Traceback (most recent call last):
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/renderers/context/egl_context.py", line 155, in __del__
+    self.free()
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x79ee23fd50c0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x79ee34b667c0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x79ee34b667c0>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x79ee34b66b40>,
+	),
+	result = 0
+)
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x7a06851d5040>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7a0695d65740>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7a0695d65740>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x7a0695d65ac0>,
+	),
+	result = 0
+)
+Exception ignored in: <function EGLGLContext.__del__ at 0x79ee349cb4c0>
+Traceback (most recent call last):
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/renderers/context/egl_context.py", line 155, in __del__
+    self.free()
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x7cf64fb960c0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7cf6610337c0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7cf6610337c0>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x7cf661033b40>,
+	),
+	result = 0
+)  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/OpenGL/error.py", line 230, in glCheckError
+
+Exception ignored in: <function EGLGLContext.__del__ at 0x7cf6605684c0>
+Traceback (most recent call last):
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/renderers/context/egl_context.py", line 155, in __del__
+    raise self._errorClass(
+    self.free()
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    self.free()
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x79ee23fd50c0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x79ee34b667c0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x79ee34b667c0>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x79ee34b66b40>,
+	),
+	result = 0
+)    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/OpenGL/error.py", line 230, in glCheckError
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+    raise self._errorClass(
+  File "/home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x735dbba53040>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x735dcc5a7740>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x735dcc5a7740>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x735dcc5a7ac0>,
+	),
+	result = 0
+)
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x7cf64fb960c0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7cf6610337c0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7cf6610337c0>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x7cf661033b40>,
+	),
+	result = 0
+)
+/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 3 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

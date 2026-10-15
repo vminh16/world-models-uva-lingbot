@@ -1,0 +1,150 @@
+seed: 42
+env_runner: {'_target_': 'unified_video_action.env_runner.libero_image_runner.LiberoImageRunner', 'dataset_path': 'data/libero_10', 'abs_action': True, 'crf': 22, 'fps': 10, 'max_steps': 500, 'n_action_steps': 8, 'n_envs': 1, 'n_obs_steps': 16, 'n_test': 1, 'n_test_vis': 1, 'n_train': 0, 'n_train_vis': 1, 'past_action': False, 'render_obs_key': 'agentview_image', 'test_start_seed': 100000, 'tqdm_interval_sec': 1.0, 'shape_meta': {'image_resolution': 128, 'action': {'shape': [10]}, 'obs': {'agentview_image': {'shape': [3, 128, 128], 'type': 'rgb'}}}, 'mp_context': 'spawn'}
+Working with z of shape (1, 16, 16, 16) = 4096 dimensions.
+-------------------------------------------------------------------
+Loading pre-trained KL-VAE
+Missing keys:
+[]
+Unexpected keys:
+[]
+Restored from pretrained_models/vae/kl16.ckpt
+-------------------------------------------------------------------
+/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+pretrained model not found:  /store/real/shuang/diffusion_policy_checkpoints/libero_10_image/unified-act-autoregressive-cant-proj-dataaug10-clip-2/checkpoints/best.ckpt
+----------------------------------------------------------------------
+task_modes ['video_model', 'dynamic_model', 'policy_model', 'inverse_model', 'full_dynamic_model']
+----------------------------------------------------------------------
+Loaded checkpoint from checkpoints/libero10.ckpt
+loading checkpoint, use ema model for model
+cuda initialized before env runners: False
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+WARNING:robosuite_logs:No private macro file found!
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+WARNING:robosuite_logs:It is recommended to use a private macro file
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+WARNING:robosuite_logs:To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+convert bddl filename
+chiliocosm/bddl_files/libero_100/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket.bddl
+chiliocosm/bddl_files/libero_100/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket.bddl
+Created environment with name Libero_Living_Room_Tabletop_Manipulation
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+env_runner:  LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket.bddl
+Created environment with name Libero_Living_Room_Tabletop_Manipulation
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:   0%|          | 0/500 [00:00<?, ?it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:   2%|▏         | 8/500 [00:06<06:20,  1.29it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:   5%|▍         | 24/500 [00:07<02:07,  3.73it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:   8%|▊         | 40/500 [00:09<01:21,  5.62it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:  11%|█         | 56/500 [00:10<01:03,  7.03it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:  14%|█▍        | 72/500 [00:12<00:52,  8.14it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:  18%|█▊        | 88/500 [00:13<00:46,  8.82it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:  21%|██        | 104/500 [00:15<00:42,  9.32it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:  24%|██▍       | 120/500 [00:16<00:39,  9.66it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:  27%|██▋       | 136/500 [00:18<00:36,  9.86it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:  30%|███       | 152/500 [00:19<00:34, 10.07it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:  34%|███▎      | 168/500 [00:21<00:32, 10.34it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:  37%|███▋      | 184/500 [00:22<00:30, 10.46it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:  40%|████      | 200/500 [00:24<00:29, 10.32it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:  43%|████▎     | 216/500 [00:25<00:27, 10.36it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:  46%|████▋     | 232/500 [00:27<00:25, 10.35it/s]predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+predict_action language_goal:  ['LIVING ROOM SCENE2 put both the alphabet soup and the tomato sauce in the basket']
+libero10 max_length 30
+Eval LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basketImage 1/1:  50%|████▉     | 248/500 [00:28<00:24, 10.35it/s]                                                                                                                                                 {'test/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_sim_max_reward_100000': 1.0, 'test/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_sim_video_100000': <wandb.sdk.data_types.video.Video object at 0x7d1628d03bb0>, 'test/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_mean_score': 1.0}
+test/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_sim_max_reward_100000 1.0
+test/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_sim_video_100000 /home/minhsctn1608/world-models-uva-lingbot/results/exp05/smoke/media/26uhpab8.mp4
+test/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_mean_score 1.0
+test_mean_score 1.0
+Saving log to /home/minhsctn1608/world-models-uva-lingbot/results/exp05/smoke/eval_log_libero10.ckpt.json
+	Command being timed: "/home/minhsctn1608/venvs/uva-libero/bin/python eval_sim.py -c checkpoints/libero10.ckpt -o /home/minhsctn1608/world-models-uva-lingbot/results/exp05/smoke --debug --n_test 1 --n_test_vis 1 --n_train 0 --n_envs 1 --mp_context spawn"
+	User time (seconds): 55.49
+	System time (seconds): 7.55
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:03.91
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7266432
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 207
+	Minor (reclaiming a frame) page faults: 2732900
+	Voluntary context switches: 2682
+	Involuntary context switches: 393
+	Swaps: 0
+	File system inputs: 457976
+	File system outputs: 1904
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

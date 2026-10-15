@@ -1,0 +1,80 @@
+=== KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it seed=42 n_test=20 n_envs=5
+exit=0 wall=3:27.12 peak_vram_mib=7415 min_ram_available_mib=3950 success_rate=1.0
+=== KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it seed=42 n_test=20 n_envs=5
+exit=0 wall=4:05.62 peak_vram_mib=7914 min_ram_available_mib=2466 success_rate=0.95
+=== KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it seed=42 n_test=20 n_envs=5
+exit=0 wall=5:30.56 peak_vram_mib=8204 min_ram_available_mib=1707 success_rate=0.95
+=== KITCHEN_SCENE8_put_both_moka_pots_on_the_stove seed=42 n_test=20 n_envs=5
+exit=0 wall=6:35.70 peak_vram_mib=7415 min_ram_available_mib=3996 success_rate=0.7
+=== LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket seed=42 n_test=20 n_envs=5
+exit=0 wall=5:35.18 peak_vram_mib=9104 min_ram_available_mib=520 success_rate=0.85
+=== LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket seed=42 n_test=20 n_envs=5
+exit=137 wall=5:46.16 peak_vram_mib=5254 min_ram_available_mib=85 success_rate=
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7313440
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 45273
+	Minor (reclaiming a frame) page faults: 1916676
+	Voluntary context switches: 64261
+	Involuntary context switches: 336
+	Swaps: 0
+	File system inputs: 11776304
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+=== LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket seed=42 n_test=20 n_envs=5
+exit=137 wall=6:12.73 peak_vram_mib=5254 min_ram_available_mib=2 success_rate=
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7317020
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 51028
+	Minor (reclaiming a frame) page faults: 1915477
+	Voluntary context switches: 71056
+	Involuntary context switches: 653
+	Swaps: 0
+	File system inputs: 7414976
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+=== LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate seed=42 n_test=20 n_envs=5
+exit=137 wall=1:08.30 peak_vram_mib=3898 min_ram_available_mib=931 success_rate=
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7490088
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 3807
+	Minor (reclaiming a frame) page faults: 2126121
+	Voluntary context switches: 22510
+	Involuntary context switches: 691
+	Swaps: 0
+	File system inputs: 6895096
+	File system outputs: 40
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+=== LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate seed=42 n_test=20 n_envs=5
+exit=137 wall=0:59.12 peak_vram_mib=5554 min_ram_available_mib=28 success_rate=
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7288604
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2337
+	Minor (reclaiming a frame) page faults: 1979041
+	Voluntary context switches: 20957
+	Involuntary context switches: 723
+	Swaps: 0
+	File system inputs: 6495856
+	File system outputs: 40
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+=== STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy seed=42 n_test=20 n_envs=5
+exit=0 wall=2:53.41 peak_vram_mib=8224 min_ram_available_mib=1891 success_rate=1.0

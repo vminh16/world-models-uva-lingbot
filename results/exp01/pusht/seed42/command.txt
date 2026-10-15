@@ -1,0 +1,6 @@
+date: 2026-10-14T09:49:56+00:00
+repo: aad9f1daf80b7dcdab921b3a48ef7ec96a49a3d3 (dirty: 5 files)
+uva:  fe3dec81af565fbb2d686072722f12340be31293 hw-small-scale (dirty: 1 files)
+ckpt: 114dd771f946311fc72208439937009ad8a8f027a1e843ec42625d1cfe38bcbc  pusht.ckpt
+cwd:  /home/minhsctn1608/world-models-uva-lingbot/uva
+python eval_sim.py -c checkpoints/pusht.ckpt -o /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht/seed42 --seed 42 --n_test 50 --n_test_vis 10 --n_train 0 --n_envs 10

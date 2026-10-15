@@ -1,0 +1,6 @@
+date: 2026-10-14T11:20:12+00:00
+repo: aad9f1daf80b7dcdab921b3a48ef7ec96a49a3d3 (dirty: 6 files)
+uva:  fe3dec81af565fbb2d686072722f12340be31293 hw-small-scale (dirty: 4 files)
+ckpt: bfba3cc9d4633e8426b5c06cbfa1c6dc28447e703efef55a848edbd1f09bcc33  pusht_multitask.ckpt
+cwd:  /home/minhsctn1608/world-models-uva-lingbot/uva
+python eval_sim.py -c checkpoints/pusht_multitask.ckpt -o /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask_seeded_goal/seed0 --seed 0 --n_test 50 --n_test_vis 10 --n_train 0 --n_envs 10 --seeded_goal True

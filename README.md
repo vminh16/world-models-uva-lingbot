@@ -14,8 +14,8 @@ NVIDIA L4 (24 GB). Part 1 (ROSOrin Pro simulation, SLAM and Nav2) is in
 
 | Step | Status |
 |---|---|
-| GCP L4 machine and environments | pending |
-| UVA: evaluate released checkpoints (EXP-01) | pending |
+| GCP L4 machine and environments | done: 1× L4, `uva` env, LIBERO venv (`docs/ENVIRONMENT.md`) |
+| UVA: evaluate released checkpoints (EXP-01, EXP-05) | done: PushT, PushT-M (50 seeds × 3, and with 50 distinct goals), LIBERO-10 (10 tasks × 20) |
 | UVA: fine-tune on a new PushT variant (EXP-02, EXP-03) | pending |
 | LingBot-VA: inference (EXP-11) | pending |
 | Report | pending |
@@ -57,7 +57,22 @@ The commands that have been run and verified are added to the "Reproduce" sectio
 
 ## Reproduce
 
-Nothing verified yet. Each experiment in [`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md) adds its exact command here.
+Each experiment in [`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md) adds its exact command here.
+
+**EXP-01** (2026-10-14, one L4, about 35 min for 6 runs), from the repository root in the `uva` env:
+
+```bash
+bash scripts/run_exp01.sh 10                       # PushT and PushT-M, 50 test seeds × policy seeds 42, 0, 1
+python scripts/aggregate_seeds.py results/exp01    # -> results/exp01/summary.json
+TAG=_seeded_goal EXTRA="--seeded_goal True" bash scripts/run_exp01.sh 10 pusht_multitask   # PushT-M, 50 distinct goals
+```
+
+**EXP-05** (2026-10-14, about 55 min), on the VM with the LIBERO venv (`docs/ENVIRONMENT.md` 2b):
+
+```bash
+bash scripts/run_exp05.sh 20 5 42                  # LIBERO-10, 10 tasks × 20 episodes, one process per task
+python scripts/summarize_libero.py results/exp05   # -> results/exp05/summary.json
+```
 
 ## Evidence
 
@@ -70,7 +85,10 @@ rollout videos from the simulator, a GPU memory log (`nvidia-smi`), and figures 
 
 | Repository | File | Change | Why |
 |---|---|---|---|
-| – | – | none yet | – |
+| uva | `env_runner/libero_image_runner.py`, `eval_sim.py` | option `mp_context` (default `None` = upstream fork): start method of the LIBERO simulator workers | with `MUJOCO_GL=egl`, forked workers fail in `eglCreateContext` (`EGL_BAD_ALLOC`); `spawn` works (ISSUE-006) |
+| uva | `eval_sim.py` | checkpoint loaded with `map_location="cpu"`; env runners created before the policy is moved to the GPU; option `--debug` (LIBERO: first task only) | forked LIBERO workers cannot create an EGL context once CUDA is initialized (ISSUE-006) |
+| uva | `eval_sim.py` | option `--seed` (policy sampling seed, default `cfg.training.seed`); options `--n_test`, `--n_test_vis`, `--n_train`, `--n_train_vis`, `--n_envs`, `--test_start_seed`, `--fix_goal` override `cfg.task.env_runner` (default: keep the checkpoint's value); the final runner config is saved to `<output_dir>/env_runner.yaml` | run the paper's 50 test seeds in chunks on a 16 GB-RAM machine without editing the checkpoint files |
+| uva | `env/pusht/pusht_env.py`, `env/pusht/pusht_image_env.py`, `env_runner/pusht_image_runner.py`, `eval_sim.py` | option `seeded_goal` (default `False` = upstream): with `fix_goal=False`, the goal is drawn from `RandomState([env_seed, 1])` instead of the global `np.random` | upstream gives every env of a chunk the same goal (ISSUE-005) |
 
 ## Acknowledgements
 

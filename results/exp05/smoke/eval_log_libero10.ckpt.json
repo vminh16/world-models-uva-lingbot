@@ -1,0 +1,6 @@
+{
+  "test/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_mean_score": 1.0,
+  "test/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_sim_max_reward_100000": 1.0,
+  "test/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_sim_video_100000": "/home/minhsctn1608/world-models-uva-lingbot/results/exp05/smoke/media/26uhpab8.mp4",
+  "test_mean_score": 1.0
+}

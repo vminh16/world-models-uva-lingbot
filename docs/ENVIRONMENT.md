@@ -1,9 +1,29 @@
 # Environment: one NVIDIA L4 on Google Cloud
 
-Status: **plan, not yet verified**. Commands that have run successfully are copied, with their date and result, into the
+Status: section 1 (machine) and section 2 (`uva`) verified; section 3 (`lingbot`) not yet. Commands that have run successfully are copied, with their date and result, into the
 "Reproduce" section of the README. Problems go to [`DEBUG_LOG.md`](DEBUG_LOG.md).
 
 ## 1. Virtual machine
+
+Machine actually used (checked 2026-10-14):
+
+| Item | Value |
+|---|---|
+| Instance | `instance-20261013-044100`, zone `us-west1-a`, standard provisioning |
+| Machine type | `g2-standard-4`: 4 vCPU, 16 GB RAM, 1× NVIDIA L4 (23 GB usable) |
+| OS / driver | Ubuntu 22.04.5 LTS, NVIDIA driver 580.178.04 (CUDA 13.0 driver API) |
+| Boot disk | 300 GB |
+| `uva` env | Python 3.9.23, PyTorch 2.1.0 + CUDA 12.1 |
+| User / repository | `minhsctn1608`, `~/world-models-uva-lingbot`, conda in `~/miniconda3` |
+
+```bash
+gcloud compute ssh minhsctn1608@instance-20261013-044100 --zone=us-west1-a
+```
+
+16 GB RAM limits how many simulator processes run at once: the default PushT runner starts `n_train + n_test = 56`
+environments in parallel. Use `eval_sim.py --n_envs` (see README, "Changes from upstream").
+
+Original plan, kept for reference:
 
 | Item | Choice | Why |
 |---|---|---|
@@ -49,6 +69,32 @@ python unified_video_action/utils/download.py     # pretrained VAE and MAR, need
 
 Data and checkpoints (download links are in the upstream README): PushT (Diffusion Policy), PushT-M (authors), Libero10,
 ToolHang, into `uva/data/`; `pusht.ckpt`, `pusht_multitask.ckpt`, `libero10.ckpt` into `uva/checkpoints/`.
+
+### 2b. LIBERO for UVA (`~/venvs/uva-libero`, verified 2026-10-14)
+
+Not covered by the upstream environment file; details and the problems met are in ISSUE-006 of `DEBUG_LOG.md`.
+
+```bash
+sudo apt-get install -y libnvidia-gl-580-server libegl1 libgl1 libglvnd0   # EGL for headless MuJoCo
+git clone https://github.com/Lifelong-Robot-Learning/LIBERO.git ~/world-models-uva-lingbot/LIBERO   # runner expects ../LIBERO
+~/miniconda3/envs/uva/bin/python -m venv --system-site-packages ~/venvs/uva-libero
+printf "numpy==1.26.4\ntorch==2.1.0\nmujoco==3.1.6\n" > /tmp/c.txt
+export PATH=~/venvs/uva-libero/bin:$PATH   # use the venv's cmake (<4) for egl_probe
+~/venvs/uva-libero/bin/python -m pip install -c /tmp/c.txt "cmake<4" robosuite==1.4.0 bddl==1.0.1 easydict future h5py \
+  termcolor tensorboardX imageio imageio-ffmpeg psutil
+~/venvs/uva-libero/bin/python -m pip install --no-build-isolation egl_probe   # CMake 4 rejects its CMakeLists
+~/venvs/uva-libero/bin/python -m pip install --no-deps robomimic==0.3.0
+# robomimic imports mujoco_py at module level but only uses mujoco_py.builder.MujocoException: add a stand-in package
+# site-packages/mujoco_py/{__init__.py: 'from . import builder', builder.py: 'class MujocoException(Exception): pass'}
+~/venvs/uva-libero/bin/python -m pip install --no-deps -e ~/world-models-uva-lingbot/LIBERO
+# pytorch3d (only pytorch3d.transforms is used, pure PyTorch): copy __init__.py, common/, transforms/ of tag v0.7.5
+# from github.com/facebookresearch/pytorch3d into the venv's site-packages/pytorch3d/
+# write ~/.libero/config.yaml first (benchmark_root, bddl_files, init_states, datasets, assets), else LIBERO prompts
+cd uva && MUJOCO_GL=egl ~/venvs/uva-libero/bin/python eval_sim.py -c checkpoints/libero10.ckpt -o <dir> ...
+```
+
+Data: `uva/data/libero_10/*.hdf5` (10 task files, 13 GB), `uva/data/pusht/pusht_cchi_v7_replay.zarr` (206 episodes),
+`uva/data/pusht_multitask` (247 episodes).
 
 ## 3. LingBot-VA environment (`lingbot`)
 

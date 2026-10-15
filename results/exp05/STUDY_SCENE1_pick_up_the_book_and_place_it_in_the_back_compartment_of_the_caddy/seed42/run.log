@@ -1,0 +1,336 @@
+seed: 42
+env_runner: {'_target_': 'unified_video_action.env_runner.libero_image_runner.LiberoImageRunner', 'dataset_path': 'data/libero_10', 'abs_action': True, 'crf': 22, 'fps': 10, 'max_steps': 500, 'n_action_steps': 8, 'n_envs': 5, 'n_obs_steps': 16, 'n_test': 20, 'n_test_vis': 2, 'n_train': 0, 'n_train_vis': 1, 'past_action': False, 'render_obs_key': 'agentview_image', 'test_start_seed': 100000, 'tqdm_interval_sec': 1.0, 'shape_meta': {'image_resolution': 128, 'action': {'shape': [10]}, 'obs': {'agentview_image': {'shape': [3, 128, 128], 'type': 'rgb'}}}, 'mp_context': 'spawn'}
+Working with z of shape (1, 16, 16, 16) = 4096 dimensions.
+-------------------------------------------------------------------
+Loading pre-trained KL-VAE
+Missing keys:
+[]
+Unexpected keys:
+[]
+Restored from pretrained_models/vae/kl16.ckpt
+-------------------------------------------------------------------
+/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+pretrained model not found:  /store/real/shuang/diffusion_policy_checkpoints/libero_10_image/unified-act-autoregressive-cant-proj-dataaug10-clip-2/checkpoints/best.ckpt
+----------------------------------------------------------------------
+task_modes ['video_model', 'dynamic_model', 'policy_model', 'inverse_model', 'full_dynamic_model']
+----------------------------------------------------------------------
+Loaded checkpoint from checkpoints/libero10.ckpt
+loading checkpoint, use ema model for model
+cuda initialized before env runners: False
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+WARNING:robosuite_logs:No private macro file found!
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+WARNING:robosuite_logs:It is recommended to use a private macro file
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+WARNING:robosuite_logs:To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+convert bddl filename
+chiliocosm/bddl_files/libero_100_debug/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy.bddl
+chiliocosm/bddl_files/libero_100_debug/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy.bddl
+Created environment with name Libero_Study_Tabletop_Manipulation
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+env_runner:  STUDY SCENE1 pick up the book and place it in the back compartment of the caddy
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy.bddl
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy.bddl
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy.bddl
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy.bddl
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy.bddl
+Created environment with name Libero_Study_Tabletop_Manipulation
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+Created environment with name Libero_Study_Tabletop_Manipulation
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+Created environment with name Libero_Study_Tabletop_Manipulation
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+Created environment with name Libero_Study_Tabletop_Manipulation
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+Created environment with name Libero_Study_Tabletop_Manipulation
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:   0%|          | 0/500 [00:00<?, ?it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:   2%|▏         | 8/500 [00:02<02:48,  2.91it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:   3%|▎         | 16/500 [00:04<01:59,  4.05it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:   5%|▍         | 24/500 [00:05<01:42,  4.64it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:   6%|▋         | 32/500 [00:07<01:33,  4.98it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:   8%|▊         | 40/500 [00:08<01:29,  5.15it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:  10%|▉         | 48/500 [00:09<01:25,  5.31it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:  11%|█         | 56/500 [00:11<01:22,  5.39it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:  13%|█▎        | 64/500 [00:12<01:20,  5.44it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:  14%|█▍        | 72/500 [00:14<01:18,  5.48it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:  16%|█▌        | 80/500 [00:15<01:16,  5.48it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:  18%|█▊        | 88/500 [00:17<01:14,  5.50it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:  19%|█▉        | 96/500 [00:18<01:13,  5.51it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:  21%|██        | 104/500 [00:20<01:11,  5.54it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:  22%|██▏       | 112/500 [00:21<01:09,  5.56it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:  24%|██▍       | 120/500 [00:22<01:08,  5.55it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:  26%|██▌       | 128/500 [00:24<01:06,  5.55it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:  27%|██▋       | 136/500 [00:25<01:05,  5.53it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:  29%|██▉       | 144/500 [00:27<01:04,  5.50it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:  30%|███       | 152/500 [00:28<01:03,  5.47it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 1/4:  32%|███▏      | 160/500 [00:30<01:02,  5.44it/s]                                                                                                                                                Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:   0%|          | 0/500 [00:00<?, ?it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:   2%|▏         | 8/500 [00:01<01:26,  5.70it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:   3%|▎         | 16/500 [00:02<01:25,  5.64it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:   5%|▍         | 24/500 [00:04<01:25,  5.60it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:   6%|▋         | 32/500 [00:05<01:23,  5.60it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:   8%|▊         | 40/500 [00:07<01:22,  5.59it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  10%|▉         | 48/500 [00:08<01:20,  5.59it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  11%|█         | 56/500 [00:09<01:19,  5.60it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  13%|█▎        | 64/500 [00:11<01:18,  5.56it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  14%|█▍        | 72/500 [00:12<01:17,  5.55it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  16%|█▌        | 80/500 [00:14<01:15,  5.54it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  18%|█▊        | 88/500 [00:15<01:14,  5.55it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  19%|█▉        | 96/500 [00:17<01:12,  5.55it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  21%|██        | 104/500 [00:18<01:11,  5.53it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  22%|██▏       | 112/500 [00:20<01:10,  5.54it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  24%|██▍       | 120/500 [00:21<01:08,  5.55it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  26%|██▌       | 128/500 [00:23<01:07,  5.54it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  27%|██▋       | 136/500 [00:24<01:06,  5.50it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  29%|██▉       | 144/500 [00:25<01:05,  5.47it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  30%|███       | 152/500 [00:27<01:03,  5.44it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  32%|███▏      | 160/500 [00:28<01:02,  5.43it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  34%|███▎      | 168/500 [00:30<01:01,  5.37it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  35%|███▌      | 176/500 [00:31<00:59,  5.41it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 2/4:  37%|███▋      | 184/500 [00:33<00:58,  5.41it/s]                                                                                                                                                Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:   0%|          | 0/500 [00:00<?, ?it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:   2%|▏         | 8/500 [00:01<01:27,  5.60it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:   3%|▎         | 16/500 [00:02<01:26,  5.60it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:   5%|▍         | 24/500 [00:04<01:25,  5.59it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:   6%|▋         | 32/500 [00:05<01:23,  5.58it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:   8%|▊         | 40/500 [00:07<01:22,  5.58it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:  10%|▉         | 48/500 [00:08<01:21,  5.55it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:  11%|█         | 56/500 [00:10<01:19,  5.56it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:  13%|█▎        | 64/500 [00:11<01:18,  5.54it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:  14%|█▍        | 72/500 [00:12<01:17,  5.50it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:  16%|█▌        | 80/500 [00:14<01:16,  5.52it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:  18%|█▊        | 88/500 [00:15<01:14,  5.53it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:  19%|█▉        | 96/500 [00:17<01:13,  5.52it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:  21%|██        | 104/500 [00:18<01:11,  5.54it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:  22%|██▏       | 112/500 [00:20<01:10,  5.52it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:  24%|██▍       | 120/500 [00:21<01:08,  5.52it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:  26%|██▌       | 128/500 [00:23<01:07,  5.50it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:  27%|██▋       | 136/500 [00:24<01:06,  5.50it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:  29%|██▉       | 144/500 [00:26<01:05,  5.45it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 3/4:  30%|███       | 152/500 [00:27<01:04,  5.43it/s]                                                                                                                                                Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:   0%|          | 0/500 [00:00<?, ?it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:   2%|▏         | 8/500 [00:01<01:27,  5.61it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:   3%|▎         | 16/500 [00:02<01:26,  5.58it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:   5%|▍         | 24/500 [00:04<01:25,  5.57it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:   6%|▋         | 32/500 [00:05<01:23,  5.58it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:   8%|▊         | 40/500 [00:07<01:22,  5.60it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:  10%|▉         | 48/500 [00:08<01:20,  5.59it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:  11%|█         | 56/500 [00:10<01:19,  5.58it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:  13%|█▎        | 64/500 [00:11<01:18,  5.52it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:  14%|█▍        | 72/500 [00:12<01:17,  5.51it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:  16%|█▌        | 80/500 [00:14<01:16,  5.50it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:  18%|█▊        | 88/500 [00:15<01:14,  5.51it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:  19%|█▉        | 96/500 [00:17<01:13,  5.50it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:  21%|██        | 104/500 [00:18<01:11,  5.52it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:  22%|██▏       | 112/500 [00:20<01:09,  5.54it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:  24%|██▍       | 120/500 [00:21<01:08,  5.54it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:  26%|██▌       | 128/500 [00:23<01:07,  5.55it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:  27%|██▋       | 136/500 [00:24<01:05,  5.52it/s]predict_action language_goal:  ['STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy', 'STUDY SCENE1 pick up the book and place it in the back compartment of the caddy']
+libero10 max_length 30
+Eval STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddyImage 4/4:  29%|██▉       | 144/500 [00:26<01:04,  5.48it/s]                                                                                                                                                {'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100000': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_video_100000': <wandb.sdk.data_types.video.Video object at 0x7c56f7f86df0>, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100001': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_video_100001': <wandb.sdk.data_types.video.Video object at 0x7c568dafb820>, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100002': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100003': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100004': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100005': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100006': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100007': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100008': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100009': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100010': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100011': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100012': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100013': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100014': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100015': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100016': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100017': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100018': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100019': 1.0, 'test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_mean_score': 1.0}
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100000 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_video_100000 /home/minhsctn1608/world-models-uva-lingbot/results/exp05/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy/seed42/media/1du4iu6y.mp4
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100001 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_video_100001 /home/minhsctn1608/world-models-uva-lingbot/results/exp05/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy/seed42/media/juasi7j9.mp4
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100002 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100003 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100004 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100005 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100006 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100007 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100008 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100009 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100010 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100011 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100012 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100013 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100014 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100015 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100016 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100017 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100018 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_sim_max_reward_100019 1.0
+test/STUDY_TABLETOP_SCENE1_pick_up_the_book_and_place_it_in_the_back_of_the_caddy_mean_score 1.0
+test_mean_score 1.0
+Saving log to /home/minhsctn1608/world-models-uva-lingbot/results/exp05/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy/seed42/eval_log_libero10.ckpt.json
+	Command being timed: "/home/minhsctn1608/venvs/uva-libero/bin/python eval_sim.py -c checkpoints/libero10.ckpt -o /home/minhsctn1608/world-models-uva-lingbot/results/exp05/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy/seed42 --seed 42 --libero_task STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy --n_test 20 --n_test_vis 2 --n_train 0 --n_envs 5 --mp_context spawn"
+	User time (seconds): 273.01
+	System time (seconds): 20.66
+	Percent of CPU this job got: 169%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:53.41
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7076356
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 4438
+	Minor (reclaiming a frame) page faults: 4693485
+	Voluntary context switches: 33786
+	Involuntary context switches: 21569
+	Swaps: 0
+	File system inputs: 6918408
+	File system outputs: 2864
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

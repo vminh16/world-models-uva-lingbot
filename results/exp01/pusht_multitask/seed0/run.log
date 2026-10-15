@@ -1,0 +1,106 @@
+seed: 0
+env_runner: {'_target_': 'unified_video_action.env_runner.pusht_image_runner.PushTImageRunner', 'fps': 10, 'legacy_test': True, 'max_steps': 300, 'n_action_steps': 8, 'n_envs': 10, 'n_obs_steps': 16, 'n_test': 50, 'n_test_vis': 10, 'n_train': 0, 'n_train_vis': 2, 'past_action': False, 'test_start_seed': 100000, 'train_start_seed': 0, 'fix_goal': False}
+Working with z of shape (1, 16, 16, 16) = 4096 dimensions.
+-------------------------------------------------------------------
+Loading pre-trained KL-VAE
+Missing keys:
+[]
+Unexpected keys:
+[]
+Restored from pretrained_models/vae/kl16.ckpt
+-------------------------------------------------------------------
+pretrained model not found:  /scratch/m000073/shuang/unified_video_action_local/checkpoints/pusht_multitask/pusht_multitask_video2/checkpoints/latest.ckpt
+----------------------------------------------------------------------
+task_modes ['video_model', 'dynamic_model', 'policy_model', 'inverse_model', 'full_dynamic_model']
+----------------------------------------------------------------------
+Loaded checkpoint from checkpoints/pusht_multitask.ckpt
+loading checkpoint, use ema model for model
+/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/site-packages/pygame/pkgdata.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_stream, resource_exists
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.23)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Eval PushtImageRunner 1/5:   0%|          | 0/300 [00:00<?, ?it/s]Eval PushtImageRunner 1/5:   8%|▊         | 24/300 [00:05<01:07,  4.09it/s]Eval PushtImageRunner 1/5:  16%|█▌        | 48/300 [00:11<00:58,  4.28it/s]Eval PushtImageRunner 1/5:  24%|██▍       | 72/300 [00:16<00:52,  4.32it/s]Eval PushtImageRunner 1/5:  32%|███▏      | 96/300 [00:22<00:47,  4.34it/s]Eval PushtImageRunner 1/5:  40%|████      | 120/300 [00:27<00:41,  4.35it/s]Eval PushtImageRunner 1/5:  48%|████▊     | 144/300 [00:33<00:35,  4.37it/s]Eval PushtImageRunner 1/5:  56%|█████▌    | 168/300 [00:38<00:30,  4.38it/s]Eval PushtImageRunner 1/5:  64%|██████▍   | 192/300 [00:44<00:24,  4.40it/s]Eval PushtImageRunner 1/5:  72%|███████▏  | 216/300 [00:49<00:19,  4.42it/s]Eval PushtImageRunner 1/5:  80%|████████  | 240/300 [00:54<00:13,  4.43it/s]Eval PushtImageRunner 1/5:  88%|████████▊ | 264/300 [01:00<00:08,  4.45it/s]Eval PushtImageRunner 1/5:  96%|█████████▌| 288/300 [01:05<00:02,  4.47it/s]                                                                            Eval PushtImageRunner 2/5:   0%|          | 0/300 [00:00<?, ?it/s]Eval PushtImageRunner 2/5:   8%|▊         | 24/300 [00:05<01:01,  4.47it/s]Eval PushtImageRunner 2/5:  16%|█▌        | 48/300 [00:10<00:56,  4.47it/s]Eval PushtImageRunner 2/5:  24%|██▍       | 72/300 [00:16<00:50,  4.47it/s]Eval PushtImageRunner 2/5:  32%|███▏      | 96/300 [00:21<00:45,  4.47it/s]Eval PushtImageRunner 2/5:  40%|████      | 120/300 [00:26<00:40,  4.46it/s]Eval PushtImageRunner 2/5:  48%|████▊     | 144/300 [00:32<00:34,  4.46it/s]Eval PushtImageRunner 2/5:  56%|█████▌    | 168/300 [00:37<00:29,  4.47it/s]Eval PushtImageRunner 2/5:  64%|██████▍   | 192/300 [00:42<00:24,  4.48it/s]Eval PushtImageRunner 2/5:  72%|███████▏  | 216/300 [00:48<00:18,  4.47it/s]Eval PushtImageRunner 2/5:  80%|████████  | 240/300 [00:53<00:13,  4.47it/s]Eval PushtImageRunner 2/5:  88%|████████▊ | 264/300 [00:59<00:08,  4.47it/s]Eval PushtImageRunner 2/5:  96%|█████████▌| 288/300 [01:04<00:02,  4.47it/s]                                                                            Eval PushtImageRunner 3/5:   0%|          | 0/300 [00:00<?, ?it/s]Eval PushtImageRunner 3/5:   8%|▊         | 24/300 [00:05<01:02,  4.45it/s]Eval PushtImageRunner 3/5:  16%|█▌        | 48/300 [00:10<00:56,  4.45it/s]Eval PushtImageRunner 3/5:  24%|██▍       | 72/300 [00:16<00:51,  4.45it/s]Eval PushtImageRunner 3/5:  32%|███▏      | 96/300 [00:21<00:45,  4.45it/s]Eval PushtImageRunner 3/5:  40%|████      | 120/300 [00:26<00:40,  4.45it/s]Eval PushtImageRunner 3/5:  48%|████▊     | 144/300 [00:32<00:35,  4.45it/s]Eval PushtImageRunner 3/5:  56%|█████▌    | 168/300 [00:37<00:29,  4.45it/s]Eval PushtImageRunner 3/5:  64%|██████▍   | 192/300 [00:43<00:24,  4.45it/s]Eval PushtImageRunner 3/5:  72%|███████▏  | 216/300 [00:48<00:18,  4.45it/s]Eval PushtImageRunner 3/5:  80%|████████  | 240/300 [00:53<00:13,  4.44it/s]Eval PushtImageRunner 3/5:  88%|████████▊ | 264/300 [00:59<00:08,  4.44it/s]Eval PushtImageRunner 3/5:  96%|█████████▌| 288/300 [01:04<00:02,  4.44it/s]                                                                            Eval PushtImageRunner 4/5:   0%|          | 0/300 [00:00<?, ?it/s]Eval PushtImageRunner 4/5:   8%|▊         | 24/300 [00:05<01:01,  4.45it/s]Eval PushtImageRunner 4/5:  16%|█▌        | 48/300 [00:10<00:56,  4.45it/s]Eval PushtImageRunner 4/5:  24%|██▍       | 72/300 [00:16<00:51,  4.44it/s]Eval PushtImageRunner 4/5:  32%|███▏      | 96/300 [00:21<00:45,  4.44it/s]Eval PushtImageRunner 4/5:  40%|████      | 120/300 [00:27<00:40,  4.44it/s]Eval PushtImageRunner 4/5:  48%|████▊     | 144/300 [00:32<00:35,  4.44it/s]Eval PushtImageRunner 4/5:  56%|█████▌    | 168/300 [00:37<00:29,  4.46it/s]Eval PushtImageRunner 4/5:  64%|██████▍   | 192/300 [00:43<00:24,  4.46it/s]Eval PushtImageRunner 4/5:  72%|███████▏  | 216/300 [00:48<00:18,  4.48it/s]Eval PushtImageRunner 4/5:  80%|████████  | 240/300 [00:53<00:13,  4.49it/s]Eval PushtImageRunner 4/5:  88%|████████▊ | 264/300 [00:59<00:07,  4.51it/s]Eval PushtImageRunner 4/5:  96%|█████████▌| 288/300 [01:04<00:02,  4.51it/s]                                                                            Eval PushtImageRunner 5/5:   0%|          | 0/300 [00:00<?, ?it/s]Eval PushtImageRunner 5/5:   8%|▊         | 24/300 [00:05<01:02,  4.44it/s]Eval PushtImageRunner 5/5:  16%|█▌        | 48/300 [00:10<00:56,  4.45it/s]Eval PushtImageRunner 5/5:  24%|██▍       | 72/300 [00:16<00:51,  4.44it/s]Eval PushtImageRunner 5/5:  32%|███▏      | 96/300 [00:21<00:45,  4.44it/s]Eval PushtImageRunner 5/5:  40%|████      | 120/300 [00:27<00:40,  4.44it/s]Eval PushtImageRunner 5/5:  48%|████▊     | 144/300 [00:32<00:34,  4.46it/s]Eval PushtImageRunner 5/5:  56%|█████▌    | 168/300 [00:37<00:29,  4.48it/s]Eval PushtImageRunner 5/5:  64%|██████▍   | 192/300 [00:42<00:24,  4.49it/s]Eval PushtImageRunner 5/5:  72%|███████▏  | 216/300 [00:48<00:18,  4.49it/s]Eval PushtImageRunner 5/5:  80%|████████  | 240/300 [00:53<00:13,  4.50it/s]Eval PushtImageRunner 5/5:  88%|████████▊ | 264/300 [00:58<00:07,  4.50it/s]Eval PushtImageRunner 5/5:  96%|█████████▌| 288/300 [01:04<00:02,  4.50it/s]                                                                            test/sim_max_reward_100000 0.7187010532859615
+test/sim_video_100000 /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask/seed0/media/u3ftj10h.mp4
+test/sim_max_reward_100001 0.7226760570731334
+test/sim_video_100001 /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask/seed0/media/js4axbwf.mp4
+test/sim_max_reward_100002 1.0
+test/sim_video_100002 /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask/seed0/media/4lsqavbo.mp4
+test/sim_max_reward_100003 1.0
+test/sim_video_100003 /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask/seed0/media/8uhb97bl.mp4
+test/sim_max_reward_100004 1.0
+test/sim_video_100004 /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask/seed0/media/6c71rfal.mp4
+test/sim_max_reward_100005 0.7120488693892738
+test/sim_video_100005 /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask/seed0/media/vvxb886v.mp4
+test/sim_max_reward_100006 0.876082659499715
+test/sim_video_100006 /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask/seed0/media/yiluh393.mp4
+test/sim_max_reward_100007 0.7214263069777634
+test/sim_video_100007 /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask/seed0/media/0qn07p2w.mp4
+test/sim_max_reward_100008 0.7286890346148615
+test/sim_video_100008 /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask/seed0/media/vj4a979s.mp4
+test/sim_max_reward_100009 0.9609683758270235
+test/sim_video_100009 /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask/seed0/media/edv6zgxj.mp4
+test/sim_max_reward_100010 0.6787737442101069
+test/sim_max_reward_100011 0.719935278362173
+test/sim_max_reward_100012 0.9773099605955605
+test/sim_max_reward_100013 0.724641519338006
+test/sim_max_reward_100014 0.9812238380230247
+test/sim_max_reward_100015 0.7254745566027957
+test/sim_max_reward_100016 1.0
+test/sim_max_reward_100017 0.7037078749271455
+test/sim_max_reward_100018 0.9097687395249241
+test/sim_max_reward_100019 0.7186231852431536
+test/sim_max_reward_100020 0.8769334796175337
+test/sim_max_reward_100021 0.713321976519324
+test/sim_max_reward_100022 0.7019687793980309
+test/sim_max_reward_100023 0.7198635098107412
+test/sim_max_reward_100024 0.9741224095836358
+test/sim_max_reward_100025 0.7232671750681364
+test/sim_max_reward_100026 0.7175260685480472
+test/sim_max_reward_100027 0.7127600850193273
+test/sim_max_reward_100028 0.6518513592456951
+test/sim_max_reward_100029 0.7193159984186107
+test/sim_max_reward_100030 1.0
+test/sim_max_reward_100031 0.7228100455842694
+test/sim_max_reward_100032 0.9621346455013599
+test/sim_max_reward_100033 1.0
+test/sim_max_reward_100034 0.0
+test/sim_max_reward_100035 1.0
+test/sim_max_reward_100036 0.7246900851020052
+test/sim_max_reward_100037 0.6457264580859271
+test/sim_max_reward_100038 0.6806193476670662
+test/sim_max_reward_100039 0.7016839660505848
+test/sim_max_reward_100040 0.71229620338363
+test/sim_max_reward_100041 0.7284557761046796
+test/sim_max_reward_100042 1.0
+test/sim_max_reward_100043 0.6493053355484864
+test/sim_max_reward_100044 0.9670977440305096
+test/sim_max_reward_100045 0.6591112569463332
+test/sim_max_reward_100046 0.6986446726246676
+test/sim_max_reward_100047 1.0
+test/sim_max_reward_100048 0.7039668093147109
+test/sim_max_reward_100049 0.7210028407672134
+test/mean_score 0.7873705416287031
+Saving log to /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask/seed0/eval_log_pusht_multitask.ckpt.json
+	Command being timed: "python eval_sim.py -c checkpoints/pusht_multitask.ckpt -o /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask/seed0 --seed 0 --n_test 50 --n_test_vis 10 --n_train 0 --n_envs 10"
+	User time (seconds): 418.41
+	System time (seconds): 7.34
+	Percent of CPU this job got: 119%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:54.92
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4650352
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1436072
+	Voluntary context switches: 22669
+	Involuntary context switches: 28610
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1176
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

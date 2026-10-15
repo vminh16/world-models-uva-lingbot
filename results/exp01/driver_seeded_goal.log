@@ -1,0 +1,9 @@
+=== pusht_multitask seed=42 n_envs=10 -> /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask_seeded_goal/seed42
+exit=0 wall=5:54.22 peak_vram_mib=9534 min_ram_available_mib=9755 oom_lines=0
+n=50  success=0.240 [0.143, 0.374]  mean_score=0.833 ± 0.028 (sem)  -> /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask_seeded_goal/seed42/metrics.json
+=== pusht_multitask seed=0 n_envs=10 -> /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask_seeded_goal/seed0
+exit=0 wall=5:55.71 peak_vram_mib=9534 min_ram_available_mib=9760 oom_lines=0
+n=50  success=0.260 [0.159, 0.396]  mean_score=0.828 ± 0.033 (sem)  -> /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask_seeded_goal/seed0/metrics.json
+=== pusht_multitask seed=1 n_envs=10 -> /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask_seeded_goal/seed1
+exit=0 wall=6:19.52 peak_vram_mib=9534 min_ram_available_mib=9313 oom_lines=0
+n=50  success=0.260 [0.159, 0.396]  mean_score=0.779 ± 0.034 (sem)  -> /home/minhsctn1608/world-models-uva-lingbot/results/exp01/pusht_multitask_seeded_goal/seed1/metrics.json

@@ -1,0 +1,14 @@
+skip KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it (done)
+skip KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it (done)
+skip KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it (done)
+skip KITCHEN_SCENE8_put_both_moka_pots_on_the_stove (done)
+skip LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket (done)
+=== LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket seed=42 n_test=20 n_envs=5
+exit=0 wall=7:33.33 peak_vram_mib=9454 min_ram_available_mib=2639 success_rate=0.5
+=== LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket seed=42 n_test=20 n_envs=5
+exit=0 wall=5:59.24 peak_vram_mib=9454 min_ram_available_mib=2679 success_rate=0.85
+=== LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate seed=42 n_test=20 n_envs=5
+exit=0 wall=4:35.55 peak_vram_mib=7078 min_ram_available_mib=1187 success_rate=0.95
+=== LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate seed=42 n_test=20 n_envs=5
+exit=0 wall=4:29.38 peak_vram_mib=9574 min_ram_available_mib=2695 success_rate=0.9
+skip STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy (done)

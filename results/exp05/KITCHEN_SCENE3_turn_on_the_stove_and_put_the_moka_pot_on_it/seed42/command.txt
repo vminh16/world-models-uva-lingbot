@@ -1,0 +1,6 @@
+date: 2026-10-14T11:57:59+00:00
+repo: aad9f1daf80b7dcdab921b3a48ef7ec96a49a3d3 (dirty: 9 files)
+uva:  fe3dec81af565fbb2d686072722f12340be31293 hw-small-scale (dirty: 6 files)
+ckpt: 4554b9bb2f4f3d44a7e51d5c7bd42a7740451874ac6cf1fea91e088a949f0dbf  libero10.ckpt
+env:  MUJOCO_GL=egl
+/home/minhsctn1608/venvs/uva-libero/bin/python eval_sim.py -c checkpoints/libero10.ckpt -o /home/minhsctn1608/world-models-uva-lingbot/results/exp05/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it/seed42 --seed 42 --libero_task KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it --n_test 20 --n_test_vis 2 --n_train 0 --n_envs 5 --mp_context spawn

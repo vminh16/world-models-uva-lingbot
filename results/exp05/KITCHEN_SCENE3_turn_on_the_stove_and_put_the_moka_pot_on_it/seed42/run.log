@@ -1,0 +1,410 @@
+seed: 42
+env_runner: {'_target_': 'unified_video_action.env_runner.libero_image_runner.LiberoImageRunner', 'dataset_path': 'data/libero_10', 'abs_action': True, 'crf': 22, 'fps': 10, 'max_steps': 500, 'n_action_steps': 8, 'n_envs': 5, 'n_obs_steps': 16, 'n_test': 20, 'n_test_vis': 2, 'n_train': 0, 'n_train_vis': 1, 'past_action': False, 'render_obs_key': 'agentview_image', 'test_start_seed': 100000, 'tqdm_interval_sec': 1.0, 'shape_meta': {'image_resolution': 128, 'action': {'shape': [10]}, 'obs': {'agentview_image': {'shape': [3, 128, 128], 'type': 'rgb'}}}, 'mp_context': 'spawn'}
+Working with z of shape (1, 16, 16, 16) = 4096 dimensions.
+-------------------------------------------------------------------
+Loading pre-trained KL-VAE
+Missing keys:
+[]
+Unexpected keys:
+[]
+Restored from pretrained_models/vae/kl16.ckpt
+-------------------------------------------------------------------
+/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+pretrained model not found:  /store/real/shuang/diffusion_policy_checkpoints/libero_10_image/unified-act-autoregressive-cant-proj-dataaug10-clip-2/checkpoints/best.ckpt
+----------------------------------------------------------------------
+task_modes ['video_model', 'dynamic_model', 'policy_model', 'inverse_model', 'full_dynamic_model']
+----------------------------------------------------------------------
+Loaded checkpoint from checkpoints/libero10.ckpt
+loading checkpoint, use ema model for model
+cuda initialized before env runners: False
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+WARNING:robosuite_logs:No private macro file found!
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+WARNING:robosuite_logs:It is recommended to use a private macro file
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+WARNING:robosuite_logs:To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+convert bddl filename
+chiliocosm/bddl_files/libero_100/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl
+chiliocosm/bddl_files/libero_100/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl
+Created environment with name Libero_Kitchen_Tabletop_Manipulation
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+env_runner:  KITCHEN SCENE3 turn on the stove and put the moka pot on it
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl
+ROBOMIMIC WARNING(
+    No private macro file found!
+    It is recommended to use a private macro file
+    To setup, run: python /home/minhsctn1608/venvs/uva-libero/lib/python3.9/site-packages/robomimic/scripts/setup_macros.py
+)
+use existing bddl file
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl
+/home/minhsctn1608/world-models-uva-lingbot/uva/unified_video_action/env/libero/bddl_files/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl
+Created environment with name Libero_Kitchen_Tabletop_Manipulation
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+Created environment with name Libero_Kitchen_Tabletop_Manipulation
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+Created environment with name Libero_Kitchen_Tabletop_Manipulation
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+Created environment with name Libero_Kitchen_Tabletop_Manipulation
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+Created environment with name Libero_Kitchen_Tabletop_Manipulation
+Action size is 7
+ROBOMIMIC WARNING(
+    No environment version found in dataset!
+    Cannot verify if dataset and installed environment versions match
+)
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:   0%|          | 0/500 [00:00<?, ?it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:   2%|▏         | 8/500 [00:01<01:58,  4.15it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:   3%|▎         | 16/500 [00:03<01:40,  4.80it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:   5%|▍         | 24/500 [00:04<01:33,  5.10it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:   6%|▋         | 32/500 [00:06<01:29,  5.24it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:   8%|▊         | 40/500 [00:07<01:26,  5.30it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  10%|▉         | 48/500 [00:09<01:24,  5.32it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  11%|█         | 56/500 [00:10<01:23,  5.32it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  13%|█▎        | 64/500 [00:12<01:22,  5.30it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  14%|█▍        | 72/500 [00:13<01:20,  5.29it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  16%|█▌        | 80/500 [00:15<01:19,  5.31it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  18%|█▊        | 88/500 [00:16<01:17,  5.34it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  19%|█▉        | 96/500 [00:18<01:15,  5.36it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  21%|██        | 104/500 [00:19<01:13,  5.39it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  22%|██▏       | 112/500 [00:21<01:11,  5.41it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  24%|██▍       | 120/500 [00:22<01:10,  5.42it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  26%|██▌       | 128/500 [00:24<01:08,  5.44it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  27%|██▋       | 136/500 [00:25<01:06,  5.45it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  29%|██▉       | 144/500 [00:27<01:05,  5.46it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  30%|███       | 152/500 [00:28<01:03,  5.48it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  32%|███▏      | 160/500 [00:29<01:01,  5.49it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  34%|███▎      | 168/500 [00:31<01:00,  5.47it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  35%|███▌      | 176/500 [00:32<00:59,  5.47it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  37%|███▋      | 184/500 [00:34<00:58,  5.45it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  38%|███▊      | 192/500 [00:35<00:56,  5.42it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  40%|████      | 200/500 [00:37<00:55,  5.43it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  42%|████▏     | 208/500 [00:38<00:53,  5.43it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 1/4:  43%|████▎     | 216/500 [00:40<00:52,  5.39it/s]                                                                                                                            Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:   0%|          | 0/500 [00:00<?, ?it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:   2%|▏         | 8/500 [00:01<01:29,  5.48it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:   3%|▎         | 16/500 [00:02<01:28,  5.47it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:   5%|▍         | 24/500 [00:04<01:26,  5.48it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:   6%|▋         | 32/500 [00:05<01:25,  5.48it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:   8%|▊         | 40/500 [00:07<01:24,  5.47it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  10%|▉         | 48/500 [00:08<01:23,  5.42it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  11%|█         | 56/500 [00:10<01:22,  5.36it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  13%|█▎        | 64/500 [00:11<01:22,  5.31it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  14%|█▍        | 72/500 [00:13<01:20,  5.31it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  16%|█▌        | 80/500 [00:14<01:19,  5.29it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  18%|█▊        | 88/500 [00:16<01:17,  5.33it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  19%|█▉        | 96/500 [00:17<01:15,  5.36it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  21%|██        | 104/500 [00:19<01:13,  5.39it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  22%|██▏       | 112/500 [00:20<01:11,  5.41it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  24%|██▍       | 120/500 [00:22<01:10,  5.43it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  26%|██▌       | 128/500 [00:23<01:08,  5.44it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  27%|██▋       | 136/500 [00:25<01:07,  5.43it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  29%|██▉       | 144/500 [00:26<01:05,  5.41it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  30%|███       | 152/500 [00:28<01:04,  5.44it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  32%|███▏      | 160/500 [00:29<01:02,  5.46it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  34%|███▎      | 168/500 [00:31<01:00,  5.47it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  35%|███▌      | 176/500 [00:32<00:59,  5.47it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  37%|███▋      | 184/500 [00:33<00:57,  5.49it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  38%|███▊      | 192/500 [00:35<00:56,  5.48it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  40%|████      | 200/500 [00:36<00:54,  5.47it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 2/4:  42%|████▏     | 208/500 [00:38<00:53,  5.47it/s]                                                                                                                            Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:   0%|          | 0/500 [00:00<?, ?it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:   2%|▏         | 8/500 [00:01<01:29,  5.52it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:   3%|▎         | 16/500 [00:02<01:28,  5.46it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:   5%|▍         | 24/500 [00:04<01:27,  5.47it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:   6%|▋         | 32/500 [00:05<01:25,  5.45it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:   8%|▊         | 40/500 [00:07<01:24,  5.44it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  10%|▉         | 48/500 [00:08<01:23,  5.42it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  11%|█         | 56/500 [00:10<01:22,  5.39it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  13%|█▎        | 64/500 [00:11<01:21,  5.36it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  14%|█▍        | 72/500 [00:13<01:20,  5.35it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  16%|█▌        | 80/500 [00:14<01:18,  5.35it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  18%|█▊        | 88/500 [00:16<01:16,  5.38it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  19%|█▉        | 96/500 [00:17<01:14,  5.39it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  21%|██        | 104/500 [00:19<01:13,  5.42it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  22%|██▏       | 112/500 [00:20<01:11,  5.43it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  24%|██▍       | 120/500 [00:22<01:09,  5.43it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  26%|██▌       | 128/500 [00:23<01:08,  5.44it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  27%|██▋       | 136/500 [00:25<01:06,  5.47it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  29%|██▉       | 144/500 [00:26<01:04,  5.49it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  30%|███       | 152/500 [00:27<01:03,  5.47it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  32%|███▏      | 160/500 [00:29<01:01,  5.49it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  34%|███▎      | 168/500 [00:30<01:00,  5.49it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  35%|███▌      | 176/500 [00:32<00:58,  5.50it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  37%|███▋      | 184/500 [00:33<00:57,  5.48it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  38%|███▊      | 192/500 [00:35<00:56,  5.47it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  40%|████      | 200/500 [00:36<00:54,  5.47it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  42%|████▏     | 208/500 [00:38<00:53,  5.45it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  43%|████▎     | 216/500 [00:39<00:52,  5.46it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  45%|████▍     | 224/500 [00:41<00:50,  5.45it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  46%|████▋     | 232/500 [00:42<00:49,  5.43it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  48%|████▊     | 240/500 [00:44<00:47,  5.44it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  50%|████▉     | 248/500 [00:45<00:46,  5.45it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  51%|█████     | 256/500 [00:47<00:44,  5.46it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  53%|█████▎    | 264/500 [00:48<00:43,  5.45it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  54%|█████▍    | 272/500 [00:49<00:41,  5.45it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  56%|█████▌    | 280/500 [00:51<00:40,  5.45it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  58%|█████▊    | 288/500 [00:52<00:38,  5.46it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  59%|█████▉    | 296/500 [00:54<00:37,  5.49it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 3/4:  61%|██████    | 304/500 [00:55<00:35,  5.49it/s]                                                                                                                            Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:   0%|          | 0/500 [00:00<?, ?it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:   2%|▏         | 8/500 [00:01<01:30,  5.42it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:   3%|▎         | 16/500 [00:02<01:28,  5.44it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:   5%|▍         | 24/500 [00:04<01:27,  5.45it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:   6%|▋         | 32/500 [00:05<01:26,  5.41it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:   8%|▊         | 40/500 [00:07<01:24,  5.41it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  10%|▉         | 48/500 [00:08<01:23,  5.39it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  11%|█         | 56/500 [00:10<01:22,  5.36it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  13%|█▎        | 64/500 [00:11<01:21,  5.34it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  14%|█▍        | 72/500 [00:13<01:20,  5.33it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  16%|█▌        | 80/500 [00:14<01:18,  5.34it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  18%|█▊        | 88/500 [00:16<01:17,  5.30it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  19%|█▉        | 96/500 [00:17<01:15,  5.32it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  21%|██        | 104/500 [00:19<01:13,  5.37it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  22%|██▏       | 112/500 [00:20<01:11,  5.40it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  24%|██▍       | 120/500 [00:22<01:10,  5.40it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  26%|██▌       | 128/500 [00:23<01:08,  5.42it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  27%|██▋       | 136/500 [00:25<01:06,  5.45it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  29%|██▉       | 144/500 [00:26<01:05,  5.44it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  30%|███       | 152/500 [00:28<01:03,  5.44it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  32%|███▏      | 160/500 [00:29<01:02,  5.46it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  34%|███▎      | 168/500 [00:31<01:00,  5.46it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  35%|███▌      | 176/500 [00:32<00:59,  5.48it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  37%|███▋      | 184/500 [00:33<00:57,  5.48it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  38%|███▊      | 192/500 [00:35<00:56,  5.47it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  40%|████      | 200/500 [00:36<00:55,  5.45it/s]predict_action language_goal:  ['KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it', 'KITCHEN SCENE3 turn on the stove and put the moka pot on it']
+libero10 max_length 30
+Eval KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_itImage 4/4:  42%|████▏     | 208/500 [00:38<00:54,  5.40it/s]                                                                                                                            {'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100000': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_video_100000': <wandb.sdk.data_types.video.Video object at 0x7af3f69db3d0>, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100001': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_video_100001': <wandb.sdk.data_types.video.Video object at 0x7af43c1b9a00>, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100002': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100003': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100004': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100005': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100006': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100007': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100008': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100009': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100010': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100011': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100012': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100013': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100014': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100015': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100016': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100017': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100018': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100019': 1.0, 'test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_mean_score': 1.0}
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100000 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_video_100000 /home/minhsctn1608/world-models-uva-lingbot/results/exp05/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it/seed42/media/4akia3iu.mp4
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100001 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_video_100001 /home/minhsctn1608/world-models-uva-lingbot/results/exp05/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it/seed42/media/yoj19jq1.mp4
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100002 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100003 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100004 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100005 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100006 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100007 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100008 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100009 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100010 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100011 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100012 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100013 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100014 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100015 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100016 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100017 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100018 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_sim_max_reward_100019 1.0
+test/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_mean_score 1.0
+test_mean_score 1.0
+Saving log to /home/minhsctn1608/world-models-uva-lingbot/results/exp05/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it/seed42/eval_log_libero10.ckpt.json
+	Command being timed: "/home/minhsctn1608/venvs/uva-libero/bin/python eval_sim.py -c checkpoints/libero10.ckpt -o /home/minhsctn1608/world-models-uva-lingbot/results/exp05/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it/seed42 --seed 42 --libero_task KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it --n_test 20 --n_test_vis 2 --n_train 0 --n_envs 5 --mp_context spawn"
+	User time (seconds): 375.63
+	System time (seconds): 15.62
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:27.12
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6824800
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 90
+	Minor (reclaiming a frame) page faults: 3605366
+	Voluntary context switches: 12178
+	Involuntary context switches: 28866
+	Swaps: 0
+	File system inputs: 154744
+	File system outputs: 3592
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
