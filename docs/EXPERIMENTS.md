@@ -134,6 +134,18 @@ checkpoint loads in `eval_sim.py` (checked). Throughput is the same for batch 8 
   with 25 demonstrations (0.454) is not distinguishable from joint training with 10 (0.421; paired difference +0.032
   [−0.043, 0.106]).
 
+### EXP-03 addendum — Position vs orientation error at the end of PushT-M episodes
+- Date: 2026-10-16. `python scripts/pose_error.py` → `results/exp02/pose_error.json`. No GPU: fits a rasterized T template
+  (pusht_env.py geometry) to the goal (green, union of 5 frames) and to the block (grey, last frame) of the 30 recorded
+  videos per run (first 10 goals × 3 seeds, 96-px frames, bars 5.6 px thick). Successful episodes fit to 0–4°.
+- Result (median position error; episodes ending within 2.8 px and 15° of the goal pose): not fine-tuned 21.3 px, 0/30;
+  k10 8.8 px, 3/30; F4 9.4 px, 0/29; F2 (k25) 4.2 px, 2/30; k50 5.0 px, 4/30; authors' model 1.4 px, 12/30.
+- Near the goal (≤ 2.8 px), about half of the endings are rotated by 100–140° (F2 4/8, k50 4/10, authors' model 5/17),
+  all with reward ≈ 0.7: the T's three arms make a ~120° rotation a local optimum of coverage.
+- Conclusion: this corrects the earlier "right place, wrong angle" reading. Fine-tuned models bring the block near the
+  goal but are imprecise in both position (median about one bar width) and orientation; the 0.72 reward plateau seen in
+  EXP-01 is the ~120° rotation.
+
 ### EXP-07 (W3) — UVA inference cost vs action denoising steps
 
 Command (VM, `uva` env): `bash scripts/run_exp07.sh` (2026-10-15, about 35 min). The policy samples only actions (no

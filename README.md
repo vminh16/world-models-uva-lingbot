@@ -19,7 +19,7 @@ NVIDIA L4 (24 GB). Part 1 (ROSOrin Pro simulation, SLAM and Nav2) is in
 | UVA: fine-tune `pusht.ckpt` to random goals (EXP-02, EXP-03) | done: 0 / 10 / 25 / 50 demonstrations and action-only ablation, 3k steps each on one L4 (`results/exp02/`) |
 | UVA: inference cost vs denoising steps (EXP-07) | done: PushT 50 seeds at 100 / 50 / 20 / 10 / 5 steps, latency at batch 1 and 10 (`results/exp07/`) |
 | LingBot-VA: inference (EXP-11) | done: i2av on one L4 with offload, 3 seeds × 10 chunks and 40 chunks, latency and memory; ablations of denoising steps, CFG, prompt, KV window (`results/exp11/`) |
-| Report | pending |
+| Report | Part 2 of the technical report: `report/PART2_en.md` (Vietnamese: `report/PART2_vi.md`); full results `report/REPORT_vi.md`; paper analysis `docs/PAPER_ANALYSIS_vi.md`; demo video `results/rollouts/part2_demo_small.mp4` |
 
 ## What is new compared with the papers
 
@@ -44,7 +44,7 @@ lingbot-va/     git submodule: fork of Robbyant/lingbot-va, branch hw-small-scal
 scripts/        task variants, data generation, figure generation (make_figures.py)
 results/        one folder per experiment: metrics.json, rollout videos, figures, logs (see results/README.md)
 docs/           ENVIRONMENT.md (GCP L4 setup), EXPERIMENTS.md (every run), DEBUG_LOG.md (every problem)
-report/         technical report for both parts
+report/         Part 2 of the technical report (PART2_en.md, PART2_vi.md), full results (REPORT_vi.md), figures/
 ```
 
 ## Getting started
@@ -82,6 +82,15 @@ bash results/exp11/driver.sh                       # i2av, 3 seeds x 10 chunks, 
 python scripts/summarize_exp11.py                  # -> results/exp11/summary.json, results/exp11/figures/
 bash results/exp11/driver_ablation.sh              # steps, CFG, KV window, prompt (seed 0)
 python scripts/compare_exp11.py                    # -> results/exp11/ablations.json, results/exp11/figures/ablations.png
+```
+
+Example videos of the report (labelled, side by side, under `results/**/rollouts/*_small.mp4`):
+
+```bash
+python scripts/make_videos.py                      # -> results/rollouts/part2_demo_small.mp4 and per-experiment clips
+PYTHONPATH=scripts python scripts/plot_report_figure.py -o report/figures/fig2_part2.png   # report Figure 2
+python scripts/plot_report_qualitative.py -o report/figures/fig3_part2.png                 # report Figure 3
+python scripts/pose_error.py                       # final position / angle error of PushT-M runs -> results/exp02/pose_error.json
 ```
 
 **EXP-05** (2026-10-14, about 55 min), on the VM with the LIBERO venv (`docs/ENVIRONMENT.md` 2b):
