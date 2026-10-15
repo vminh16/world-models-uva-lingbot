@@ -39,6 +39,8 @@ checkpoint loads in `eval_sim.py` (checked). Throughput is the same for batch 8 
 
 | ID | Checkpoint | Task | Change from upstream | Metric | Result (ours) | Reported | Run time | Peak GPU memory | Output |
 |---|---|---|---|---|---|---|---|---|---|
+| EXP-07 | `pusht.ckpt`, action head denoising steps 100 (checkpoint) / 50 / 20 / 10 / 5 | PushT, 50 seeds × policy seed 42, 10 envs; batch-1 latency on 1 seed | `--act_diff_testing_steps`, `latency.json` in `eval_sim.py` | mean score; seconds per `predict_action` call (8 executed actions) | 0.957 / 0.973 / 0.972 / 0.976 / 0.995 (paired differences vs 100 steps all include 0); batch 1: 0.48 / 0.30 / 0.19 / 0.16 / 0.14 s; batch 10: 1.65 → 1.30 s | – | about 6 min per 50 seeds | 1.9 GiB (batch 1), 8.0 GiB (batch 10) | `results/exp07/` |
+| EXP-11 | `robbyant/lingbot-va-posttrain-robotwin` (24.4 GB), i2av, offload on, 3 seeds × 10 chunks + 1 × 40 chunks | RoboTwin example image (3 cameras) + mug-on-rack prompt, no simulator (open-loop imagination) | `--model_path --enable_offload --num_chunks --seed` options, flash-attn import fix (ISSUE-013) | seconds per chunk (2 latent frames = 8 video frames, 32 actions); peak GPU memory | 17.1 s per chunk (chunks 1–9, 3 seeds), rising linearly to 23.6 s at chunk 36, flat after; first chunk 39–40 s; prompt encoding on CPU 268 s; peak 17.0 GiB allocated / 18.1 GB nvidia-smi | about 18 GB VRAM with offload (README) | 10 min per 10-chunk run, 20 min for 40 | 18.1 GB | `results/exp11/` |
 | EXP-05 | `libero10.ckpt` | LIBERO-10, 10 tasks × 20 episodes, policy seed 42 | `eval_sim.py` options, LIBERO venv (ISSUE-006) | mean success over tasks | 0.865 [0.811, 0.906] | 0.90 | about 55 min | 10.3 GB | `results/exp05/` |
 | EXP-03 F3 | `pusht.ckpt` fine-tuned on 10 PushT-M demos (nested subset), 3034 steps (sha256 `22a5a53c…`) | PushT-M, same protocol as F1 | `train_episodes` option, 37 epochs, FVD every 2 | success / mean score | 0.000 [0.000, 0.025] / 0.421 ± 0.023 | – | train 2 h 53 min; eval 6 min per 50 seeds | train 21.6 GB, eval 9.3 GiB | `results/exp02/f3_k10/`, `train_f3_k10/` |
 | EXP-03 F3 | `pusht.ckpt` fine-tuned on 50 PushT-M demos (nested superset), 3144 steps (sha256 `d694bf13…`) | PushT-M, same protocol as F1 | `train_episodes` option, 8 epochs | success / mean score | 0.013 [0.004, 0.047] / 0.593 ± 0.040 | – | train 2 h 53 min; eval 6 min per 50 seeds | train 21.6 GB, eval 9.3 GiB | `results/exp02/f3_k50/`, `train_f3_k50/` |
@@ -131,6 +133,97 @@ checkpoint loads in `eval_sim.py` (checked). Throughput is the same for batch 8 
   objective helps the policy. Weak evidence: one training seed, borderline significance. On the F3 curve, action-only
   with 25 demonstrations (0.454) is not distinguishable from joint training with 10 (0.421; paired difference +0.032
   [−0.043, 0.106]).
+
+### EXP-07 (W3) — UVA inference cost vs action denoising steps
+
+Command (VM, `uva` env): `bash scripts/run_exp07.sh` (2026-10-15, about 35 min). The policy samples only actions (no
+video) at test time, so the step count of the action diffusion head (`act_diff_testing_steps`, 100 in the checkpoint) is
+the knob. `eval_sim.py` times every `predict_action` call with CUDA synchronization (`latency.json`). Each call returns an
+action chunk, of which 8 actions are executed (`n_action_steps`).
+
+| steps | mean score (50 seeds) | success | paired difference vs 100 steps, 95% bootstrap | s / call, batch 1 | s / call, batch 10 |
+|---|---|---|---|---|---|
+| 100 | 0.957 | 0.70 | – | 0.48 | 1.65 |
+| 50 | 0.973 | 0.74 | +0.016 [−0.007, 0.059] | 0.30 | 1.46 |
+| 20 | 0.972 | 0.68 | +0.015 [−0.010, 0.058] | 0.19 | 1.35 |
+| 10 | 0.976 | 0.78 | +0.019 [−0.004, 0.061] | 0.16 | 1.32 |
+| 5 | 0.995 | 0.70 | +0.038 [−0.003, 0.099] | 0.14 | 1.30 |
+
+- The 100-step run gives exactly the EXP-01 seed-42 result (0.9567), so the timing wrapper does not change the policy.
+- No measurable loss down to 5 steps on PushT; the action head can run 3.5× faster at batch 1 (0.48 → 0.14 s).
+- At batch 10 the time per call barely changes (1.65 → 1.30 s): the shared encoder and MAR transformer dominate, the action
+  head is a small part. Peak GPU memory 1.9 GiB at batch 1.
+- Batch-1 latency is from one episode (19–38 calls), so it is a timing, not a score; the batch-1 scores are not used.
+- Against LingBot-VA on the same L4 (EXP-11): UVA executes 8 actions per 0.14–0.48 s (about 17–59 actions/s) with 1.9 GiB;
+  LingBot-VA generates 32 actions per 3.8–17.1 s (about 2–8 actions/s) with 17 GiB, and also generates the video. Tasks,
+  images and action spaces differ (PushT 2-D vs RoboTwin dual-arm), so this is an order-of-magnitude comparison.
+
+### EXP-11 — LingBot-VA image → video + action generation on one L4
+
+Command (VM, venv `~/venvs/lingbot`, setup `scripts/exp11_setup.sh`): `bash results/exp11/driver.sh`, which runs
+`scripts/run_exp11.sh i2av_c10_s{0,1,2} 10 {0,1,2}` and `scripts/run_exp11.sh i2av_c40_s0 40 0`; summary and figures:
+`python scripts/summarize_exp11.py` → `results/exp11/summary.json`, `results/exp11/figures/`.
+
+What the run does: `robotwin_i2av` config of the authors (25 video denoising steps with classifier-free guidance 5,
+50 action denoising steps, 2 latent frames and 16 actions per frame per chunk). One start image from 3 cameras and the
+prompt "Grab the medium-sized white mug, rotate it, place it on the table, and hook it onto the smooth dark gray rack."
+Every chunk is conditioned on all earlier chunks through the KV cache; no simulator feedback (open-loop imagination).
+
+| | value | source |
+|---|---|---|
+| model load (transformer to GPU, T5 and VAE on CPU) | about 1 min | `run.log` |
+| prompt encoding, T5 (11.4 GB) on 4 vCPUs | 268 ± 2 s | `prompt_encoding_cpu_s` |
+| first chunk (includes VAE encoding of the start image on the CPU) | 39–40 s | `timing.json` |
+| later chunks, chunks 1–9 | 17.1 s (16.4–18.1), of which video ≈ 6.3 s, actions ≈ 9.8 s | `timing.json`, tqdm rates |
+| chunk 36 onwards (KV cache full, oldest entries evicted) | 23.6 s, flat | `i2av_c40_s0/timing.json` |
+| VAE decoding on the GPU | 10.7 s for 77 frames, 41.5 s for 317 frames | `decode_s` |
+| peak GPU memory | 16.9–17.0 GiB allocated, 18.0–18.1 GB nvidia-smi; same for 2, 10 and 40 chunks | `timing.json`, `vram.csv` |
+| peak RAM / swap | 4.1–5.1 GB / 0.6–2.3 GB (16 GB machine) | `ram.csv` |
+
+Findings:
+- Fits on the L4 with offload; no OOM. GPU memory does not grow with the number of chunks because the KV cache is
+  allocated up front for 36 chunks (`attn_window` 72 / 2) and the oldest entries are evicted after that.
+- Time per chunk grows linearly with the history (+0.21 s per chunk, 16.3 s → 23.6 s) because attention covers every
+  filled cache slot, then stays flat once the cache is full: the cost of the long memory that UVA does not have.
+- At about 17 s per 32 actions the L4 produces about 2 actions per second without the authors' asynchronous execution;
+  the CPU prompt encoding (268 s) is paid once per episode.
+- Seeds: generated actions differ by 0.001 (mean absolute, normalized units) in chunk 0 and up to 0.08 in chunk 9 between
+  seeds; the difference grows with the chunk index (errors compound autoregressively). Seeds 1 and 2 stay close
+  (≤ 0.008), seed 0 diverges from chunk 6 on, visible in the videos (`figures/frames_i2av_c10_s*.png`). The 40-chunk run
+  with seed 0 reproduces the 10-chunk run with seed 0 (mean absolute pixel difference 0.5 / 255 over the first 77 frames).
+- Qualitative (`figures/frames_i2av_c40_s0.png`): in the first 10 chunks the arm reaches, grasps and lifts the mug toward
+  the rack; after about chunk 12 the imagined high-camera view loses the rack and the arms while the mug stays near the
+  right edge, and later frames are mostly the empty table with shadows. Not quantified; past the authors' default length
+  of 10 chunks, open-loop imagination drifts (in closed loop the real observations refresh the cache).
+
+Ablations (2026-10-15, seed 0, same initial noise as the reference; `results/exp11/driver_ablation.sh`, comparison
+`python scripts/compare_exp11.py` → `results/exp11/ablations.json`, `figures/ablations.png`). T5 embeddings cached
+(`--set prompt_embeds_cache_dir=...`), so only the first run of a prompt pays the 268 s. Yardstick: another seed of the
+reference config differs by 0.015–0.016 in actions and has 16–17 dB PSNR.
+
+| run | change | action difference vs reference | video PSNR vs reference | s / chunk (ref) | peak GiB |
+|---|---|---|---|---|---|
+| `steps_v10_a20` | 10 video / 20 action denoising steps (default 25 / 50) | 0.002 | 28.7 dB | **7.1** (17.1) | 16.9 |
+| `steps_v5_a10` | 5 / 10 steps | 0.015 (≈ another seed) | 16.8 dB | **3.8** (17.1) | 16.9 |
+| `cfg1` | no classifier-free guidance on video (guidance 5 → 1, batch 2 → 1) | 0.012 | 19.1 dB | 15.1 (17.1) | 15.2 |
+| `prompt_left` | prompt "…place it on the left side of the table." | 0.028 | 15.3 dB | 17.1 (17.1) | 16.9 |
+| `win8_c40` | KV window 4 chunks (`attn_window` 8, default 72 = 36 chunks), 40 chunks, vs `i2av_c40_s0` | 0.135 (0 in chunks 0–3, ≤ 0.005 up to chunk 10, 0.05–0.34 from chunk 13) | 19.3 dB | 16.6 flat (20.3, rising) | 15.4 |
+
+- Denoising steps: 10 / 20 steps give the same video and actions as 25 / 50 (difference 7× below seed noise) at 2.4× the
+  speed; 5 / 10 steps are 4.5× faster and stay coherent, but differ from the reference as much as another seed does.
+  With 5 / 10 steps the L4 produces 32 actions in 3.8 s, about 8 actions per second.
+- Classifier-free guidance doubles the video batch but costs only 12% of the time per chunk (action denoising, without
+  guidance, is the larger part) and 1.7 GiB; without it the sample stays coherent.
+- Prompt: with the same start image the imagined video still takes the mug to the rack (frames in
+  `figures/frames_prompt_left.png`); the actions differ from the reference by 1.7× seed noise. On this RoboTwin scene the
+  post-trained model follows the visual context more than the new instruction (one prompt, one seed: an observation, not
+  a measured rate).
+- Memory window: with 4 chunks of memory the time per chunk stays at 16.6 s instead of rising to 23.6 s, and peak memory
+  drops by 1.6 GiB. The first 4 chunks are identical to the full-window run (the window is not yet full); from about
+  chunk 13 the two runs diverge far beyond seed noise, and from about chunk 15 the short-window video shows broken arm
+  geometry (overlapping gripper fragments, `figures/frames_win8_c40.png`), which the full-window run does not. Short memory
+  is cheaper but loses consistency over long horizons; this is the trade-off behind the UVA / LingBot-VA comparison
+  (Phase 6, A3).
 
 ### EXP-05 — Released checkpoint, LIBERO-10
 - Date / commit: 2026-10-14 / `aad9f1d` + uncommitted / `uva` `fe3dec8` + changes listed in the README

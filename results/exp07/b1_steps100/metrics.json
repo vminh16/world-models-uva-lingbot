@@ -1,0 +1,22 @@
+{
+  "source_log": "/home/minhsctn1608/world-models-uva-lingbot/results/exp07/b1_steps100/eval_log_pusht.ckpt.json",
+  "n_seeds": 1,
+  "seed_range": [
+    100000,
+    100000
+  ],
+  "success_rate": 1.0,
+  "success_rate_ci95_wilson": [
+    0.20654329147389294,
+    1.0
+  ],
+  "n_success": 1,
+  "mean_score": 1.0,
+  "mean_score_std": 0.0,
+  "mean_score_sem": 0.0,
+  "mean_score_logged": 1.0,
+  "per_seed_max_reward": {
+    "100000": 1.0
+  },
+  "failed_seeds_sorted": []
+}

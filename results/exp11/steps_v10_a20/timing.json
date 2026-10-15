@@ -1,0 +1,38 @@
+{
+  "chunk_seconds": [
+    30.861982016000184,
+    6.8296667639997395,
+    6.866781306000121,
+    6.947519177000686,
+    7.010289729999386,
+    7.0918151350006156,
+    7.189411661000122,
+    7.272809299000073,
+    7.396140844000001,
+    7.508686782000041
+  ],
+  "decode_seconds": 11.049375304999558,
+  "peak_allocated_gb_generation": 16.863134384155273,
+  "peak_allocated_gb_total": 16.863134384155273,
+  "num_chunks": 10,
+  "frame_chunk_size": 2,
+  "action_per_frame": 16,
+  "num_inference_steps": 10,
+  "action_num_inference_steps": 20,
+  "guidance_scale": 5,
+  "attn_window": 72,
+  "prompt": "Grab the medium-sized white mug, rotate it, place it on the table, and hook it onto the smooth dark gray rack.",
+  "enable_offload": true,
+  "seed": 0,
+  "video_frames": 77,
+  "video_shape": [
+    77,
+    384,
+    320,
+    3
+  ],
+  "action_shape": [
+    16,
+    320
+  ]
+}

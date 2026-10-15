@@ -1,0 +1,1655 @@
++ umask 007
++ NGPU=1
++ MASTER_PORT=29501
++ PORT=1106
++ LOG_RANK=0
++ TORCHFT_LIGHTHOUSE=http://localhost:29510
++ CONFIG_NAME=robotwin_i2av
++ overrides=
++ '[' 13 -ne 0 ']'
++ overrides='--model_path /home/minhsctn1608/models/lingbot-va-posttrain-robotwin --enable_offload true --num_chunks 10 --seed 0 --save_root /home/minhsctn1608/world-models-uva-lingbot/results/exp11/cfg1 --set prompt_embeds_cache_dir=/home/minhsctn1608/world-models-uva-lingbot/results/exp11/prompt_cache guidance_scale=1'
++ num_gpu=1
++ master_port=29501
++ log_rank=0
++ torchft_lighthouse=http://localhost:29510
++ config_name=robotwin_i2av
++ export TOKENIZERS_PARALLELISM=false
++ TOKENIZERS_PARALLELISM=false
++ PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ TORCHFT_LIGHTHOUSE=http://localhost:29510
++ python -m torch.distributed.run --nproc_per_node=1 --local-ranks-filter=0 --master_port 29501 --tee 3 -m wan_va.wan_va_server --config-name robotwin_i2av --model_path /home/minhsctn1608/models/lingbot-va-posttrain-robotwin --enable_offload true --num_chunks 10 --seed 0 --save_root /home/minhsctn1608/world-models-uva-lingbot/results/exp11/cfg1 --set prompt_embeds_cache_dir=/home/minhsctn1608/world-models-uva-lingbot/results/exp11/prompt_cache guidance_scale=1
+[default0]:2026-10-15 08:57:07,568 - root - INFO - config override prompt_embeds_cache_dir = '/home/minhsctn1608/world-models-uva-lingbot/results/exp11/prompt_cache'
+[default0]:2026-10-15 08:57:07,568 - root - INFO - config override guidance_scale = 1
+[default0]:The config attributes {'clip_output': False} were passed to AutoencoderKLWan, but are not expected and will be ignored. Please verify your config.json configuration file.
+[default0]:
+[default0]:Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]
+[default0]:Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 66.83it/s]
+[default0]:
+[default0]:Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s][default0]:
+[default0]:Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:00,  3.98it/s][default0]:
+[default0]:Loading checkpoint shards:  67%|██████▋   | 2/3 [00:00<00:00,  4.03it/s][default0]:
+[default0]:Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00,  5.38it/s]
+[default0]:Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00,  4.93it/s]
+[default0]:Some weights of the model checkpoint at /home/minhsctn1608/models/lingbot-va-posttrain-robotwin/transformer were not used when initializing WanTransformer3DModel: 
+[default0]: ['patch_embedding.bias, patch_embedding.weight']
+[default0]:/home/minhsctn1608/venvs/lingbot/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+[default0]:  warnings.warn(  # warn only once
+[default0]:[rank0]:[W1015 08:57:50.638369970 ProcessGroupNCCL.cpp:5068] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+[default0]:The config attributes {'clip_output': False} were passed to AutoencoderKLWan, but are not expected and will be ignored. Please verify your config.json configuration file.
+[default0]:2026-10-15 08:58:04,449 - root - INFO - ******************************USE I2AV mode******************************
+[default0]:2026-10-15 08:58:04,465 - root - INFO - Reset.
+[default0]:
+[default0]:  0%|          | 0/26 [00:00<?, ?it/s]2026-10-15 09:00:46,374 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]:  4%|▍         | 1/26 [00:03<01:16,  3.08s/it]2026-10-15 09:00:49,444 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]:  8%|▊         | 2/26 [00:03<00:34,  1.42s/it]2026-10-15 09:00:49,705 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 12%|█▏        | 3/26 [00:03<00:20,  1.12it/s]2026-10-15 09:00:49,967 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 15%|█▌        | 4/26 [00:03<00:14,  1.55it/s]2026-10-15 09:00:50,228 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 19%|█▉        | 5/26 [00:04<00:10,  1.99it/s]2026-10-15 09:00:50,481 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 23%|██▎       | 6/26 [00:04<00:08,  2.42it/s]2026-10-15 09:00:50,723 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 27%|██▋       | 7/26 [00:04<00:06,  2.80it/s]2026-10-15 09:00:50,961 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 31%|███       | 8/26 [00:04<00:05,  3.17it/s]2026-10-15 09:00:51,189 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 35%|███▍      | 9/26 [00:05<00:04,  3.45it/s]2026-10-15 09:00:51,422 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 38%|███▊      | 10/26 [00:05<00:04,  3.72it/s]2026-10-15 09:00:51,644 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 42%|████▏     | 11/26 [00:05<00:03,  3.94it/s]2026-10-15 09:00:51,863 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 46%|████▌     | 12/26 [00:05<00:03,  4.11it/s]2026-10-15 09:00:52,084 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 50%|█████     | 13/26 [00:05<00:03,  4.24it/s]2026-10-15 09:00:52,302 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 54%|█████▍    | 14/26 [00:06<00:02,  4.33it/s]2026-10-15 09:00:52,521 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 58%|█████▊    | 15/26 [00:06<00:02,  4.41it/s]2026-10-15 09:00:52,739 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 62%|██████▏   | 16/26 [00:06<00:02,  4.47it/s]2026-10-15 09:00:52,956 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 65%|██████▌   | 17/26 [00:06<00:01,  4.54it/s]2026-10-15 09:00:53,168 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 69%|██████▉   | 18/26 [00:07<00:01,  4.57it/s]2026-10-15 09:00:53,384 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 73%|███████▎  | 19/26 [00:07<00:01,  4.62it/s]2026-10-15 09:00:53,595 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 77%|███████▋  | 20/26 [00:07<00:01,  4.62it/s]2026-10-15 09:00:53,811 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 81%|████████  | 21/26 [00:07<00:01,  4.67it/s]2026-10-15 09:00:54,020 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 85%|████████▍ | 22/26 [00:07<00:00,  4.70it/s]2026-10-15 09:00:54,230 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 88%|████████▊ | 23/26 [00:08<00:00,  4.71it/s]2026-10-15 09:00:54,441 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 92%|█████████▏| 24/26 [00:08<00:00,  4.74it/s]2026-10-15 09:00:54,649 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 96%|█████████▌| 25/26 [00:08<00:00,  4.75it/s]2026-10-15 09:00:54,859 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]:100%|██████████| 26/26 [00:08<00:00,  4.79it/s]
+[default0]:100%|██████████| 26/26 [00:08<00:00,  2.99it/s]
+[default0]:
+[default0]:  0%|          | 0/51 [00:00<?, ?it/s]2026-10-15 09:00:55,068 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]:  2%|▏         | 1/51 [00:00<00:14,  3.44it/s]2026-10-15 09:00:55,357 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]:  4%|▍         | 2/51 [00:00<00:11,  4.24it/s]2026-10-15 09:00:55,554 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]:  6%|▌         | 3/51 [00:00<00:10,  4.62it/s]2026-10-15 09:00:55,747 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]:  8%|▊         | 4/51 [00:00<00:09,  4.79it/s]2026-10-15 09:00:55,944 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 10%|▉         | 5/51 [00:01<00:09,  4.92it/s]2026-10-15 09:00:56,137 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 12%|█▏        | 6/51 [00:01<00:09,  4.98it/s]2026-10-15 09:00:56,334 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 14%|█▎        | 7/51 [00:01<00:08,  5.03it/s]2026-10-15 09:00:56,528 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 16%|█▌        | 8/51 [00:01<00:08,  5.02it/s]2026-10-15 09:00:56,728 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 18%|█▊        | 9/51 [00:01<00:08,  5.08it/s]2026-10-15 09:00:56,920 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 20%|█▉        | 10/51 [00:02<00:08,  5.09it/s]2026-10-15 09:00:57,115 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 22%|██▏       | 11/51 [00:02<00:07,  5.09it/s]2026-10-15 09:00:57,311 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 24%|██▎       | 12/51 [00:02<00:07,  5.10it/s]2026-10-15 09:00:57,507 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 25%|██▌       | 13/51 [00:02<00:07,  5.12it/s]2026-10-15 09:00:57,701 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 27%|██▋       | 14/51 [00:02<00:07,  5.13it/s]2026-10-15 09:00:57,895 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 29%|██▉       | 15/51 [00:03<00:06,  5.15it/s]2026-10-15 09:00:58,087 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 31%|███▏      | 16/51 [00:03<00:06,  5.17it/s]2026-10-15 09:00:58,279 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 33%|███▎      | 17/51 [00:03<00:06,  5.16it/s]2026-10-15 09:00:58,473 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 35%|███▌      | 18/51 [00:03<00:06,  5.17it/s]2026-10-15 09:00:58,666 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 37%|███▋      | 19/51 [00:03<00:06,  5.20it/s]2026-10-15 09:00:58,856 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 39%|███▉      | 20/51 [00:03<00:05,  5.22it/s]2026-10-15 09:00:59,045 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 41%|████      | 21/51 [00:04<00:05,  5.19it/s]2026-10-15 09:00:59,241 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 43%|████▎     | 22/51 [00:04<00:05,  5.18it/s]2026-10-15 09:00:59,435 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 45%|████▌     | 23/51 [00:04<00:05,  5.19it/s]2026-10-15 09:00:59,627 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 47%|████▋     | 24/51 [00:04<00:05,  5.21it/s]2026-10-15 09:00:59,817 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 49%|████▉     | 25/51 [00:04<00:04,  5.22it/s]2026-10-15 09:01:00,008 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 51%|█████     | 26/51 [00:05<00:04,  5.22it/s]2026-10-15 09:01:00,200 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 53%|█████▎    | 27/51 [00:05<00:04,  5.21it/s]2026-10-15 09:01:00,392 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 55%|█████▍    | 28/51 [00:05<00:04,  5.23it/s]2026-10-15 09:01:00,581 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 57%|█████▋    | 29/51 [00:05<00:04,  5.22it/s]2026-10-15 09:01:00,774 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 59%|█████▉    | 30/51 [00:05<00:04,  5.23it/s]2026-10-15 09:01:00,965 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 61%|██████    | 31/51 [00:06<00:03,  5.23it/s]2026-10-15 09:01:01,156 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 63%|██████▎   | 32/51 [00:06<00:03,  5.17it/s]2026-10-15 09:01:01,355 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 65%|██████▍   | 33/51 [00:06<00:03,  5.18it/s]2026-10-15 09:01:01,546 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 67%|██████▋   | 34/51 [00:06<00:03,  5.20it/s]2026-10-15 09:01:01,738 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 69%|██████▊   | 35/51 [00:06<00:03,  5.20it/s]2026-10-15 09:01:01,929 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 71%|███████   | 36/51 [00:07<00:02,  5.21it/s]2026-10-15 09:01:02,120 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 73%|███████▎  | 37/51 [00:07<00:02,  5.19it/s]2026-10-15 09:01:02,314 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 75%|███████▍  | 38/51 [00:07<00:02,  5.20it/s]2026-10-15 09:01:02,506 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 76%|███████▋  | 39/51 [00:07<00:02,  5.22it/s]2026-10-15 09:01:02,696 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 78%|███████▊  | 40/51 [00:07<00:02,  5.22it/s]2026-10-15 09:01:02,888 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 80%|████████  | 41/51 [00:08<00:01,  5.22it/s]2026-10-15 09:01:03,079 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 82%|████████▏ | 42/51 [00:08<00:01,  5.21it/s][default0]:2026-10-15 09:01:03,272 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 84%|████████▍ | 43/51 [00:08<00:01,  5.22it/s]2026-10-15 09:01:03,463 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 86%|████████▋ | 44/51 [00:08<00:01,  5.22it/s]2026-10-15 09:01:03,654 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 88%|████████▊ | 45/51 [00:08<00:01,  5.22it/s]2026-10-15 09:01:03,846 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 90%|█████████ | 46/51 [00:08<00:00,  5.21it/s]2026-10-15 09:01:04,039 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 92%|█████████▏| 47/51 [00:09<00:00,  5.22it/s]2026-10-15 09:01:04,229 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 94%|█████████▍| 48/51 [00:09<00:00,  5.24it/s]2026-10-15 09:01:04,419 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 96%|█████████▌| 49/51 [00:09<00:00,  5.24it/s]2026-10-15 09:01:04,610 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]: 98%|█████████▊| 50/51 [00:09<00:00,  5.24it/s]2026-10-15 09:01:04,801 - root - INFO - FRAME START ID: 0
+[default0]:
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.26it/s]
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.14it/s]
+[default0]:2026-10-15 09:01:05,051 - root - INFO - chunk 0: 40.01 s
+[default0]:
+[default0]:  0%|          | 0/26 [00:00<?, ?it/s]2026-10-15 09:01:05,052 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]:  4%|▍         | 1/26 [00:00<00:05,  4.82it/s]2026-10-15 09:01:05,260 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]:  8%|▊         | 2/26 [00:00<00:04,  4.87it/s]2026-10-15 09:01:05,464 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 12%|█▏        | 3/26 [00:00<00:04,  4.90it/s]2026-10-15 09:01:05,666 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 15%|█▌        | 4/26 [00:00<00:04,  4.92it/s]2026-10-15 09:01:05,869 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 19%|█▉        | 5/26 [00:01<00:04,  4.92it/s]2026-10-15 09:01:06,071 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 23%|██▎       | 6/26 [00:01<00:04,  4.93it/s]2026-10-15 09:01:06,274 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 27%|██▋       | 7/26 [00:01<00:03,  4.93it/s]2026-10-15 09:01:06,477 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 31%|███       | 8/26 [00:01<00:03,  4.93it/s]2026-10-15 09:01:06,679 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 35%|███▍      | 9/26 [00:01<00:03,  4.93it/s]2026-10-15 09:01:06,882 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 38%|███▊      | 10/26 [00:02<00:03,  4.93it/s]2026-10-15 09:01:07,084 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 42%|████▏     | 11/26 [00:02<00:03,  4.92it/s]2026-10-15 09:01:07,289 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 46%|████▌     | 12/26 [00:02<00:02,  4.92it/s]2026-10-15 09:01:07,492 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 50%|█████     | 13/26 [00:02<00:02,  4.93it/s]2026-10-15 09:01:07,695 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 54%|█████▍    | 14/26 [00:02<00:02,  4.92it/s]2026-10-15 09:01:07,899 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 58%|█████▊    | 15/26 [00:03<00:02,  4.92it/s]2026-10-15 09:01:08,102 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 62%|██████▏   | 16/26 [00:03<00:02,  4.91it/s]2026-10-15 09:01:08,306 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 65%|██████▌   | 17/26 [00:03<00:01,  4.91it/s]2026-10-15 09:01:08,510 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 69%|██████▉   | 18/26 [00:03<00:01,  4.92it/s]2026-10-15 09:01:08,712 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 73%|███████▎  | 19/26 [00:03<00:01,  4.90it/s]2026-10-15 09:01:08,918 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 77%|███████▋  | 20/26 [00:04<00:01,  4.91it/s]2026-10-15 09:01:09,121 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 81%|████████  | 21/26 [00:04<00:01,  4.91it/s]2026-10-15 09:01:09,325 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 85%|████████▍ | 22/26 [00:04<00:00,  4.92it/s]2026-10-15 09:01:09,527 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 88%|████████▊ | 23/26 [00:04<00:00,  4.92it/s]2026-10-15 09:01:09,730 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 92%|█████████▏| 24/26 [00:04<00:00,  4.92it/s]2026-10-15 09:01:09,933 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 96%|█████████▌| 25/26 [00:05<00:00,  4.93it/s]2026-10-15 09:01:10,135 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.94it/s]
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.92it/s]
+[default0]:
+[default0]:  0%|          | 0/51 [00:00<?, ?it/s]2026-10-15 09:01:10,337 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]:  2%|▏         | 1/51 [00:00<00:09,  5.24it/s]2026-10-15 09:01:10,528 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]:  4%|▍         | 2/51 [00:00<00:10,  4.80it/s]2026-10-15 09:01:10,748 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]:  6%|▌         | 3/51 [00:00<00:09,  5.02it/s]2026-10-15 09:01:10,937 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]:  8%|▊         | 4/51 [00:00<00:09,  5.15it/s]2026-10-15 09:01:11,124 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 10%|▉         | 5/51 [00:00<00:08,  5.18it/s]2026-10-15 09:01:11,314 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 12%|█▏        | 6/51 [00:01<00:08,  5.22it/s]2026-10-15 09:01:11,503 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 14%|█▎        | 7/51 [00:01<00:08,  5.25it/s]2026-10-15 09:01:11,691 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 16%|█▌        | 8/51 [00:01<00:08,  5.26it/s]2026-10-15 09:01:11,881 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 18%|█▊        | 9/51 [00:01<00:07,  5.27it/s]2026-10-15 09:01:12,070 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 20%|█▉        | 10/51 [00:01<00:07,  5.26it/s]2026-10-15 09:01:12,260 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 22%|██▏       | 11/51 [00:02<00:07,  5.27it/s]2026-10-15 09:01:12,450 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 24%|██▎       | 12/51 [00:02<00:07,  5.27it/s]2026-10-15 09:01:12,639 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 25%|██▌       | 13/51 [00:02<00:07,  5.28it/s]2026-10-15 09:01:12,828 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 27%|██▋       | 14/51 [00:02<00:06,  5.29it/s]2026-10-15 09:01:13,016 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 29%|██▉       | 15/51 [00:02<00:06,  5.30it/s]2026-10-15 09:01:13,204 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 31%|███▏      | 16/51 [00:03<00:06,  5.29it/s]2026-10-15 09:01:13,394 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 33%|███▎      | 17/51 [00:03<00:06,  5.29it/s]2026-10-15 09:01:13,583 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 35%|███▌      | 18/51 [00:03<00:06,  5.30it/s]2026-10-15 09:01:13,771 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 37%|███▋      | 19/51 [00:03<00:06,  5.30it/s]2026-10-15 09:01:13,960 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 39%|███▉      | 20/51 [00:03<00:05,  5.30it/s]2026-10-15 09:01:14,148 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 41%|████      | 21/51 [00:03<00:05,  5.30it/s]2026-10-15 09:01:14,337 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 43%|████▎     | 22/51 [00:04<00:05,  5.30it/s]2026-10-15 09:01:14,525 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 45%|████▌     | 23/51 [00:04<00:05,  5.30it/s]2026-10-15 09:01:14,714 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 47%|████▋     | 24/51 [00:04<00:05,  5.31it/s]2026-10-15 09:01:14,902 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 49%|████▉     | 25/51 [00:04<00:04,  5.31it/s]2026-10-15 09:01:15,090 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 51%|█████     | 26/51 [00:04<00:04,  5.31it/s]2026-10-15 09:01:15,279 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 53%|█████▎    | 27/51 [00:05<00:04,  5.29it/s]2026-10-15 09:01:15,469 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 55%|█████▍    | 28/51 [00:05<00:04,  5.30it/s]2026-10-15 09:01:15,657 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 57%|█████▋    | 29/51 [00:05<00:04,  5.30it/s]2026-10-15 09:01:15,845 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 59%|█████▉    | 30/51 [00:05<00:03,  5.31it/s]2026-10-15 09:01:16,033 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 61%|██████    | 31/51 [00:05<00:03,  5.31it/s]2026-10-15 09:01:16,221 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 63%|██████▎   | 32/51 [00:06<00:03,  5.31it/s]2026-10-15 09:01:16,409 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 65%|██████▍   | 33/51 [00:06<00:03,  5.31it/s]2026-10-15 09:01:16,598 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 67%|██████▋   | 34/51 [00:06<00:03,  5.31it/s]2026-10-15 09:01:16,786 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 69%|██████▊   | 35/51 [00:06<00:03,  5.30it/s]2026-10-15 09:01:16,976 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 71%|███████   | 36/51 [00:06<00:02,  5.30it/s]2026-10-15 09:01:17,164 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 73%|███████▎  | 37/51 [00:07<00:02,  5.28it/s]2026-10-15 09:01:17,355 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 75%|███████▍  | 38/51 [00:07<00:02,  5.29it/s]2026-10-15 09:01:17,543 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 76%|███████▋  | 39/51 [00:07<00:02,  5.28it/s]2026-10-15 09:01:17,734 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 78%|███████▊  | 40/51 [00:07<00:02,  5.26it/s]2026-10-15 09:01:17,925 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 80%|████████  | 41/51 [00:07<00:01,  5.26it/s]2026-10-15 09:01:18,115 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 82%|████████▏ | 42/51 [00:07<00:01,  5.28it/s]2026-10-15 09:01:18,303 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 84%|████████▍ | 43/51 [00:08<00:01,  5.28it/s]2026-10-15 09:01:18,492 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 86%|████████▋ | 44/51 [00:08<00:01,  5.29it/s]2026-10-15 09:01:18,680 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 88%|████████▊ | 45/51 [00:08<00:01,  5.29it/s]2026-10-15 09:01:18,869 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 90%|█████████ | 46/51 [00:08<00:00,  5.29it/s]2026-10-15 09:01:19,058 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 92%|█████████▏| 47/51 [00:08<00:00,  5.31it/s]2026-10-15 09:01:19,245 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 94%|█████████▍| 48/51 [00:09<00:00,  5.29it/s]2026-10-15 09:01:19,436 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 96%|█████████▌| 49/51 [00:09<00:00,  5.29it/s]2026-10-15 09:01:19,625 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]: 98%|█████████▊| 50/51 [00:09<00:00,  5.30it/s]2026-10-15 09:01:19,812 - root - INFO - FRAME START ID: 2
+[default0]:
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.32it/s]
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.28it/s]
+[default0]:2026-10-15 09:01:20,014 - root - INFO - chunk 1: 14.96 s
+[default0]:
+[default0]:  0%|          | 0/26 [00:00<?, ?it/s]2026-10-15 09:01:20,015 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]:  4%|▍         | 1/26 [00:00<00:05,  4.93it/s]2026-10-15 09:01:20,218 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]:  8%|▊         | 2/26 [00:00<00:04,  4.93it/s]2026-10-15 09:01:20,420 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 12%|█▏        | 3/26 [00:00<00:04,  4.94it/s]2026-10-15 09:01:20,623 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 15%|█▌        | 4/26 [00:00<00:04,  4.93it/s]2026-10-15 09:01:20,826 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 19%|█▉        | 5/26 [00:01<00:04,  4.94it/s]2026-10-15 09:01:21,028 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 23%|██▎       | 6/26 [00:01<00:04,  4.94it/s]2026-10-15 09:01:21,230 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 27%|██▋       | 7/26 [00:01<00:03,  4.93it/s]2026-10-15 09:01:21,434 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 31%|███       | 8/26 [00:01<00:03,  4.92it/s]2026-10-15 09:01:21,638 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 35%|███▍      | 9/26 [00:01<00:03,  4.92it/s]2026-10-15 09:01:21,841 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 38%|███▊      | 10/26 [00:02<00:03,  4.92it/s]2026-10-15 09:01:22,045 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 42%|████▏     | 11/26 [00:02<00:03,  4.91it/s]2026-10-15 09:01:22,249 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 46%|████▌     | 12/26 [00:02<00:02,  4.92it/s]2026-10-15 09:01:22,451 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 50%|█████     | 13/26 [00:02<00:02,  4.93it/s]2026-10-15 09:01:22,653 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 54%|█████▍    | 14/26 [00:02<00:02,  4.93it/s]2026-10-15 09:01:22,856 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 58%|█████▊    | 15/26 [00:03<00:02,  4.94it/s]2026-10-15 09:01:23,058 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 62%|██████▏   | 16/26 [00:03<00:02,  4.94it/s]2026-10-15 09:01:23,261 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 65%|██████▌   | 17/26 [00:03<00:01,  4.92it/s]2026-10-15 09:01:23,465 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 69%|██████▉   | 18/26 [00:03<00:01,  4.93it/s]2026-10-15 09:01:23,667 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 73%|███████▎  | 19/26 [00:03<00:01,  4.93it/s]2026-10-15 09:01:23,870 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 77%|███████▋  | 20/26 [00:04<00:01,  4.90it/s]2026-10-15 09:01:24,077 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 81%|████████  | 21/26 [00:04<00:01,  4.89it/s]2026-10-15 09:01:24,282 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 85%|████████▍ | 22/26 [00:04<00:00,  4.89it/s]2026-10-15 09:01:24,486 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 88%|████████▊ | 23/26 [00:04<00:00,  4.88it/s]2026-10-15 09:01:24,693 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 92%|█████████▏| 24/26 [00:04<00:00,  4.89it/s]2026-10-15 09:01:24,896 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 96%|█████████▌| 25/26 [00:05<00:00,  4.89it/s]2026-10-15 09:01:25,101 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.90it/s]
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.92it/s]
+[default0]:
+[default0]:  0%|          | 0/51 [00:00<?, ?it/s]2026-10-15 09:01:25,304 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]:  2%|▏         | 1/51 [00:00<00:09,  5.18it/s]2026-10-15 09:01:25,497 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]:  4%|▍         | 2/51 [00:00<00:09,  5.23it/s]2026-10-15 09:01:25,688 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]:  6%|▌         | 3/51 [00:00<00:09,  5.25it/s]2026-10-15 09:01:25,877 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]:  8%|▊         | 4/51 [00:00<00:08,  5.26it/s]2026-10-15 09:01:26,066 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 10%|▉         | 5/51 [00:00<00:08,  5.26it/s]2026-10-15 09:01:26,256 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 12%|█▏        | 6/51 [00:01<00:08,  5.26it/s]2026-10-15 09:01:26,446 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 14%|█▎        | 7/51 [00:01<00:08,  5.26it/s]2026-10-15 09:01:26,636 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 16%|█▌        | 8/51 [00:01<00:08,  5.27it/s]2026-10-15 09:01:26,826 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 18%|█▊        | 9/51 [00:01<00:07,  5.27it/s]2026-10-15 09:01:27,016 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 20%|█▉        | 10/51 [00:01<00:07,  5.26it/s]2026-10-15 09:01:27,206 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 22%|██▏       | 11/51 [00:02<00:07,  5.25it/s]2026-10-15 09:01:27,397 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 24%|██▎       | 12/51 [00:02<00:07,  5.27it/s]2026-10-15 09:01:27,586 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 25%|██▌       | 13/51 [00:02<00:07,  5.28it/s]2026-10-15 09:01:27,775 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 27%|██▋       | 14/51 [00:02<00:06,  5.29it/s]2026-10-15 09:01:27,963 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 29%|██▉       | 15/51 [00:02<00:06,  5.29it/s]2026-10-15 09:01:28,152 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 31%|███▏      | 16/51 [00:03<00:06,  5.27it/s]2026-10-15 09:01:28,343 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 33%|███▎      | 17/51 [00:03<00:06,  5.26it/s]2026-10-15 09:01:28,534 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 35%|███▌      | 18/51 [00:03<00:06,  5.29it/s]2026-10-15 09:01:28,721 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 37%|███▋      | 19/51 [00:03<00:06,  5.29it/s]2026-10-15 09:01:28,909 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 39%|███▉      | 20/51 [00:03<00:05,  5.29it/s]2026-10-15 09:01:29,099 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 41%|████      | 21/51 [00:03<00:05,  5.27it/s]2026-10-15 09:01:29,290 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 43%|████▎     | 22/51 [00:04<00:05,  5.26it/s]2026-10-15 09:01:29,481 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 45%|████▌     | 23/51 [00:04<00:05,  5.26it/s]2026-10-15 09:01:29,671 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 47%|████▋     | 24/51 [00:04<00:05,  5.27it/s]2026-10-15 09:01:29,860 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 49%|████▉     | 25/51 [00:04<00:04,  5.28it/s]2026-10-15 09:01:30,048 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 51%|█████     | 26/51 [00:04<00:04,  5.29it/s]2026-10-15 09:01:30,236 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 53%|█████▎    | 27/51 [00:05<00:04,  5.28it/s]2026-10-15 09:01:30,427 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 55%|█████▍    | 28/51 [00:05<00:04,  5.27it/s]2026-10-15 09:01:30,617 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 57%|█████▋    | 29/51 [00:05<00:04,  5.26it/s]2026-10-15 09:01:30,808 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 59%|█████▉    | 30/51 [00:05<00:03,  5.26it/s]2026-10-15 09:01:30,998 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 61%|██████    | 31/51 [00:05<00:03,  5.27it/s]2026-10-15 09:01:31,187 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 63%|██████▎   | 32/51 [00:06<00:03,  5.27it/s]2026-10-15 09:01:31,377 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 65%|██████▍   | 33/51 [00:06<00:03,  5.27it/s]2026-10-15 09:01:31,567 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 67%|██████▋   | 34/51 [00:06<00:03,  5.26it/s]2026-10-15 09:01:31,757 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 69%|██████▊   | 35/51 [00:06<00:03,  5.26it/s]2026-10-15 09:01:31,947 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 71%|███████   | 36/51 [00:06<00:02,  5.27it/s]2026-10-15 09:01:32,137 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 73%|███████▎  | 37/51 [00:07<00:02,  5.26it/s]2026-10-15 09:01:32,328 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 75%|███████▍  | 38/51 [00:07<00:02,  5.26it/s]2026-10-15 09:01:32,518 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 76%|███████▋  | 39/51 [00:07<00:02,  5.27it/s]2026-10-15 09:01:32,707 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 78%|███████▊  | 40/51 [00:07<00:02,  5.27it/s]2026-10-15 09:01:32,896 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 80%|████████  | 41/51 [00:07<00:01,  5.28it/s]2026-10-15 09:01:33,086 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 82%|████████▏ | 42/51 [00:07<00:01,  5.28it/s]2026-10-15 09:01:33,275 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 84%|████████▍ | 43/51 [00:08<00:01,  5.26it/s]2026-10-15 09:01:33,466 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 86%|████████▋ | 44/51 [00:08<00:01,  5.27it/s]2026-10-15 09:01:33,656 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 88%|████████▊ | 45/51 [00:08<00:01,  5.27it/s]2026-10-15 09:01:33,845 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 90%|█████████ | 46/51 [00:08<00:00,  5.27it/s]2026-10-15 09:01:34,035 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 92%|█████████▏| 47/51 [00:08<00:00,  5.27it/s]2026-10-15 09:01:34,225 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 94%|█████████▍| 48/51 [00:09<00:00,  5.27it/s]2026-10-15 09:01:34,414 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 96%|█████████▌| 49/51 [00:09<00:00,  5.27it/s]2026-10-15 09:01:34,604 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]: 98%|█████████▊| 50/51 [00:09<00:00,  5.29it/s]2026-10-15 09:01:34,792 - root - INFO - FRAME START ID: 4
+[default0]:
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.32it/s]
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.27it/s]
+[default0]:2026-10-15 09:01:34,993 - root - INFO - chunk 2: 14.98 s
+[default0]:
+[default0]:  0%|          | 0/26 [00:00<?, ?it/s]2026-10-15 09:01:34,994 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]:  4%|▍         | 1/26 [00:00<00:05,  4.93it/s]2026-10-15 09:01:35,197 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]:  8%|▊         | 2/26 [00:00<00:04,  4.93it/s]2026-10-15 09:01:35,400 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 12%|█▏        | 3/26 [00:00<00:04,  4.92it/s]2026-10-15 09:01:35,603 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 15%|█▌        | 4/26 [00:00<00:04,  4.93it/s]2026-10-15 09:01:35,806 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 19%|█▉        | 5/26 [00:01<00:04,  4.93it/s]2026-10-15 09:01:36,008 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 23%|██▎       | 6/26 [00:01<00:04,  4.94it/s]2026-10-15 09:01:36,210 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 27%|██▋       | 7/26 [00:01<00:03,  4.94it/s]2026-10-15 09:01:36,413 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 31%|███       | 8/26 [00:01<00:03,  4.95it/s]2026-10-15 09:01:36,614 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 35%|███▍      | 9/26 [00:01<00:03,  4.95it/s]2026-10-15 09:01:36,816 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 38%|███▊      | 10/26 [00:02<00:03,  4.95it/s]2026-10-15 09:01:37,018 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 42%|████▏     | 11/26 [00:02<00:03,  4.95it/s]2026-10-15 09:01:37,220 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 46%|████▌     | 12/26 [00:02<00:02,  4.95it/s]2026-10-15 09:01:37,423 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 50%|█████     | 13/26 [00:02<00:02,  4.94it/s]2026-10-15 09:01:37,625 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 54%|█████▍    | 14/26 [00:02<00:02,  4.93it/s]2026-10-15 09:01:37,829 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 58%|█████▊    | 15/26 [00:03<00:02,  4.93it/s]2026-10-15 09:01:38,031 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 62%|██████▏   | 16/26 [00:03<00:02,  4.93it/s]2026-10-15 09:01:38,234 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 65%|██████▌   | 17/26 [00:03<00:01,  4.94it/s]2026-10-15 09:01:38,437 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 69%|██████▉   | 18/26 [00:03<00:01,  4.93it/s]2026-10-15 09:01:38,640 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 73%|███████▎  | 19/26 [00:03<00:01,  4.94it/s]2026-10-15 09:01:38,842 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 77%|███████▋  | 20/26 [00:04<00:01,  4.93it/s]2026-10-15 09:01:39,045 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 81%|████████  | 21/26 [00:04<00:01,  4.93it/s]2026-10-15 09:01:39,248 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 85%|████████▍ | 22/26 [00:04<00:00,  4.93it/s]2026-10-15 09:01:39,451 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 88%|████████▊ | 23/26 [00:04<00:00,  4.93it/s]2026-10-15 09:01:39,653 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 92%|█████████▏| 24/26 [00:04<00:00,  4.94it/s]2026-10-15 09:01:39,856 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 96%|█████████▌| 25/26 [00:05<00:00,  4.94it/s]2026-10-15 09:01:40,057 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.96it/s]
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.94it/s]
+[default0]:
+[default0]:  0%|          | 0/51 [00:00<?, ?it/s]2026-10-15 09:01:40,258 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]:  2%|▏         | 1/51 [00:00<00:09,  5.30it/s]2026-10-15 09:01:40,446 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]:  4%|▍         | 2/51 [00:00<00:09,  5.32it/s]2026-10-15 09:01:40,634 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]:  6%|▌         | 3/51 [00:00<00:08,  5.34it/s]2026-10-15 09:01:40,821 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]:  8%|▊         | 4/51 [00:00<00:08,  5.34it/s]2026-10-15 09:01:41,008 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 10%|▉         | 5/51 [00:00<00:08,  5.34it/s]2026-10-15 09:01:41,195 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 12%|█▏        | 6/51 [00:01<00:08,  5.34it/s]2026-10-15 09:01:41,382 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 14%|█▎        | 7/51 [00:01<00:08,  5.32it/s]2026-10-15 09:01:41,572 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 16%|█▌        | 8/51 [00:01<00:08,  5.33it/s]2026-10-15 09:01:41,759 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 18%|█▊        | 9/51 [00:01<00:07,  5.33it/s]2026-10-15 09:01:41,946 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 20%|█▉        | 10/51 [00:01<00:07,  5.33it/s]2026-10-15 09:01:42,134 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 22%|██▏       | 11/51 [00:02<00:07,  5.33it/s]2026-10-15 09:01:42,321 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 24%|██▎       | 12/51 [00:02<00:07,  5.33it/s]2026-10-15 09:01:42,509 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 25%|██▌       | 13/51 [00:02<00:07,  5.33it/s]2026-10-15 09:01:42,697 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 27%|██▋       | 14/51 [00:02<00:06,  5.33it/s]2026-10-15 09:01:42,884 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 29%|██▉       | 15/51 [00:02<00:06,  5.33it/s]2026-10-15 09:01:43,072 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 31%|███▏      | 16/51 [00:03<00:06,  5.33it/s]2026-10-15 09:01:43,259 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 33%|███▎      | 17/51 [00:03<00:06,  5.33it/s]2026-10-15 09:01:43,447 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 35%|███▌      | 18/51 [00:03<00:06,  5.31it/s]2026-10-15 09:01:43,637 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 37%|███▋      | 19/51 [00:03<00:06,  5.30it/s]2026-10-15 09:01:43,826 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 39%|███▉      | 20/51 [00:03<00:05,  5.31it/s]2026-10-15 09:01:44,014 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 41%|████      | 21/51 [00:03<00:05,  5.32it/s]2026-10-15 09:01:44,201 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 43%|████▎     | 22/51 [00:04<00:05,  5.32it/s]2026-10-15 09:01:44,389 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 45%|████▌     | 23/51 [00:04<00:05,  5.33it/s]2026-10-15 09:01:44,576 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 47%|████▋     | 24/51 [00:04<00:05,  5.33it/s]2026-10-15 09:01:44,764 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 49%|████▉     | 25/51 [00:04<00:04,  5.33it/s]2026-10-15 09:01:44,951 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 51%|█████     | 26/51 [00:04<00:04,  5.34it/s]2026-10-15 09:01:45,137 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 53%|█████▎    | 27/51 [00:05<00:04,  5.32it/s]2026-10-15 09:01:45,327 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 55%|█████▍    | 28/51 [00:05<00:04,  5.31it/s]2026-10-15 09:01:45,516 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 57%|█████▋    | 29/51 [00:05<00:04,  5.32it/s]2026-10-15 09:01:45,704 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 59%|█████▉    | 30/51 [00:05<00:03,  5.33it/s]2026-10-15 09:01:45,890 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 61%|██████    | 31/51 [00:05<00:03,  5.33it/s]2026-10-15 09:01:46,078 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 63%|██████▎   | 32/51 [00:06<00:03,  5.32it/s]2026-10-15 09:01:46,266 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 65%|██████▍   | 33/51 [00:06<00:03,  5.31it/s]2026-10-15 09:01:46,456 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 67%|██████▋   | 34/51 [00:06<00:03,  5.30it/s]2026-10-15 09:01:46,645 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 69%|██████▊   | 35/51 [00:06<00:03,  5.29it/s]2026-10-15 09:01:46,834 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 71%|███████   | 36/51 [00:06<00:02,  5.29it/s]2026-10-15 09:01:47,024 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 73%|███████▎  | 37/51 [00:06<00:02,  5.29it/s]2026-10-15 09:01:47,213 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 75%|███████▍  | 38/51 [00:07<00:02,  5.28it/s]2026-10-15 09:01:47,402 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 76%|███████▋  | 39/51 [00:07<00:02,  5.26it/s]2026-10-15 09:01:47,594 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 78%|███████▊  | 40/51 [00:07<00:02,  5.26it/s]2026-10-15 09:01:47,784 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 80%|████████  | 41/51 [00:07<00:01,  5.26it/s]2026-10-15 09:01:47,974 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 82%|████████▏ | 42/51 [00:07<00:01,  5.27it/s]2026-10-15 09:01:48,163 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 84%|████████▍ | 43/51 [00:08<00:01,  5.27it/s]2026-10-15 09:01:48,353 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 86%|████████▋ | 44/51 [00:08<00:01,  5.27it/s]2026-10-15 09:01:48,543 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 88%|████████▊ | 45/51 [00:08<00:01,  5.27it/s]2026-10-15 09:01:48,733 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 90%|█████████ | 46/51 [00:08<00:00,  5.27it/s]2026-10-15 09:01:48,922 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 92%|█████████▏| 47/51 [00:08<00:00,  5.28it/s]2026-10-15 09:01:49,112 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 94%|█████████▍| 48/51 [00:09<00:00,  5.28it/s]2026-10-15 09:01:49,300 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 96%|█████████▌| 49/51 [00:09<00:00,  5.27it/s]2026-10-15 09:01:49,492 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]: 98%|█████████▊| 50/51 [00:09<00:00,  5.28it/s]2026-10-15 09:01:49,680 - root - INFO - FRAME START ID: 6
+[default0]:
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.30it/s]
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.31it/s]
+[default0]:2026-10-15 09:01:49,882 - root - INFO - chunk 3: 14.89 s
+[default0]:
+[default0]:  0%|          | 0/26 [00:00<?, ?it/s]2026-10-15 09:01:49,883 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]:  4%|▍         | 1/26 [00:00<00:05,  4.86it/s]2026-10-15 09:01:50,089 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]:  8%|▊         | 2/26 [00:00<00:04,  4.88it/s]2026-10-15 09:01:50,293 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 12%|█▏        | 3/26 [00:00<00:04,  4.89it/s]2026-10-15 09:01:50,498 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 15%|█▌        | 4/26 [00:00<00:04,  4.89it/s]2026-10-15 09:01:50,702 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 19%|█▉        | 5/26 [00:01<00:04,  4.90it/s]2026-10-15 09:01:50,906 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 23%|██▎       | 6/26 [00:01<00:04,  4.89it/s]2026-10-15 09:01:51,111 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 27%|██▋       | 7/26 [00:01<00:03,  4.89it/s]2026-10-15 09:01:51,316 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 31%|███       | 8/26 [00:01<00:03,  4.88it/s]2026-10-15 09:01:51,521 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 35%|███▍      | 9/26 [00:01<00:03,  4.88it/s]2026-10-15 09:01:51,726 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 38%|███▊      | 10/26 [00:02<00:03,  4.88it/s]2026-10-15 09:01:51,931 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 42%|████▏     | 11/26 [00:02<00:03,  4.88it/s]2026-10-15 09:01:52,136 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 46%|████▌     | 12/26 [00:02<00:02,  4.89it/s]2026-10-15 09:01:52,340 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 50%|█████     | 13/26 [00:02<00:02,  4.89it/s]2026-10-15 09:01:52,544 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 54%|█████▍    | 14/26 [00:02<00:02,  4.89it/s]2026-10-15 09:01:52,749 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 58%|█████▊    | 15/26 [00:03<00:02,  4.89it/s]2026-10-15 09:01:52,952 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 62%|██████▏   | 16/26 [00:03<00:02,  4.89it/s]2026-10-15 09:01:53,157 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 65%|██████▌   | 17/26 [00:03<00:01,  4.89it/s]2026-10-15 09:01:53,361 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 69%|██████▉   | 18/26 [00:03<00:01,  4.88it/s]2026-10-15 09:01:53,568 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 73%|███████▎  | 19/26 [00:03<00:01,  4.88it/s]2026-10-15 09:01:53,772 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 77%|███████▋  | 20/26 [00:04<00:01,  4.88it/s]2026-10-15 09:01:53,977 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 81%|████████  | 21/26 [00:04<00:01,  4.89it/s]2026-10-15 09:01:54,181 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 85%|████████▍ | 22/26 [00:04<00:00,  4.88it/s]2026-10-15 09:01:54,387 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 88%|████████▊ | 23/26 [00:04<00:00,  4.88it/s]2026-10-15 09:01:54,591 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 92%|█████████▏| 24/26 [00:04<00:00,  4.88it/s]2026-10-15 09:01:54,796 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 96%|█████████▌| 25/26 [00:05<00:00,  4.89it/s]2026-10-15 09:01:55,000 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.92it/s]
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.89it/s]
+[default0]:
+[default0]:  0%|          | 0/51 [00:00<?, ?it/s]2026-10-15 09:01:55,201 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]:  2%|▏         | 1/51 [00:00<00:09,  5.29it/s]2026-10-15 09:01:55,390 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]:  4%|▍         | 2/51 [00:00<00:09,  5.27it/s]2026-10-15 09:01:55,580 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]:  6%|▌         | 3/51 [00:00<00:09,  5.29it/s]2026-10-15 09:01:55,769 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]:  8%|▊         | 4/51 [00:00<00:08,  5.28it/s]2026-10-15 09:01:55,959 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 10%|▉         | 5/51 [00:00<00:08,  5.29it/s]2026-10-15 09:01:56,147 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 12%|█▏        | 6/51 [00:01<00:08,  5.29it/s]2026-10-15 09:01:56,336 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 14%|█▎        | 7/51 [00:01<00:08,  5.29it/s]2026-10-15 09:01:56,525 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 16%|█▌        | 8/51 [00:01<00:08,  5.28it/s]2026-10-15 09:01:56,715 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 18%|█▊        | 9/51 [00:01<00:07,  5.28it/s]2026-10-15 09:01:56,905 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 20%|█▉        | 10/51 [00:01<00:07,  5.28it/s]2026-10-15 09:01:57,094 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 22%|██▏       | 11/51 [00:02<00:07,  5.29it/s]2026-10-15 09:01:57,282 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 24%|██▎       | 12/51 [00:02<00:07,  5.29it/s]2026-10-15 09:01:57,471 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 25%|██▌       | 13/51 [00:02<00:07,  5.28it/s]2026-10-15 09:01:57,662 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 27%|██▋       | 14/51 [00:02<00:07,  5.28it/s]2026-10-15 09:01:57,850 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 29%|██▉       | 15/51 [00:02<00:06,  5.29it/s]2026-10-15 09:01:58,039 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 31%|███▏      | 16/51 [00:03<00:06,  5.29it/s]2026-10-15 09:01:58,228 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 33%|███▎      | 17/51 [00:03<00:06,  5.28it/s]2026-10-15 09:01:58,418 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 35%|███▌      | 18/51 [00:03<00:06,  5.28it/s]2026-10-15 09:01:58,608 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 37%|███▋      | 19/51 [00:03<00:06,  5.28it/s]2026-10-15 09:01:58,797 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 39%|███▉      | 20/51 [00:03<00:05,  5.28it/s]2026-10-15 09:01:58,987 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 41%|████      | 21/51 [00:03<00:05,  5.28it/s]2026-10-15 09:01:59,176 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 43%|████▎     | 22/51 [00:04<00:05,  5.28it/s]2026-10-15 09:01:59,365 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 45%|████▌     | 23/51 [00:04<00:05,  5.27it/s]2026-10-15 09:01:59,556 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 47%|████▋     | 24/51 [00:04<00:05,  5.29it/s]2026-10-15 09:01:59,744 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 49%|████▉     | 25/51 [00:04<00:04,  5.30it/s]2026-10-15 09:01:59,932 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 51%|█████     | 26/51 [00:04<00:04,  5.30it/s]2026-10-15 09:02:00,120 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 53%|█████▎    | 27/51 [00:05<00:04,  5.32it/s]2026-10-15 09:02:00,307 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 55%|█████▍    | 28/51 [00:05<00:04,  5.32it/s]2026-10-15 09:02:00,494 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 57%|█████▋    | 29/51 [00:05<00:04,  5.32it/s]2026-10-15 09:02:00,683 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 59%|█████▉    | 30/51 [00:05<00:03,  5.32it/s]2026-10-15 09:02:00,870 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 61%|██████    | 31/51 [00:05<00:03,  5.32it/s]2026-10-15 09:02:01,058 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 63%|██████▎   | 32/51 [00:06<00:03,  5.32it/s]2026-10-15 09:02:01,246 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 65%|██████▍   | 33/51 [00:06<00:03,  5.32it/s]2026-10-15 09:02:01,434 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 67%|██████▋   | 34/51 [00:06<00:03,  5.30it/s]2026-10-15 09:02:01,624 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 69%|██████▊   | 35/51 [00:06<00:03,  5.31it/s]2026-10-15 09:02:01,812 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 71%|███████   | 36/51 [00:06<00:02,  5.31it/s][default0]:2026-10-15 09:02:02,000 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 73%|███████▎  | 37/51 [00:06<00:02,  5.32it/s]2026-10-15 09:02:02,188 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 75%|███████▍  | 38/51 [00:07<00:02,  5.32it/s]2026-10-15 09:02:02,376 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 76%|███████▋  | 39/51 [00:07<00:02,  5.32it/s]2026-10-15 09:02:02,563 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 78%|███████▊  | 40/51 [00:07<00:02,  5.32it/s]2026-10-15 09:02:02,751 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 80%|████████  | 41/51 [00:07<00:01,  5.32it/s]2026-10-15 09:02:02,940 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 82%|████████▏ | 42/51 [00:07<00:01,  5.32it/s]2026-10-15 09:02:03,128 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 84%|████████▍ | 43/51 [00:08<00:01,  5.32it/s]2026-10-15 09:02:03,315 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 86%|████████▋ | 44/51 [00:08<00:01,  5.32it/s]2026-10-15 09:02:03,503 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 88%|████████▊ | 45/51 [00:08<00:01,  5.31it/s]2026-10-15 09:02:03,692 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 90%|█████████ | 46/51 [00:08<00:00,  5.32it/s]2026-10-15 09:02:03,880 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 92%|█████████▏| 47/51 [00:08<00:00,  5.32it/s]2026-10-15 09:02:04,067 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 94%|█████████▍| 48/51 [00:09<00:00,  5.32it/s]2026-10-15 09:02:04,255 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 96%|█████████▌| 49/51 [00:09<00:00,  5.32it/s]2026-10-15 09:02:04,443 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]: 98%|█████████▊| 50/51 [00:09<00:00,  5.31it/s]2026-10-15 09:02:04,632 - root - INFO - FRAME START ID: 8
+[default0]:
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.34it/s]
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.30it/s]
+[default0]:2026-10-15 09:02:04,832 - root - INFO - chunk 4: 14.95 s
+[default0]:
+[default0]:  0%|          | 0/26 [00:00<?, ?it/s]2026-10-15 09:02:04,833 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]:  4%|▍         | 1/26 [00:00<00:05,  4.89it/s]2026-10-15 09:02:05,038 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]:  8%|▊         | 2/26 [00:00<00:04,  4.90it/s]2026-10-15 09:02:05,241 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 12%|█▏        | 3/26 [00:00<00:04,  4.90it/s]2026-10-15 09:02:05,446 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 15%|█▌        | 4/26 [00:00<00:04,  4.90it/s]2026-10-15 09:02:05,650 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 19%|█▉        | 5/26 [00:01<00:04,  4.91it/s]2026-10-15 09:02:05,853 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 23%|██▎       | 6/26 [00:01<00:04,  4.91it/s]2026-10-15 09:02:06,057 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 27%|██▋       | 7/26 [00:01<00:03,  4.91it/s]2026-10-15 09:02:06,260 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 31%|███       | 8/26 [00:01<00:03,  4.92it/s]2026-10-15 09:02:06,463 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 35%|███▍      | 9/26 [00:01<00:03,  4.91it/s]2026-10-15 09:02:06,667 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 38%|███▊      | 10/26 [00:02<00:03,  4.92it/s]2026-10-15 09:02:06,870 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 42%|████▏     | 11/26 [00:02<00:03,  4.91it/s]2026-10-15 09:02:07,074 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 46%|████▌     | 12/26 [00:02<00:02,  4.92it/s]2026-10-15 09:02:07,276 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 50%|█████     | 13/26 [00:02<00:02,  4.92it/s]2026-10-15 09:02:07,479 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 54%|█████▍    | 14/26 [00:02<00:02,  4.93it/s]2026-10-15 09:02:07,682 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 58%|█████▊    | 15/26 [00:03<00:02,  4.93it/s]2026-10-15 09:02:07,885 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 62%|██████▏   | 16/26 [00:03<00:02,  4.93it/s]2026-10-15 09:02:08,088 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 65%|██████▌   | 17/26 [00:03<00:01,  4.92it/s]2026-10-15 09:02:08,291 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 69%|██████▉   | 18/26 [00:03<00:01,  4.92it/s]2026-10-15 09:02:08,495 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 73%|███████▎  | 19/26 [00:03<00:01,  4.92it/s]2026-10-15 09:02:08,698 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 77%|███████▋  | 20/26 [00:04<00:01,  4.91it/s]2026-10-15 09:02:08,902 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 81%|████████  | 21/26 [00:04<00:01,  4.91it/s]2026-10-15 09:02:09,106 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 85%|████████▍ | 22/26 [00:04<00:00,  4.91it/s]2026-10-15 09:02:09,309 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 88%|████████▊ | 23/26 [00:04<00:00,  4.91it/s]2026-10-15 09:02:09,514 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 92%|█████████▏| 24/26 [00:04<00:00,  4.90it/s]2026-10-15 09:02:09,718 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 96%|█████████▌| 25/26 [00:05<00:00,  4.91it/s]2026-10-15 09:02:09,921 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.94it/s]
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.92it/s]
+[default0]:
+[default0]:  0%|          | 0/51 [00:00<?, ?it/s]2026-10-15 09:02:10,121 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]:  2%|▏         | 1/51 [00:00<00:09,  5.29it/s]2026-10-15 09:02:10,310 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]:  4%|▍         | 2/51 [00:00<00:09,  5.32it/s]2026-10-15 09:02:10,497 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]:  6%|▌         | 3/51 [00:00<00:09,  5.32it/s]2026-10-15 09:02:10,685 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]:  8%|▊         | 4/51 [00:00<00:08,  5.33it/s]2026-10-15 09:02:10,872 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 10%|▉         | 5/51 [00:00<00:08,  5.33it/s]2026-10-15 09:02:11,060 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 12%|█▏        | 6/51 [00:01<00:08,  5.33it/s]2026-10-15 09:02:11,247 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 14%|█▎        | 7/51 [00:01<00:08,  5.33it/s]2026-10-15 09:02:11,435 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 16%|█▌        | 8/51 [00:01<00:08,  5.32it/s]2026-10-15 09:02:11,624 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 18%|█▊        | 9/51 [00:01<00:07,  5.32it/s]2026-10-15 09:02:11,812 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 20%|█▉        | 10/51 [00:01<00:07,  5.32it/s]2026-10-15 09:02:11,999 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 22%|██▏       | 11/51 [00:02<00:07,  5.33it/s]2026-10-15 09:02:12,187 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 24%|██▎       | 12/51 [00:02<00:07,  5.32it/s]2026-10-15 09:02:12,375 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 25%|██▌       | 13/51 [00:02<00:07,  5.31it/s]2026-10-15 09:02:12,564 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 27%|██▋       | 14/51 [00:02<00:06,  5.31it/s]2026-10-15 09:02:12,752 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 29%|██▉       | 15/51 [00:02<00:06,  5.32it/s]2026-10-15 09:02:12,940 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 31%|███▏      | 16/51 [00:03<00:06,  5.32it/s]2026-10-15 09:02:13,128 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 33%|███▎      | 17/51 [00:03<00:06,  5.32it/s]2026-10-15 09:02:13,315 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 35%|███▌      | 18/51 [00:03<00:06,  5.33it/s]2026-10-15 09:02:13,503 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 37%|███▋      | 19/51 [00:03<00:06,  5.29it/s]2026-10-15 09:02:13,695 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 39%|███▉      | 20/51 [00:03<00:05,  5.27it/s]2026-10-15 09:02:13,887 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 41%|████      | 21/51 [00:03<00:05,  5.26it/s]2026-10-15 09:02:14,077 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 43%|████▎     | 22/51 [00:04<00:05,  5.25it/s]2026-10-15 09:02:14,269 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 45%|████▌     | 23/51 [00:04<00:05,  5.25it/s]2026-10-15 09:02:14,460 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 47%|████▋     | 24/51 [00:04<00:05,  5.25it/s]2026-10-15 09:02:14,650 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 49%|████▉     | 25/51 [00:04<00:04,  5.25it/s]2026-10-15 09:02:14,840 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 51%|█████     | 26/51 [00:04<00:04,  5.25it/s]2026-10-15 09:02:15,031 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 53%|█████▎    | 27/51 [00:05<00:04,  5.24it/s]2026-10-15 09:02:15,222 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 55%|█████▍    | 28/51 [00:05<00:04,  5.24it/s]2026-10-15 09:02:15,413 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 57%|█████▋    | 29/51 [00:05<00:04,  5.24it/s]2026-10-15 09:02:15,604 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 59%|█████▉    | 30/51 [00:05<00:04,  5.22it/s]2026-10-15 09:02:15,798 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 61%|██████    | 31/51 [00:05<00:03,  5.23it/s]2026-10-15 09:02:15,988 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 63%|██████▎   | 32/51 [00:06<00:03,  5.24it/s]2026-10-15 09:02:16,178 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 65%|██████▍   | 33/51 [00:06<00:03,  5.25it/s]2026-10-15 09:02:16,367 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 67%|██████▋   | 34/51 [00:06<00:03,  5.26it/s]2026-10-15 09:02:16,556 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 69%|██████▊   | 35/51 [00:06<00:03,  5.27it/s]2026-10-15 09:02:16,746 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 71%|███████   | 36/51 [00:06<00:02,  5.27it/s]2026-10-15 09:02:16,935 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 73%|███████▎  | 37/51 [00:07<00:02,  5.28it/s]2026-10-15 09:02:17,124 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 75%|███████▍  | 38/51 [00:07<00:02,  5.26it/s]2026-10-15 09:02:17,316 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 76%|███████▋  | 39/51 [00:07<00:02,  5.26it/s]2026-10-15 09:02:17,506 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 78%|███████▊  | 40/51 [00:07<00:02,  5.24it/s]2026-10-15 09:02:17,698 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 80%|████████  | 41/51 [00:07<00:01,  5.25it/s]2026-10-15 09:02:17,889 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 82%|████████▏ | 42/51 [00:07<00:01,  5.25it/s]2026-10-15 09:02:18,079 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 84%|████████▍ | 43/51 [00:08<00:01,  5.25it/s]2026-10-15 09:02:18,269 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 86%|████████▋ | 44/51 [00:08<00:01,  5.25it/s]2026-10-15 09:02:18,460 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 88%|████████▊ | 45/51 [00:08<00:01,  5.25it/s]2026-10-15 09:02:18,650 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 90%|█████████ | 46/51 [00:08<00:00,  5.25it/s]2026-10-15 09:02:18,841 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 92%|█████████▏| 47/51 [00:08<00:00,  5.25it/s]2026-10-15 09:02:19,031 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 94%|█████████▍| 48/51 [00:09<00:00,  5.25it/s]2026-10-15 09:02:19,221 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 96%|█████████▌| 49/51 [00:09<00:00,  5.26it/s]2026-10-15 09:02:19,411 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]: 98%|█████████▊| 50/51 [00:09<00:00,  5.25it/s]2026-10-15 09:02:19,602 - root - INFO - FRAME START ID: 10
+[default0]:
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.25it/s]
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.27it/s]
+[default0]:2026-10-15 09:02:19,807 - root - INFO - chunk 5: 14.97 s
+[default0]:
+[default0]:  0%|          | 0/26 [00:00<?, ?it/s]2026-10-15 09:02:19,808 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]:  4%|▍         | 1/26 [00:00<00:05,  4.79it/s]2026-10-15 09:02:20,017 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]:  8%|▊         | 2/26 [00:00<00:04,  4.83it/s]2026-10-15 09:02:20,223 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 12%|█▏        | 3/26 [00:00<00:04,  4.83it/s]2026-10-15 09:02:20,430 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 15%|█▌        | 4/26 [00:00<00:04,  4.84it/s]2026-10-15 09:02:20,637 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 19%|█▉        | 5/26 [00:01<00:04,  4.83it/s]2026-10-15 09:02:20,844 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 23%|██▎       | 6/26 [00:01<00:04,  4.84it/s]2026-10-15 09:02:21,049 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 27%|██▋       | 7/26 [00:01<00:03,  4.84it/s]2026-10-15 09:02:21,256 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 31%|███       | 8/26 [00:01<00:03,  4.85it/s]2026-10-15 09:02:21,462 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 35%|███▍      | 9/26 [00:01<00:03,  4.84it/s]2026-10-15 09:02:21,669 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 38%|███▊      | 10/26 [00:02<00:03,  4.85it/s]2026-10-15 09:02:21,875 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 42%|████▏     | 11/26 [00:02<00:03,  4.85it/s]2026-10-15 09:02:22,081 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 46%|████▌     | 12/26 [00:02<00:02,  4.86it/s]2026-10-15 09:02:22,286 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 50%|█████     | 13/26 [00:02<00:02,  4.86it/s]2026-10-15 09:02:22,491 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 54%|█████▍    | 14/26 [00:02<00:02,  4.87it/s]2026-10-15 09:02:22,696 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 58%|█████▊    | 15/26 [00:03<00:02,  4.87it/s]2026-10-15 09:02:22,901 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 62%|██████▏   | 16/26 [00:03<00:02,  4.86it/s]2026-10-15 09:02:23,107 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 65%|██████▌   | 17/26 [00:03<00:01,  4.85it/s]2026-10-15 09:02:23,314 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 69%|██████▉   | 18/26 [00:03<00:01,  4.84it/s]2026-10-15 09:02:23,522 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 73%|███████▎  | 19/26 [00:03<00:01,  4.84it/s]2026-10-15 09:02:23,729 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 77%|███████▋  | 20/26 [00:04<00:01,  4.84it/s]2026-10-15 09:02:23,935 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 81%|████████  | 21/26 [00:04<00:01,  4.85it/s]2026-10-15 09:02:24,140 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 85%|████████▍ | 22/26 [00:04<00:00,  4.86it/s]2026-10-15 09:02:24,346 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 88%|████████▊ | 23/26 [00:04<00:00,  4.87it/s]2026-10-15 09:02:24,550 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 92%|█████████▏| 24/26 [00:04<00:00,  4.86it/s]2026-10-15 09:02:24,756 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 96%|█████████▌| 25/26 [00:05<00:00,  4.87it/s]2026-10-15 09:02:24,961 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.91it/s]
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.86it/s]
+[default0]:
+[default0]:  0%|          | 0/51 [00:00<?, ?it/s]2026-10-15 09:02:25,161 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]:  2%|▏         | 1/51 [00:00<00:09,  5.29it/s]2026-10-15 09:02:25,350 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]:  4%|▍         | 2/51 [00:00<00:09,  5.29it/s]2026-10-15 09:02:25,539 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]:  6%|▌         | 3/51 [00:00<00:09,  5.29it/s]2026-10-15 09:02:25,728 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]:  8%|▊         | 4/51 [00:00<00:08,  5.29it/s]2026-10-15 09:02:25,917 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 10%|▉         | 5/51 [00:00<00:08,  5.30it/s]2026-10-15 09:02:26,106 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 12%|█▏        | 6/51 [00:01<00:08,  5.28it/s]2026-10-15 09:02:26,296 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 14%|█▎        | 7/51 [00:01<00:08,  5.29it/s]2026-10-15 09:02:26,484 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 16%|█▌        | 8/51 [00:01<00:08,  5.29it/s]2026-10-15 09:02:26,674 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 18%|█▊        | 9/51 [00:01<00:07,  5.29it/s]2026-10-15 09:02:26,862 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 20%|█▉        | 10/51 [00:01<00:07,  5.28it/s]2026-10-15 09:02:27,053 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 22%|██▏       | 11/51 [00:02<00:07,  5.28it/s]2026-10-15 09:02:27,242 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 24%|██▎       | 12/51 [00:02<00:07,  5.28it/s]2026-10-15 09:02:27,431 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 25%|██▌       | 13/51 [00:02<00:07,  5.29it/s]2026-10-15 09:02:27,620 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 27%|██▋       | 14/51 [00:02<00:07,  5.26it/s]2026-10-15 09:02:27,812 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 29%|██▉       | 15/51 [00:02<00:06,  5.27it/s]2026-10-15 09:02:28,001 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 31%|███▏      | 16/51 [00:03<00:06,  5.27it/s]2026-10-15 09:02:28,190 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 33%|███▎      | 17/51 [00:03<00:06,  5.28it/s]2026-10-15 09:02:28,380 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 35%|███▌      | 18/51 [00:03<00:06,  5.28it/s]2026-10-15 09:02:28,569 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 37%|███▋      | 19/51 [00:03<00:06,  5.28it/s]2026-10-15 09:02:28,758 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 39%|███▉      | 20/51 [00:03<00:05,  5.28it/s]2026-10-15 09:02:28,947 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 41%|████      | 21/51 [00:03<00:05,  5.28it/s]2026-10-15 09:02:29,137 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 43%|████▎     | 22/51 [00:04<00:05,  5.27it/s]2026-10-15 09:02:29,328 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 45%|████▌     | 23/51 [00:04<00:05,  5.27it/s]2026-10-15 09:02:29,518 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 47%|████▋     | 24/51 [00:04<00:05,  5.26it/s]2026-10-15 09:02:29,709 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 49%|████▉     | 25/51 [00:04<00:04,  5.25it/s]2026-10-15 09:02:29,900 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 51%|█████     | 26/51 [00:04<00:04,  5.25it/s]2026-10-15 09:02:30,090 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 53%|█████▎    | 27/51 [00:05<00:04,  5.25it/s]2026-10-15 09:02:30,281 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 55%|█████▍    | 28/51 [00:05<00:04,  5.24it/s]2026-10-15 09:02:30,472 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 57%|█████▋    | 29/51 [00:05<00:04,  5.23it/s]2026-10-15 09:02:30,664 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 59%|█████▉    | 30/51 [00:05<00:04,  5.23it/s]2026-10-15 09:02:30,856 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 61%|██████    | 31/51 [00:05<00:03,  5.22it/s]2026-10-15 09:02:31,048 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 63%|██████▎   | 32/51 [00:06<00:03,  5.22it/s]2026-10-15 09:02:31,240 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 65%|██████▍   | 33/51 [00:06<00:03,  5.20it/s]2026-10-15 09:02:31,433 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 67%|██████▋   | 34/51 [00:06<00:03,  5.21it/s]2026-10-15 09:02:31,625 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 69%|██████▊   | 35/51 [00:06<00:03,  5.18it/s]2026-10-15 09:02:31,821 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 71%|███████   | 36/51 [00:06<00:02,  5.18it/s]2026-10-15 09:02:32,013 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 73%|███████▎  | 37/51 [00:07<00:02,  5.19it/s]2026-10-15 09:02:32,205 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 75%|███████▍  | 38/51 [00:07<00:02,  5.19it/s]2026-10-15 09:02:32,398 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 76%|███████▋  | 39/51 [00:07<00:02,  5.19it/s]2026-10-15 09:02:32,590 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 78%|███████▊  | 40/51 [00:07<00:02,  5.20it/s]2026-10-15 09:02:32,782 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 80%|████████  | 41/51 [00:07<00:01,  5.21it/s]2026-10-15 09:02:32,973 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 82%|████████▏ | 42/51 [00:08<00:01,  5.21it/s]2026-10-15 09:02:33,165 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 84%|████████▍ | 43/51 [00:08<00:01,  5.21it/s]2026-10-15 09:02:33,357 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 86%|████████▋ | 44/51 [00:08<00:01,  5.21it/s]2026-10-15 09:02:33,549 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 88%|████████▊ | 45/51 [00:08<00:01,  5.20it/s]2026-10-15 09:02:33,742 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 90%|█████████ | 46/51 [00:08<00:00,  5.20it/s]2026-10-15 09:02:33,934 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 92%|█████████▏| 47/51 [00:08<00:00,  5.20it/s]2026-10-15 09:02:34,127 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 94%|█████████▍| 48/51 [00:09<00:00,  5.20it/s]2026-10-15 09:02:34,319 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 96%|█████████▌| 49/51 [00:09<00:00,  5.20it/s]2026-10-15 09:02:34,511 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]: 98%|█████████▊| 50/51 [00:09<00:00,  5.21it/s]2026-10-15 09:02:34,703 - root - INFO - FRAME START ID: 12
+[default0]:
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.24it/s]
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.24it/s]
+[default0]:2026-10-15 09:02:34,906 - root - INFO - chunk 6: 15.10 s
+[default0]:
+[default0]:  0%|          | 0/26 [00:00<?, ?it/s]2026-10-15 09:02:34,907 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]:  4%|▍         | 1/26 [00:00<00:05,  4.79it/s]2026-10-15 09:02:35,116 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]:  8%|▊         | 2/26 [00:00<00:05,  4.79it/s]2026-10-15 09:02:35,324 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 12%|█▏        | 3/26 [00:00<00:04,  4.80it/s]2026-10-15 09:02:35,532 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 15%|█▌        | 4/26 [00:00<00:04,  4.79it/s]2026-10-15 09:02:35,742 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 19%|█▉        | 5/26 [00:01<00:04,  4.80it/s]2026-10-15 09:02:35,950 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 23%|██▎       | 6/26 [00:01<00:04,  4.80it/s]2026-10-15 09:02:36,157 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 27%|██▋       | 7/26 [00:01<00:03,  4.81it/s]2026-10-15 09:02:36,364 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 31%|███       | 8/26 [00:01<00:03,  4.80it/s]2026-10-15 09:02:36,573 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 35%|███▍      | 9/26 [00:01<00:03,  4.81it/s]2026-10-15 09:02:36,780 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 38%|███▊      | 10/26 [00:02<00:03,  4.81it/s]2026-10-15 09:02:36,989 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 42%|████▏     | 11/26 [00:02<00:03,  4.81it/s]2026-10-15 09:02:37,197 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 46%|████▌     | 12/26 [00:02<00:02,  4.80it/s]2026-10-15 09:02:37,406 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 50%|█████     | 13/26 [00:02<00:02,  4.81it/s]2026-10-15 09:02:37,613 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 54%|█████▍    | 14/26 [00:02<00:02,  4.79it/s]2026-10-15 09:02:37,823 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 58%|█████▊    | 15/26 [00:03<00:02,  4.80it/s]2026-10-15 09:02:38,031 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 62%|██████▏   | 16/26 [00:03<00:02,  4.80it/s]2026-10-15 09:02:38,239 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 65%|██████▌   | 17/26 [00:03<00:01,  4.81it/s]2026-10-15 09:02:38,445 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 69%|██████▉   | 18/26 [00:03<00:01,  4.82it/s]2026-10-15 09:02:38,652 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 73%|███████▎  | 19/26 [00:03<00:01,  4.83it/s]2026-10-15 09:02:38,859 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 77%|███████▋  | 20/26 [00:04<00:01,  4.83it/s]2026-10-15 09:02:39,066 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 81%|████████  | 21/26 [00:04<00:01,  4.83it/s]2026-10-15 09:02:39,273 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 85%|████████▍ | 22/26 [00:04<00:00,  4.83it/s]2026-10-15 09:02:39,479 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 88%|████████▊ | 23/26 [00:04<00:00,  4.83it/s]2026-10-15 09:02:39,686 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 92%|█████████▏| 24/26 [00:04<00:00,  4.82it/s]2026-10-15 09:02:39,894 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 96%|█████████▌| 25/26 [00:05<00:00,  4.83it/s]2026-10-15 09:02:40,101 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.88it/s]
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.82it/s]
+[default0]:
+[default0]:  0%|          | 0/51 [00:00<?, ?it/s]2026-10-15 09:02:40,302 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]:  2%|▏         | 1/51 [00:00<00:09,  5.25it/s]2026-10-15 09:02:40,492 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]:  4%|▍         | 2/51 [00:00<00:09,  5.26it/s]2026-10-15 09:02:40,682 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]:  6%|▌         | 3/51 [00:00<00:09,  5.26it/s]2026-10-15 09:02:40,872 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]:  8%|▊         | 4/51 [00:00<00:08,  5.26it/s]2026-10-15 09:02:41,063 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 10%|▉         | 5/51 [00:00<00:08,  5.26it/s]2026-10-15 09:02:41,253 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 12%|█▏        | 6/51 [00:01<00:08,  5.25it/s]2026-10-15 09:02:41,444 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 14%|█▎        | 7/51 [00:01<00:08,  5.24it/s]2026-10-15 09:02:41,635 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 16%|█▌        | 8/51 [00:01<00:08,  5.23it/s]2026-10-15 09:02:41,827 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 18%|█▊        | 9/51 [00:01<00:08,  5.24it/s]2026-10-15 09:02:42,017 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 20%|█▉        | 10/51 [00:01<00:07,  5.24it/s]2026-10-15 09:02:42,207 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 22%|██▏       | 11/51 [00:02<00:07,  5.25it/s]2026-10-15 09:02:42,398 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 24%|██▎       | 12/51 [00:02<00:07,  5.25it/s]2026-10-15 09:02:42,588 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 25%|██▌       | 13/51 [00:02<00:07,  5.25it/s]2026-10-15 09:02:42,779 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 27%|██▋       | 14/51 [00:02<00:07,  5.25it/s]2026-10-15 09:02:42,969 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 29%|██▉       | 15/51 [00:02<00:06,  5.24it/s]2026-10-15 09:02:43,161 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 31%|███▏      | 16/51 [00:03<00:06,  5.24it/s]2026-10-15 09:02:43,352 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 33%|███▎      | 17/51 [00:03<00:06,  5.23it/s]2026-10-15 09:02:43,544 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 35%|███▌      | 18/51 [00:03<00:06,  5.23it/s]2026-10-15 09:02:43,735 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 37%|███▋      | 19/51 [00:03<00:06,  5.20it/s]2026-10-15 09:02:43,930 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 39%|███▉      | 20/51 [00:03<00:05,  5.21it/s]2026-10-15 09:02:44,121 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 41%|████      | 21/51 [00:04<00:05,  5.21it/s]2026-10-15 09:02:44,313 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 43%|████▎     | 22/51 [00:04<00:05,  5.21it/s]2026-10-15 09:02:44,505 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 45%|████▌     | 23/51 [00:04<00:05,  5.21it/s]2026-10-15 09:02:44,696 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 47%|████▋     | 24/51 [00:04<00:05,  5.21it/s]2026-10-15 09:02:44,888 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 49%|████▉     | 25/51 [00:04<00:04,  5.21it/s]2026-10-15 09:02:45,080 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 51%|█████     | 26/51 [00:04<00:04,  5.21it/s]2026-10-15 09:02:45,273 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 53%|█████▎    | 27/51 [00:05<00:04,  5.21it/s]2026-10-15 09:02:45,464 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 55%|█████▍    | 28/51 [00:05<00:04,  5.21it/s]2026-10-15 09:02:45,657 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 57%|█████▋    | 29/51 [00:05<00:04,  5.19it/s]2026-10-15 09:02:45,850 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 59%|█████▉    | 30/51 [00:05<00:04,  5.20it/s]2026-10-15 09:02:46,042 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 61%|██████    | 31/51 [00:05<00:03,  5.20it/s]2026-10-15 09:02:46,234 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 63%|██████▎   | 32/51 [00:06<00:03,  5.20it/s]2026-10-15 09:02:46,426 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 65%|██████▍   | 33/51 [00:06<00:03,  5.21it/s]2026-10-15 09:02:46,618 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 67%|██████▋   | 34/51 [00:06<00:03,  5.21it/s]2026-10-15 09:02:46,809 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 69%|██████▊   | 35/51 [00:06<00:03,  5.22it/s]2026-10-15 09:02:47,001 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 71%|███████   | 36/51 [00:06<00:02,  5.22it/s]2026-10-15 09:02:47,192 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 73%|███████▎  | 37/51 [00:07<00:02,  5.22it/s]2026-10-15 09:02:47,383 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 75%|███████▍  | 38/51 [00:07<00:02,  5.22it/s]2026-10-15 09:02:47,575 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 76%|███████▋  | 39/51 [00:07<00:02,  5.23it/s]2026-10-15 09:02:47,766 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 78%|███████▊  | 40/51 [00:07<00:02,  5.21it/s]2026-10-15 09:02:47,959 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 80%|████████  | 41/51 [00:07<00:01,  5.21it/s]2026-10-15 09:02:48,151 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 82%|████████▏ | 42/51 [00:08<00:01,  5.21it/s]2026-10-15 09:02:48,343 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 84%|████████▍ | 43/51 [00:08<00:01,  5.21it/s]2026-10-15 09:02:48,536 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 86%|████████▋ | 44/51 [00:08<00:01,  5.21it/s]2026-10-15 09:02:48,727 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 88%|████████▊ | 45/51 [00:08<00:01,  5.21it/s]2026-10-15 09:02:48,919 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 90%|█████████ | 46/51 [00:08<00:00,  5.21it/s]2026-10-15 09:02:49,112 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 92%|█████████▏| 47/51 [00:09<00:00,  5.21it/s]2026-10-15 09:02:49,303 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 94%|█████████▍| 48/51 [00:09<00:00,  5.21it/s]2026-10-15 09:02:49,495 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 96%|█████████▌| 49/51 [00:09<00:00,  5.21it/s]2026-10-15 09:02:49,687 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]: 98%|█████████▊| 50/51 [00:09<00:00,  5.20it/s]2026-10-15 09:02:49,881 - root - INFO - FRAME START ID: 14
+[default0]:
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.24it/s]
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.22it/s]
+[default0]:2026-10-15 09:02:50,083 - root - INFO - chunk 7: 15.18 s
+[default0]:
+[default0]:  0%|          | 0/26 [00:00<?, ?it/s]2026-10-15 09:02:50,084 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]:  4%|▍         | 1/26 [00:00<00:05,  4.75it/s]2026-10-15 09:02:50,295 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]:  8%|▊         | 2/26 [00:00<00:05,  4.78it/s]2026-10-15 09:02:50,503 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 12%|█▏        | 3/26 [00:00<00:04,  4.77it/s]2026-10-15 09:02:50,713 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 15%|█▌        | 4/26 [00:00<00:04,  4.77it/s]2026-10-15 09:02:50,923 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 19%|█▉        | 5/26 [00:01<00:04,  4.76it/s]2026-10-15 09:02:51,134 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 23%|██▎       | 6/26 [00:01<00:04,  4.77it/s]2026-10-15 09:02:51,343 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 27%|██▋       | 7/26 [00:01<00:03,  4.77it/s]2026-10-15 09:02:51,553 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 31%|███       | 8/26 [00:01<00:03,  4.76it/s]2026-10-15 09:02:51,763 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 35%|███▍      | 9/26 [00:01<00:03,  4.75it/s]2026-10-15 09:02:51,974 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 38%|███▊      | 10/26 [00:02<00:03,  4.76it/s]2026-10-15 09:02:52,184 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 42%|████▏     | 11/26 [00:02<00:03,  4.76it/s]2026-10-15 09:02:52,394 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 46%|████▌     | 12/26 [00:02<00:02,  4.76it/s]2026-10-15 09:02:52,604 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 50%|█████     | 13/26 [00:02<00:02,  4.77it/s]2026-10-15 09:02:52,812 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 54%|█████▍    | 14/26 [00:02<00:02,  4.78it/s]2026-10-15 09:02:53,021 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 58%|█████▊    | 15/26 [00:03<00:02,  4.78it/s]2026-10-15 09:02:53,230 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 62%|██████▏   | 16/26 [00:03<00:02,  4.77it/s]2026-10-15 09:02:53,440 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 65%|██████▌   | 17/26 [00:03<00:01,  4.77it/s]2026-10-15 09:02:53,650 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 69%|██████▉   | 18/26 [00:03<00:01,  4.76it/s]2026-10-15 09:02:53,861 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 73%|███████▎  | 19/26 [00:03<00:01,  4.75it/s]2026-10-15 09:02:54,073 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 77%|███████▋  | 20/26 [00:04<00:01,  4.71it/s]2026-10-15 09:02:54,289 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 81%|████████  | 21/26 [00:04<00:01,  4.73it/s]2026-10-15 09:02:54,499 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 85%|████████▍ | 22/26 [00:04<00:00,  4.74it/s]2026-10-15 09:02:54,709 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 88%|████████▊ | 23/26 [00:04<00:00,  4.74it/s]2026-10-15 09:02:54,919 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 92%|█████████▏| 24/26 [00:05<00:00,  4.75it/s]2026-10-15 09:02:55,129 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 96%|█████████▌| 25/26 [00:05<00:00,  4.74it/s]2026-10-15 09:02:55,341 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.80it/s]
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.76it/s]
+[default0]:
+[default0]:  0%|          | 0/51 [00:00<?, ?it/s]2026-10-15 09:02:55,544 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]:  2%|▏         | 1/51 [00:00<00:09,  5.13it/s]2026-10-15 09:02:55,739 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]:  4%|▍         | 2/51 [00:00<00:09,  5.10it/s]2026-10-15 09:02:55,936 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]:  6%|▌         | 3/51 [00:00<00:09,  5.12it/s]2026-10-15 09:02:56,130 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]:  8%|▊         | 4/51 [00:00<00:09,  5.13it/s]2026-10-15 09:02:56,325 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 10%|▉         | 5/51 [00:00<00:08,  5.14it/s]2026-10-15 09:02:56,519 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 12%|█▏        | 6/51 [00:01<00:08,  5.15it/s]2026-10-15 09:02:56,712 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 14%|█▎        | 7/51 [00:01<00:08,  5.16it/s]2026-10-15 09:02:56,905 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 16%|█▌        | 8/51 [00:01<00:08,  5.16it/s]2026-10-15 09:02:57,099 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 18%|█▊        | 9/51 [00:01<00:08,  5.17it/s]2026-10-15 09:02:57,292 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 20%|█▉        | 10/51 [00:01<00:07,  5.14it/s]2026-10-15 09:02:57,488 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 22%|██▏       | 11/51 [00:02<00:07,  5.15it/s]2026-10-15 09:02:57,682 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 24%|██▎       | 12/51 [00:02<00:07,  5.12it/s]2026-10-15 09:02:57,880 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 25%|██▌       | 13/51 [00:02<00:07,  5.15it/s]2026-10-15 09:02:58,072 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 27%|██▋       | 14/51 [00:02<00:07,  5.14it/s]2026-10-15 09:02:58,267 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 29%|██▉       | 15/51 [00:02<00:07,  5.14it/s]2026-10-15 09:02:58,461 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 31%|███▏      | 16/51 [00:03<00:06,  5.14it/s]2026-10-15 09:02:58,656 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 33%|███▎      | 17/51 [00:03<00:06,  5.14it/s]2026-10-15 09:02:58,850 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 35%|███▌      | 18/51 [00:03<00:06,  5.15it/s]2026-10-15 09:02:59,043 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 37%|███▋      | 19/51 [00:03<00:06,  5.16it/s]2026-10-15 09:02:59,237 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 39%|███▉      | 20/51 [00:03<00:06,  5.16it/s]2026-10-15 09:02:59,431 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 41%|████      | 21/51 [00:04<00:05,  5.17it/s]2026-10-15 09:02:59,623 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 43%|████▎     | 22/51 [00:04<00:05,  5.17it/s]2026-10-15 09:02:59,816 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 45%|████▌     | 23/51 [00:04<00:05,  5.16it/s]2026-10-15 09:03:00,011 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 47%|████▋     | 24/51 [00:04<00:05,  5.17it/s]2026-10-15 09:03:00,204 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 49%|████▉     | 25/51 [00:04<00:05,  5.18it/s]2026-10-15 09:03:00,396 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 51%|█████     | 26/51 [00:05<00:04,  5.17it/s]2026-10-15 09:03:00,591 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 53%|█████▎    | 27/51 [00:05<00:04,  5.18it/s]2026-10-15 09:03:00,783 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 55%|█████▍    | 28/51 [00:05<00:04,  5.19it/s]2026-10-15 09:03:00,974 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 57%|█████▋    | 29/51 [00:05<00:04,  5.19it/s]2026-10-15 09:03:01,167 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 59%|█████▉    | 30/51 [00:05<00:04,  5.20it/s]2026-10-15 09:03:01,359 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 61%|██████    | 31/51 [00:06<00:03,  5.19it/s]2026-10-15 09:03:01,553 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 63%|██████▎   | 32/51 [00:06<00:03,  5.18it/s]2026-10-15 09:03:01,746 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 65%|██████▍   | 33/51 [00:06<00:03,  5.17it/s]2026-10-15 09:03:01,941 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 67%|██████▋   | 34/51 [00:06<00:03,  5.17it/s]2026-10-15 09:03:02,134 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 69%|██████▊   | 35/51 [00:06<00:03,  5.18it/s]2026-10-15 09:03:02,326 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 71%|███████   | 36/51 [00:06<00:02,  5.18it/s]2026-10-15 09:03:02,519 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 73%|███████▎  | 37/51 [00:07<00:02,  5.18it/s]2026-10-15 09:03:02,711 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 75%|███████▍  | 38/51 [00:07<00:02,  5.18it/s]2026-10-15 09:03:02,905 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 76%|███████▋  | 39/51 [00:07<00:02,  5.18it/s]2026-10-15 09:03:03,098 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 78%|███████▊  | 40/51 [00:07<00:02,  5.18it/s]2026-10-15 09:03:03,291 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 80%|████████  | 41/51 [00:07<00:01,  5.19it/s]2026-10-15 09:03:03,483 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 82%|████████▏ | 42/51 [00:08<00:01,  5.19it/s]2026-10-15 09:03:03,676 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 84%|████████▍ | 43/51 [00:08<00:01,  5.19it/s]2026-10-15 09:03:03,868 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 86%|████████▋ | 44/51 [00:08<00:01,  5.18it/s]2026-10-15 09:03:04,062 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 88%|████████▊ | 45/51 [00:08<00:01,  5.18it/s]2026-10-15 09:03:04,255 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 90%|█████████ | 46/51 [00:08<00:00,  5.19it/s]2026-10-15 09:03:04,447 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 92%|█████████▏| 47/51 [00:09<00:00,  5.19it/s]2026-10-15 09:03:04,639 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 94%|█████████▍| 48/51 [00:09<00:00,  5.19it/s]2026-10-15 09:03:04,832 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 96%|█████████▌| 49/51 [00:09<00:00,  5.19it/s]2026-10-15 09:03:05,024 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]: 98%|█████████▊| 50/51 [00:09<00:00,  5.19it/s]2026-10-15 09:03:05,217 - root - INFO - FRAME START ID: 16
+[default0]:
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.23it/s]
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.17it/s]
+[default0]:2026-10-15 09:03:05,420 - root - INFO - chunk 8: 15.34 s
+[default0]:
+[default0]:  0%|          | 0/26 [00:00<?, ?it/s]2026-10-15 09:03:05,421 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]:  4%|▍         | 1/26 [00:00<00:05,  4.70it/s]2026-10-15 09:03:05,634 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]:  8%|▊         | 2/26 [00:00<00:05,  4.72it/s]2026-10-15 09:03:05,846 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 12%|█▏        | 3/26 [00:00<00:04,  4.71it/s]2026-10-15 09:03:06,058 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 15%|█▌        | 4/26 [00:00<00:04,  4.72it/s]2026-10-15 09:03:06,269 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 19%|█▉        | 5/26 [00:01<00:04,  4.73it/s]2026-10-15 09:03:06,481 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 23%|██▎       | 6/26 [00:01<00:04,  4.73it/s]2026-10-15 09:03:06,692 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 27%|██▋       | 7/26 [00:01<00:04,  4.72it/s]2026-10-15 09:03:06,905 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 31%|███       | 8/26 [00:01<00:03,  4.72it/s]2026-10-15 09:03:07,117 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 35%|███▍      | 9/26 [00:01<00:03,  4.72it/s]2026-10-15 09:03:07,328 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 38%|███▊      | 10/26 [00:02<00:03,  4.73it/s]2026-10-15 09:03:07,539 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 42%|████▏     | 11/26 [00:02<00:03,  4.73it/s]2026-10-15 09:03:07,751 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 46%|████▌     | 12/26 [00:02<00:02,  4.72it/s]2026-10-15 09:03:07,963 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 50%|█████     | 13/26 [00:02<00:02,  4.73it/s]2026-10-15 09:03:08,174 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 54%|█████▍    | 14/26 [00:02<00:02,  4.73it/s]2026-10-15 09:03:08,385 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 58%|█████▊    | 15/26 [00:03<00:02,  4.73it/s]2026-10-15 09:03:08,596 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 62%|██████▏   | 16/26 [00:03<00:02,  4.73it/s]2026-10-15 09:03:08,808 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 65%|██████▌   | 17/26 [00:03<00:01,  4.73it/s]2026-10-15 09:03:09,018 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 69%|██████▉   | 18/26 [00:03<00:01,  4.74it/s]2026-10-15 09:03:09,229 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 73%|███████▎  | 19/26 [00:04<00:01,  4.73it/s]2026-10-15 09:03:09,441 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 77%|███████▋  | 20/26 [00:04<00:01,  4.74it/s]2026-10-15 09:03:09,652 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 81%|████████  | 21/26 [00:04<00:01,  4.74it/s]2026-10-15 09:03:09,863 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 85%|████████▍ | 22/26 [00:04<00:00,  4.73it/s]2026-10-15 09:03:10,075 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 88%|████████▊ | 23/26 [00:04<00:00,  4.73it/s]2026-10-15 09:03:10,286 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 92%|█████████▏| 24/26 [00:05<00:00,  4.73it/s]2026-10-15 09:03:10,497 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 96%|█████████▌| 25/26 [00:05<00:00,  4.73it/s]2026-10-15 09:03:10,708 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.80it/s]
+[default0]:100%|██████████| 26/26 [00:05<00:00,  4.74it/s]
+[default0]:
+[default0]:  0%|          | 0/51 [00:00<?, ?it/s]2026-10-15 09:03:10,910 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]:  2%|▏         | 1/51 [00:00<00:09,  5.16it/s]2026-10-15 09:03:11,104 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]:  4%|▍         | 2/51 [00:00<00:09,  5.17it/s]2026-10-15 09:03:11,297 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]:  6%|▌         | 3/51 [00:00<00:09,  5.18it/s]2026-10-15 09:03:11,490 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]:  8%|▊         | 4/51 [00:00<00:09,  5.18it/s]2026-10-15 09:03:11,683 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 10%|▉         | 5/51 [00:00<00:08,  5.18it/s]2026-10-15 09:03:11,876 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 12%|█▏        | 6/51 [00:01<00:08,  5.15it/s]2026-10-15 09:03:12,073 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 14%|█▎        | 7/51 [00:01<00:08,  5.15it/s]2026-10-15 09:03:12,266 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 16%|█▌        | 8/51 [00:01<00:08,  5.17it/s]2026-10-15 09:03:12,458 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 18%|█▊        | 9/51 [00:01<00:08,  5.18it/s]2026-10-15 09:03:12,650 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 20%|█▉        | 10/51 [00:01<00:07,  5.19it/s]2026-10-15 09:03:12,842 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 22%|██▏       | 11/51 [00:02<00:07,  5.19it/s]2026-10-15 09:03:13,035 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 24%|██▎       | 12/51 [00:02<00:07,  5.20it/s]2026-10-15 09:03:13,226 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 25%|██▌       | 13/51 [00:02<00:07,  5.20it/s]2026-10-15 09:03:13,418 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 27%|██▋       | 14/51 [00:02<00:07,  5.21it/s]2026-10-15 09:03:13,610 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 29%|██▉       | 15/51 [00:02<00:06,  5.20it/s]2026-10-15 09:03:13,802 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 31%|███▏      | 16/51 [00:03<00:06,  5.19it/s]2026-10-15 09:03:13,996 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 33%|███▎      | 17/51 [00:03<00:06,  5.19it/s]2026-10-15 09:03:14,189 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 35%|███▌      | 18/51 [00:03<00:06,  5.20it/s]2026-10-15 09:03:14,381 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 37%|███▋      | 19/51 [00:03<00:06,  5.20it/s]2026-10-15 09:03:14,573 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 39%|███▉      | 20/51 [00:03<00:05,  5.20it/s]2026-10-15 09:03:14,765 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 41%|████      | 21/51 [00:04<00:05,  5.20it/s]2026-10-15 09:03:14,958 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 43%|████▎     | 22/51 [00:04<00:05,  5.20it/s]2026-10-15 09:03:15,150 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 45%|████▌     | 23/51 [00:04<00:05,  5.19it/s]2026-10-15 09:03:15,343 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 47%|████▋     | 24/51 [00:04<00:05,  5.20it/s]2026-10-15 09:03:15,535 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 49%|████▉     | 25/51 [00:04<00:05,  5.20it/s]2026-10-15 09:03:15,727 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 51%|█████     | 26/51 [00:05<00:04,  5.20it/s]2026-10-15 09:03:15,919 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 53%|█████▎    | 27/51 [00:05<00:04,  5.19it/s]2026-10-15 09:03:16,113 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 55%|█████▍    | 28/51 [00:05<00:04,  5.20it/s]2026-10-15 09:03:16,305 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 57%|█████▋    | 29/51 [00:05<00:04,  5.20it/s]2026-10-15 09:03:16,496 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 59%|█████▉    | 30/51 [00:05<00:04,  5.21it/s]2026-10-15 09:03:16,688 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 61%|██████    | 31/51 [00:05<00:03,  5.21it/s]2026-10-15 09:03:16,880 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 63%|██████▎   | 32/51 [00:06<00:03,  5.21it/s]2026-10-15 09:03:17,072 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 65%|██████▍   | 33/51 [00:06<00:03,  5.21it/s]2026-10-15 09:03:17,264 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 67%|██████▋   | 34/51 [00:06<00:03,  5.21it/s]2026-10-15 09:03:17,456 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 69%|██████▊   | 35/51 [00:06<00:03,  5.21it/s]2026-10-15 09:03:17,648 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 71%|███████   | 36/51 [00:06<00:02,  5.20it/s]2026-10-15 09:03:17,841 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 73%|███████▎  | 37/51 [00:07<00:02,  5.19it/s]2026-10-15 09:03:18,035 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 75%|███████▍  | 38/51 [00:07<00:02,  5.20it/s]2026-10-15 09:03:18,226 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 76%|███████▋  | 39/51 [00:07<00:02,  4.90it/s]2026-10-15 09:03:18,461 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 78%|███████▊  | 40/51 [00:07<00:02,  4.86it/s]2026-10-15 09:03:18,672 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 80%|████████  | 41/51 [00:07<00:02,  4.91it/s]2026-10-15 09:03:18,867 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 82%|████████▏ | 42/51 [00:08<00:01,  4.98it/s]2026-10-15 09:03:19,061 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 84%|████████▍ | 43/51 [00:08<00:01,  5.04it/s]2026-10-15 09:03:19,253 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 86%|████████▋ | 44/51 [00:08<00:01,  5.09it/s]2026-10-15 09:03:19,446 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 88%|████████▊ | 45/51 [00:08<00:01,  5.11it/s]2026-10-15 09:03:19,639 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 90%|█████████ | 46/51 [00:08<00:00,  5.14it/s]2026-10-15 09:03:19,831 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 92%|█████████▏| 47/51 [00:09<00:00,  5.15it/s]2026-10-15 09:03:20,025 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 94%|█████████▍| 48/51 [00:09<00:00,  5.15it/s]2026-10-15 09:03:20,218 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 96%|█████████▌| 49/51 [00:09<00:00,  5.17it/s]2026-10-15 09:03:20,411 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]: 98%|█████████▊| 50/51 [00:09<00:00,  5.18it/s]2026-10-15 09:03:20,603 - root - INFO - FRAME START ID: 18
+[default0]:
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.23it/s]
+[default0]:100%|██████████| 51/51 [00:09<00:00,  5.16it/s]
+[default0]:2026-10-15 09:03:20,805 - root - INFO - chunk 9: 15.38 s
+[default0]:2026-10-15 09:04:14,836 - root - INFO - Finish all process!!!!!!!!!!!!
+[default0]:[rank0]:[W1015 09:04:26.857569564 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[default0]:[rank0]:[W1015 09:04:29.351665424 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+[W1015 09:04:38.945093936 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+wall_seconds=465

@@ -1,0 +1,26 @@
+seed: 42
+env_runner: {'_target_': 'unified_video_action.env_runner.pusht_image_runner.PushTImageRunner', 'fps': 10, 'legacy_test': True, 'max_steps': 300, 'n_action_steps': 8, 'n_envs': 1, 'n_obs_steps': 16, 'n_test': 1, 'n_test_vis': 0, 'n_train': 0, 'n_train_vis': 2, 'past_action': False, 'test_start_seed': 100000, 'train_start_seed': 0, 'fix_goal': True}
+Working with z of shape (1, 16, 16, 16) = 4096 dimensions.
+-------------------------------------------------------------------
+Loading pre-trained KL-VAE
+Missing keys:
+[]
+Unexpected keys:
+[]
+Restored from pretrained_models/vae/kl16.ckpt
+-------------------------------------------------------------------
+pretrained model not found:  /scratch/m000073/shuang/unified_video_action_local/checkpoints/pusht/pusht_video2_act4/checkpoints/latest.ckpt
+----------------------------------------------------------------------
+task_modes ['video_model', 'dynamic_model', 'policy_model', 'inverse_model', 'full_dynamic_model']
+----------------------------------------------------------------------
+Loaded checkpoint from checkpoints/pusht.ckpt
+loading checkpoint, use ema model for model
+cuda initialized before env runners: False
+/home/minhsctn1608/miniconda3/envs/uva/lib/python3.9/site-packages/pygame/pkgdata.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_stream, resource_exists
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.23)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Eval PushtImageRunner 1/1:   0%|          | 0/300 [00:00<?, ?it/s]Eval PushtImageRunner 1/1:  61%|██████▏   | 184/300 [00:05<00:03, 36.19it/s]                                                                            test/sim_max_reward_100000 1.0
+test/mean_score 1.0
+Saving log to /home/minhsctn1608/world-models-uva-lingbot/results/exp07/b1_steps10/eval_log_pusht.ckpt.json
+n=1  success=1.000 [0.207, 1.000]  mean_score=1.000 ± 0.000 (sem)  -> /home/minhsctn1608/world-models-uva-lingbot/results/exp07/b1_steps10/metrics.json

@@ -55,6 +55,11 @@ nvidia-smi        # must show one NVIDIA L4 with about 23 GB
 
 Stop the machine when it is idle (`gcloud compute instances stop uva-l4 --zone=<ZONE>`); the disk is still billed.
 
+If the local `gcloud` hangs on every command (seen 2026-10-15: `gcloud compute instances list` stalled after the auth
+step while the REST API answered), SSH directly with the key gcloud created:
+`ssh -i ~/.ssh/google_compute_engine minhsctn1608@<external IP>` (the external IP changes at every start; read it from
+`gcloud compute instances describe ... --format='value(networkInterfaces[0].accessConfigs[0].natIP)'` or the console).
+
 ## 2. UVA environment (`uva`)
 
 From the upstream README ([ShuangLI59/unified_video_action](https://github.com/ShuangLI59/unified_video_action)):
@@ -96,22 +101,34 @@ cd uva && MUJOCO_GL=egl ~/venvs/uva-libero/bin/python eval_sim.py -c checkpoints
 Data: `uva/data/libero_10/*.hdf5` (10 task files, 13 GB), `uva/data/pusht/pusht_cchi_v7_replay.zarr` (206 episodes),
 `uva/data/pusht_multitask` (247 episodes).
 
-## 3. LingBot-VA environment (`lingbot`)
+## 3. LingBot-VA environment (`~/venvs/lingbot`, verified 2026-10-15)
 
 From the upstream README ([Robbyant/lingbot-va](https://github.com/Robbyant/lingbot-va)): Python 3.10.16, PyTorch 2.9.0,
-CUDA 12.6.
+CUDA 12.6. The driver on the VM (580, CUDA 13.0) runs the cu126 wheels. Conda on the VM cannot create environments
+(ISSUE-012), so the environment is a [uv](https://docs.astral.sh/uv/) venv; the whole setup is `scripts/exp11_setup.sh`:
 
 ```bash
-conda create -n lingbot python=3.10.16 -y && conda activate lingbot
-pip install torch==2.9.0 torchvision==0.24.0 torchaudio==2.9.0 --index-url https://download.pytorch.org/whl/cu126
-pip install websockets einops diffusers==0.36.0 transformers==4.55.2 accelerate msgpack opencv-python matplotlib ftfy easydict
-pip install flash-attn --no-build-isolation
+curl -LsSf https://astral.sh/uv/install.sh | sh          # if uv is missing
+uv venv --python 3.10.16 ~/venvs/lingbot && source ~/venvs/lingbot/bin/activate
+uv pip install torch==2.9.0 torchvision==0.24.0 torchaudio==2.9.0 --index-url https://download.pytorch.org/whl/cu126
+uv pip install websockets einops diffusers==0.36.0 transformers==4.55.2 accelerate msgpack opencv-python matplotlib \
+    ftfy easydict huggingface_hub hf_transfer imageio imageio-ffmpeg
+HF_HUB_ENABLE_HF_TRANSFER=1 python -c "from huggingface_hub import snapshot_download; \
+    snapshot_download('robbyant/lingbot-va-posttrain-robotwin', local_dir='$HOME/models/lingbot-va-posttrain-robotwin')"
 ```
 
+`flash-attn` is not installed (it builds from source for hours on 4 vCPUs); inference uses `attn_mode="torch"` (PyTorch
+SDPA), which needs the import fix in the README table "Changes from upstream" (ISSUE-013). Exact package versions:
+`results/exp11/pip_freeze.txt`.
+
 Checkpoints on Hugging Face: `robbyant/lingbot-va-base`, `robbyant/lingbot-va-posttrain-robotwin`,
-`robbyant/lingbot-va-posttrain-libero-long`. Before inference set `attn_mode` in `<model>/transformer/config.json` to
-`"torch"` or `"flashattn"` (`"flex"` is for training and fails at evaluation). Offload mode keeps the VAE and text encoder on
-the CPU; the upstream memory figures (about 18 GB for i2av, about 24 GB for single-GPU RoboTwin evaluation) assume it.
+`robbyant/lingbot-va-posttrain-libero-long`, 24.4 GB each (transformer 10.2 GB, T5 text encoder 11.4 GB, VAE 2.8 GB; the
+download took about 2 min on the VM). `attn_mode` in `<model>/transformer/config.json` is already `"torch"` in the
+RoboTwin checkpoint, and `wan_va_server.py` passes `attn_mode="torch"` explicitly in any case (`"flex"` is for training).
+Offload mode (`--enable_offload true`, upstream default in `shared_config.py` is off) keeps the VAE and the text encoder
+on the CPU. Loading then holds T5, VAE and transformer on the CPU at the same time; a 32 GB swap file was added before the
+first run (`sudo fallocate -l 32G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile`,
+not persistent across reboots), but the measured peak was 4.8 GB RAM and 0.6 GB swap (safetensors are memory-mapped).
 
 ## 4. Simulators without a screen
 

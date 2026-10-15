@@ -1,0 +1,28 @@
+{
+  "chunk_seconds": [
+    28.534039000999883,
+    16.248710298000105
+  ],
+  "decode_seconds": 2.5996365530002095,
+  "peak_allocated_gb_generation": 16.86244773864746,
+  "peak_allocated_gb_total": 16.86244773864746,
+  "num_chunks": 2,
+  "frame_chunk_size": 2,
+  "action_per_frame": 16,
+  "num_inference_steps": 25,
+  "action_num_inference_steps": 50,
+  "guidance_scale": 5,
+  "enable_offload": true,
+  "seed": 0,
+  "video_frames": 13,
+  "video_shape": [
+    13,
+    384,
+    320,
+    3
+  ],
+  "action_shape": [
+    16,
+    64
+  ]
+}

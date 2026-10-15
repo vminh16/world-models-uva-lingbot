@@ -17,7 +17,8 @@ NVIDIA L4 (24 GB). Part 1 (ROSOrin Pro simulation, SLAM and Nav2) is in
 | GCP L4 machine and environments | done: 1× L4, `uva` env, LIBERO venv (`docs/ENVIRONMENT.md`) |
 | UVA: evaluate released checkpoints (EXP-01, EXP-05) | done: PushT, PushT-M (50 seeds × 3, and with 50 distinct goals), LIBERO-10 (10 tasks × 20) |
 | UVA: fine-tune `pusht.ckpt` to random goals (EXP-02, EXP-03) | done: 0 / 10 / 25 / 50 demonstrations and action-only ablation, 3k steps each on one L4 (`results/exp02/`) |
-| LingBot-VA: inference (EXP-11) | pending |
+| UVA: inference cost vs denoising steps (EXP-07) | done: PushT 50 seeds at 100 / 50 / 20 / 10 / 5 steps, latency at batch 1 and 10 (`results/exp07/`) |
+| LingBot-VA: inference (EXP-11) | done: i2av on one L4 with offload, 3 seeds × 10 chunks and 40 chunks, latency and memory; ablations of denoising steps, CFG, prompt, KV window (`results/exp11/`) |
 | Report | pending |
 
 ## What is new compared with the papers
@@ -68,6 +69,21 @@ python scripts/aggregate_seeds.py results/exp01    # -> results/exp01/summary.js
 TAG=_seeded_goal EXTRA="--seeded_goal True" bash scripts/run_exp01.sh 10 pusht_multitask   # PushT-M, 50 distinct goals
 ```
 
+**EXP-07** (2026-10-15, about 35 min), on the VM in the `uva` env:
+
+```bash
+bash scripts/run_exp07.sh                          # PushT 50 seeds and batch-1 latency, 100 / 50 / 20 / 10 / 5 action steps
+```
+
+**EXP-11** (2026-10-15, about 50 min + 40 min of ablations), on the VM with the venv from `scripts/exp11_setup.sh`:
+
+```bash
+bash results/exp11/driver.sh                       # i2av, 3 seeds x 10 chunks, then 40 chunks (scripts/run_exp11.sh)
+python scripts/summarize_exp11.py                  # -> results/exp11/summary.json, results/exp11/figures/
+bash results/exp11/driver_ablation.sh              # steps, CFG, KV window, prompt (seed 0)
+python scripts/compare_exp11.py                    # -> results/exp11/ablations.json, results/exp11/figures/ablations.png
+```
+
 **EXP-05** (2026-10-14, about 55 min), on the VM with the LIBERO venv (`docs/ENVIRONMENT.md` 2b):
 
 ```bash
@@ -93,6 +109,9 @@ rollout videos from the simulator, a GPU memory log (`nvidia-smi`), and figures 
 | uva | `workspace/train_unified_video_action_workspace.py` | scalar entries of every step and epoch log (train / video / action loss, lr, FVD, rollout scores) also appended to `<output_dir>/logs.jsonl` | training curves without reading wandb's offline files (EXP-02) |
 | uva | `workspace/train_unified_video_action_workspace.py` | FVD on the validation batches runs only when `epoch % training.val_every == 0` (default 1 = upstream, every epoch) | the k = 10 run has 37 short epochs; FVD every epoch would add about 40 min (EXP-02 F3) |
 | uva | `dataset/pusht_image_dataset.py` | option `train_episodes` (default `None` = upstream `max_train_episodes` sampling): explicit training episode indices | nested subsets k10 ⊂ k25 ⊂ k50 for the data-scaling runs; upstream sampling gives disjoint sets (EXP-02 F3) |
+| uva | `eval_sim.py` | option `--act_diff_testing_steps` (default: checkpoint value); every `predict_action` call timed with CUDA synchronization, written to `<output_dir>/latency.json` with the peak GPU memory | inference cost vs denoising steps (EXP-07) |
+| lingbot-va | `wan_va/modules/model.py` | `flash_attn` import optional (fallback `None`; `attn_mode="flashattn"` raises a clear error without it) | `attn_mode="torch"` could not start without flash-attn, which takes hours to build on 4 vCPUs (ISSUE-013) |
+| lingbot-va | `wan_va/wan_va_server.py` | options `--model_path`, `--enable_offload`, `--num_chunks`, `--seed`, `--set KEY=VALUE` (config overrides; key `prompt_embeds_cache_dir` reuses T5 prompt embeddings across runs) (default: config values, unseeded, no cache = upstream); i2av mode writes `timing.json` (seconds per chunk with CUDA sync, VAE decode time, peak allocated GPU memory) and `actions.npy` next to `demo.mp4` | run EXP-11 without editing the config files, and measure latency and memory (EXP-11) |
 
 ## Acknowledgements
 

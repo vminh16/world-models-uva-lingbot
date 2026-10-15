@@ -3,6 +3,33 @@
 Source for the "problems and solutions" part of the report. Newest entries first. Each entry records the command, the error,
 the cause (verified, or marked as a hypothesis) and the fix.
 
+## ISSUE-013 — LingBot-VA does not start without flash-attn, even with `attn_mode="torch"`
+- Date: 2026-10-15
+- Component: LingBot-VA (`wan_va/modules/model.py`)
+- Status: FIXED
+- Command: `bash scripts/run_exp11.sh smoke_c2_s0 2 0`
+- Error: `ModuleNotFoundError: No module named 'flash_attn'` at import (`results/exp11/smoke_c2_s0_try1_flashattn/` on the VM)
+- Cause: the module imports `flash_attn_func` unconditionally (`try: flash_attn_interface except: flash_attn`), although
+  only `attn_mode="flashattn"` uses it. The README presents `"torch"` as an inference option, but it cannot run unless
+  flash-attn is installed.
+- Fix: the second import falls back to `None`; `attn_mode="flashattn"` raises a clear `ImportError` in that case.
+  `"torch"` mode is unchanged (PyTorch SDPA).
+- In report: no (setup)
+
+## ISSUE-012 — Conda on the VM cannot create the `lingbot` environment
+- Date: 2026-10-15
+- Component: machine (miniconda base, conda 26.9.2 on Python 3.14)
+- Status: WORKAROUND
+- Errors, in order: (1) `conda create` fails while loading the plugins `conda-anaconda-tos` / `conda-anaconda-telemetry`
+  (`cannot import name 'CondaPreCommand'`); the setup script went on with the system Python 3.10.12 and `pip` installed
+  4.3 GB into `~/.local/lib/python3.10`, which every Python 3.10 (including a new env) would import. (2) With
+  `CONDA_NO_PLUGINS=true`, the libmamba solver (itself a plugin) is unknown. (3) With `--solver classic`, the package
+  cache in `~/miniconda3/pkgs` is corrupted (`x264-…/info/index.json` missing).
+- Fix: `~/.local/lib/python3.10` and `~/.local/bin` removed (all files from that run, checked by timestamp); environment
+  created with `uv venv --python 3.10.16 ~/venvs/lingbot` instead; `scripts/exp11_setup.sh` now stops with `set -e`
+  if the venv is not active and sets `PYTHONNOUSERSITE=1`. Conda base and the `uva` env were left untouched.
+- In report: no (setup)
+
 ## ISSUE-011 — FVD logged during training is not comparable across runs
 - Date: 2026-10-15
 - Component: UVA (`eval/eval.py` `test_video_fvd`)
